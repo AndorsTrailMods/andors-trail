@@ -1,0 +1,4 @@
+#Sat Oct 03 12:41:49 PDT 2026
+base.0=C\:\\Users\\IntoTheAbyss\\AndroidStudioProjects\\AndorsTrail\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

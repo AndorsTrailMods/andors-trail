@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "MERGED_MANIFESTS",
+    "kind": "Directory"
+  },
+  "applicationId": "com.gpl.rpg.AndorsTrail.custom",
+  "variantName": "debug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 42,
+      "versionName": "0.7.2dev",
+      "outputFile": "AndroidManifest.xml"
+    }
+  ]
+}

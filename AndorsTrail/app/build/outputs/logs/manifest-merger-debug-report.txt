@@ -1,0 +1,250 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:3:1-65:12
+INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:3:1-65:12
+INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:3:1-65:12
+INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:3:1-65:12
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\ff887725efb01ee084fa61563782ee3c\support-v4-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\8aca4e385a19c5786957a72d8de77e9f\support-media-compat-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\7093625e245be2f9da059fb69635e386\support-fragment-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\ebdaba724d630547519146b185ca3ca2\support-core-ui-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\b4c6af1ae4345cab0a622f08a7523356\support-core-utils-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\76f967ba5224a2324c7b36a6b6beb8ef\loader-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\89face3daa86ec6e301af2545a00e819\viewpager-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\7cadb58b8c0c86a09731971f6307fd56\coordinatorlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\efd769fb970c1894bc704f9b03375891\drawerlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\99286e9264ccffbdcfeef6a898d405a9\slidingpanelayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\c645b14cbf7400c1620284ec778917ed\customview-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\69584d4b522a168305e2fe7e786b3c2d\swiperefreshlayout-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\f0aa855178a708528b0b89a033e11975\asynclayoutinflater-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\06f6df44c76c4a181cad1895980d5a87\support-compat-28.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\5b0bdb1141ca8e0033dd5a0f32776df1\versionedparcelable-28.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\b3178544db81ff2083269db8058eb1dd\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\fd28601af1e62f6b2008bfcf849ab48b\documentfile-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\a76aa01d89e969980164b1fd1e31c0c5\localbroadcastmanager-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\3c66927090c50d8cae8d532a1f537c39\print-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\bd647f4fe7f1f1847c7c2a54d917be44\interpolator-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\5a32061153c0ccb63d4c91e7462c854e\cursoradapter-28.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\6fc8c33e0b497e25ecd64651fccd3c8e\viewmodel-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\24deb7c88481bc7fd9652b157e2158d8\livedata-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\998135bdb7686494daa9579c72a212a4\livedata-core-1.1.1\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\158fb668b4a0516eb81e0ac79af18a91\runtime-1.1.1\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:3:1-65:12
+INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:3:1-65:12
+INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:3:1-65:12
+	package
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:5:2-35
+		INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:7:2-32
+		INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:4:2-60
+	android:versionCode
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:6:2-26
+		INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml
+	android:installLocation
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:8:2-32
+uses-sdk
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:10:2-13:5
+INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:10:2-13:5
+INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:10:2-13:5
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\ff887725efb01ee084fa61563782ee3c\support-v4-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\ff887725efb01ee084fa61563782ee3c\support-v4-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\8aca4e385a19c5786957a72d8de77e9f\support-media-compat-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\8aca4e385a19c5786957a72d8de77e9f\support-media-compat-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\7093625e245be2f9da059fb69635e386\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\7093625e245be2f9da059fb69635e386\support-fragment-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\ebdaba724d630547519146b185ca3ca2\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\ebdaba724d630547519146b185ca3ca2\support-core-ui-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\b4c6af1ae4345cab0a622f08a7523356\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\b4c6af1ae4345cab0a622f08a7523356\support-core-utils-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\76f967ba5224a2324c7b36a6b6beb8ef\loader-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\76f967ba5224a2324c7b36a6b6beb8ef\loader-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\89face3daa86ec6e301af2545a00e819\viewpager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\89face3daa86ec6e301af2545a00e819\viewpager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\7cadb58b8c0c86a09731971f6307fd56\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\7cadb58b8c0c86a09731971f6307fd56\coordinatorlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\efd769fb970c1894bc704f9b03375891\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\efd769fb970c1894bc704f9b03375891\drawerlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\99286e9264ccffbdcfeef6a898d405a9\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\99286e9264ccffbdcfeef6a898d405a9\slidingpanelayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\c645b14cbf7400c1620284ec778917ed\customview-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\c645b14cbf7400c1620284ec778917ed\customview-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\69584d4b522a168305e2fe7e786b3c2d\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\69584d4b522a168305e2fe7e786b3c2d\swiperefreshlayout-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\f0aa855178a708528b0b89a033e11975\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\f0aa855178a708528b0b89a033e11975\asynclayoutinflater-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\06f6df44c76c4a181cad1895980d5a87\support-compat-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\06f6df44c76c4a181cad1895980d5a87\support-compat-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\5b0bdb1141ca8e0033dd5a0f32776df1\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\5b0bdb1141ca8e0033dd5a0f32776df1\versionedparcelable-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\b3178544db81ff2083269db8058eb1dd\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\b3178544db81ff2083269db8058eb1dd\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\fd28601af1e62f6b2008bfcf849ab48b\documentfile-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\fd28601af1e62f6b2008bfcf849ab48b\documentfile-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\a76aa01d89e969980164b1fd1e31c0c5\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\a76aa01d89e969980164b1fd1e31c0c5\localbroadcastmanager-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\3c66927090c50d8cae8d532a1f537c39\print-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\3c66927090c50d8cae8d532a1f537c39\print-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\bd647f4fe7f1f1847c7c2a54d917be44\interpolator-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\bd647f4fe7f1f1847c7c2a54d917be44\interpolator-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\5a32061153c0ccb63d4c91e7462c854e\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\5a32061153c0ccb63d4c91e7462c854e\cursoradapter-28.0.0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\6fc8c33e0b497e25ecd64651fccd3c8e\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\6fc8c33e0b497e25ecd64651fccd3c8e\viewmodel-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\24deb7c88481bc7fd9652b157e2158d8\livedata-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\24deb7c88481bc7fd9652b157e2158d8\livedata-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\998135bdb7686494daa9579c72a212a4\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\998135bdb7686494daa9579c72a212a4\livedata-core-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\158fb668b4a0516eb81e0ac79af18a91\runtime-1.1.1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\158fb668b4a0516eb81e0ac79af18a91\runtime-1.1.1\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:10:2-13:5
+INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:10:2-13:5
+	android:targetSdkVersion
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:12:3-32
+		INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:11:3-28
+		INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml
+supports-screens
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:15:2-21:5
+	android:largeScreens
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:18:3-30
+	android:smallScreens
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:16:3-30
+	android:normalScreens
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:17:3-31
+	android:xlargeScreens
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:19:3-31
+	android:anyDensity
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:20:3-28
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:23:2-25:8
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:24:6-62
+application
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:27:2-63:16
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\06f6df44c76c4a181cad1895980d5a87\support-compat-28.0.0\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\06f6df44c76c4a181cad1895980d5a87\support-compat-28.0.0\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\5b0bdb1141ca8e0033dd5a0f32776df1\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\5b0bdb1141ca8e0033dd5a0f32776df1\versionedparcelable-28.0.0\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\06f6df44c76c4a181cad1895980d5a87\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:29:3-35
+	android:icon
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:30:3-32
+	android:allowBackup
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:32:9-35
+	android:description
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:31:3-48
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:28:3-41
+activity#com.gpl.rpg.AndorsTrail.activity.StartScreenActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:34:3-42:14
+	android:clearTaskOnLaunch
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:36:7-39
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:35:7-51
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:38:4-41:20
+action#android.intent.action.MAIN
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:39:5-57
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:39:13-54
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:40:5-65
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:40:15-62
+activity#com.gpl.rpg.AndorsTrail.activity.MainActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:43:6-47:6
+	android:label
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:45:4-36
+	android:theme
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:46:4-45
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:44:4-41
+activity#com.gpl.rpg.AndorsTrail.activity.HeroinfoActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:48:3-57
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:48:13-54
+activity#com.gpl.rpg.AndorsTrail.activity.MonsterInfoActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:49:3-104
+	android:theme
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:49:58-101
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:49:13-57
+activity#com.gpl.rpg.AndorsTrail.activity.ItemInfoActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:50:3-101
+	android:theme
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:50:55-98
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:50:13-54
+activity#com.gpl.rpg.AndorsTrail.activity.LevelUpActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:51:3-100
+	android:theme
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:51:54-97
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:51:13-53
+activity#com.gpl.rpg.AndorsTrail.activity.MonsterEncounterActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:52:3-109
+	android:theme
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:52:63-106
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:52:13-62
+activity#com.gpl.rpg.AndorsTrail.activity.ConversationActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:53:3-105
+	android:theme
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:53:59-102
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:53:13-58
+activity#com.gpl.rpg.AndorsTrail.activity.ShopActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:54:3-53
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:54:13-50
+activity#com.gpl.rpg.AndorsTrail.activity.AboutActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:55:3-54
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:55:13-51
+activity#com.gpl.rpg.AndorsTrail.activity.LoadingActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:56:3-56
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:56:13-53
+activity#com.gpl.rpg.AndorsTrail.activity.Preferences
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:57:3-52
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:57:13-49
+activity#com.gpl.rpg.AndorsTrail.activity.LoadSaveActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:58:3-101
+	android:theme
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:58:55-98
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:58:13-54
+activity#com.gpl.rpg.AndorsTrail.activity.ActorConditionInfoActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:59:3-111
+	android:theme
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:59:65-108
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:59:13-64
+activity#com.gpl.rpg.AndorsTrail.activity.BulkSelectionInterface
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:60:3-107
+	android:theme
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:60:61-104
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:60:13-60
+activity#com.gpl.rpg.AndorsTrail.activity.SkillInfoActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:61:3-102
+	android:theme
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:61:56-99
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:61:13-55
+activity#com.gpl.rpg.AndorsTrail.activity.DisplayWorldMapActivity
+ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:62:3-64
+	android:name
+		ADDED from C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:62:13-61

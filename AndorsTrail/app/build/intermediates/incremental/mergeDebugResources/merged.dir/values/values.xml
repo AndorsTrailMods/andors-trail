@@ -1,0 +1,1768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="loadresource_actorconditions">
+		<item>@raw/actorconditions_v069</item>
+		<item>@raw/actorconditions_v069_bwm</item>
+		<item>@raw/actorconditions_v0610</item>
+		<item>@raw/actorconditions_v0611</item>
+		<item>@raw/actorconditions_v0611_2</item>
+		<item>@raw/actorconditions_v0612_2</item>
+		<item>@raw/actorconditions_v070</item>
+	</array>
+    <array name="loadresource_conversationlists">
+		<item>@raw/conversationlist_mikhail</item>
+		<item>@raw/conversationlist_crossglen</item>
+		<item>@raw/conversationlist_crossglen_gruil</item>
+		<item>@raw/conversationlist_crossglen_leonid</item>
+		<item>@raw/conversationlist_crossglen_tharal</item>
+		<item>@raw/conversationlist_crossglen_leta</item>
+		<item>@raw/conversationlist_crossglen_odair</item>
+		<item>@raw/conversationlist_jan</item>
+		<item>@raw/conversationlist_fallhaven</item>
+		<item>@raw/conversationlist_fallhaven_arcir</item>
+		<item>@raw/conversationlist_fallhaven_bucus</item>
+		<item>@raw/conversationlist_fallhaven_church</item>
+		<item>@raw/conversationlist_fallhaven_athamyr</item>
+		<item>@raw/conversationlist_fallhaven_drunk</item>
+		<item>@raw/conversationlist_fallhaven_nocmar</item>
+		<item>@raw/conversationlist_fallhaven_oldman</item>
+		<item>@raw/conversationlist_fallhaven_tavern</item>
+		<item>@raw/conversationlist_fallhaven_larcal</item>
+		<item>@raw/conversationlist_fallhaven_unnmir</item>
+		<item>@raw/conversationlist_fallhaven_gaela</item>
+		<item>@raw/conversationlist_fallhaven_vacor</item>
+		<item>@raw/conversationlist_fallhaven_unzel</item>
+		<item>@raw/conversationlist_wilderness</item>
+		<item>@raw/conversationlist_flagstone</item>
+		<item>@raw/conversationlist_fallhaven_south</item>
+		<item>@raw/conversationlist_signs_pre067</item>
+		<item>@raw/conversationlist_thievesguild_1</item>
+		<item>@raw/conversationlist_farrik</item>
+		<item>@raw/conversationlist_fallhaven_warden</item>
+		<item>@raw/conversationlist_umar</item>
+		<item>@raw/conversationlist_kaori</item>
+		<item>@raw/conversationlist_vilegard_villagers</item>
+		<item>@raw/conversationlist_vilegard_erttu</item>
+		<item>@raw/conversationlist_vilegard_tavern</item>
+		<item>@raw/conversationlist_jolnor</item>
+		<item>@raw/conversationlist_alynndir</item>
+		<item>@raw/conversationlist_vilegard_shops</item>
+		<item>@raw/conversationlist_ogam</item>
+		<item>@raw/conversationlist_foamingflask</item>
+		<item>@raw/conversationlist_ambelie</item>
+		<item>@raw/conversationlist_foamingflask_guards</item>
+		<item>@raw/conversationlist_foamingflask_outsideguard</item>
+		<item>@raw/conversationlist_wrye</item>
+		<item>@raw/conversationlist_oluag</item>
+		<item>@raw/conversationlist_signs_v068</item>
+		<item>@raw/conversationlist_maelveon</item>
+		<item>@raw/conversationlist_bwm_agent_1</item>
+		<item>@raw/conversationlist_bwm_agent_2</item>
+		<item>@raw/conversationlist_bwm_agent_3</item>
+		<item>@raw/conversationlist_bwm_agent_4</item>
+		<item>@raw/conversationlist_bwm_agent_5</item>
+		<item>@raw/conversationlist_bwm_agent_6</item>
+		<item>@raw/conversationlist_prim_arghest</item>
+		<item>@raw/conversationlist_prim_outside</item>
+		<item>@raw/conversationlist_prim_inn</item>
+		<item>@raw/conversationlist_prim_tavern</item>
+		<item>@raw/conversationlist_prim_guthbered</item>
+		<item>@raw/conversationlist_blackwater_signs</item>
+		<item>@raw/conversationlist_blackwater_harlenn</item>
+		<item>@raw/conversationlist_blackwater_upper</item>
+		<item>@raw/conversationlist_blackwater_lower</item>
+		<item>@raw/conversationlist_blackwater_herec</item>
+		<item>@raw/conversationlist_prim_bjorgur</item>
+		<item>@raw/conversationlist_prim_fulus</item>
+		<item>@raw/conversationlist_prim_merchants</item>
+		<item>@raw/conversationlist_blackwater_throdna</item>
+		<item>@raw/conversationlist_blackwater_kazaul</item>
+		<item>@raw/conversationlist_erinith</item>
+		<item>@raw/conversationlist_hadracor</item>
+		<item>@raw/conversationlist_tinlyn</item>
+		<item>@raw/conversationlist_tinlyn_sheep</item>
+		<item>@raw/conversationlist_benbyr</item>
+		<item>@raw/conversationlist_crossroads_1</item>
+		<item>@raw/conversationlist_minarra</item>
+		<item>@raw/conversationlist_rogorn</item>
+		<item>@raw/conversationlist_gandoren</item>
+		<item>@raw/conversationlist_ailshara</item>
+		<item>@raw/conversationlist_vilegard_v0610</item>
+		<item>@raw/conversationlist_crossroads_2</item>
+		<item>@raw/conversationlist_crossroads_3</item>
+		<item>@raw/conversationlist_fields_1</item>
+		<item>@raw/conversationlist_loneford_1</item>
+		<item>@raw/conversationlist_loneford_2</item>
+		<item>@raw/conversationlist_buceth</item>
+		<item>@raw/conversationlist_talion</item>
+		<item>@raw/conversationlist_taevinn</item>
+		<item>@raw/conversationlist_loneford_kuldan</item>
+		<item>@raw/conversationlist_loneford_3</item>
+		<item>@raw/conversationlist_loneford_4</item>
+		<item>@raw/conversationlist_pwcave</item>
+		<item>@raw/conversationlist_thorin</item>
+		<item>@raw/conversationlist_thorinbone</item>
+		<item>@raw/conversationlist_algangror</item>
+		<item>@raw/conversationlist_remgard_bridgeguard</item>
+		<item>@raw/conversationlist_ulirfendor</item>
+		<item>@raw/conversationlist_toszylae_guard</item>
+		<item>@raw/conversationlist_toszylae</item>
+		<item>@raw/conversationlist_sign_ulirfendor</item>
+		<item>@raw/conversationlist_talion_2</item>
+		<item>@raw/conversationlist_gylew</item>
+		<item>@raw/conversationlist_ingus</item>
+		<item>@raw/conversationlist_elwyl</item>
+		<item>@raw/conversationlist_hjaldar</item>
+		<item>@raw/conversationlist_mazeg</item>
+		<item>@raw/conversationlist_sign_waterwaycave</item>
+		<item>@raw/conversationlist_jhaeld</item>
+		<item>@raw/conversationlist_norath</item>
+		<item>@raw/conversationlist_elythom_1</item>
+		<item>@raw/conversationlist_duaina</item>
+		<item>@raw/conversationlist_rothses</item>
+		<item>@raw/conversationlist_remgard_villagers1</item>
+		<item>@raw/conversationlist_kendelow</item>
+		<item>@raw/conversationlist_arghes</item>
+		<item>@raw/conversationlist_remgard_villagers2</item>
+		<item>@raw/conversationlist_ervelyn</item>
+		<item>@raw/conversationlist_reinkarr</item>
+		<item>@raw/conversationlist_remgard_idolsigns</item>
+		<item>@raw/conversationlist_signs_v0611</item>
+		<item>@raw/conversationlist_kaverin</item>
+		<item>@raw/conversationlist_vacor2</item>
+		<item>@raw/conversationlist_unzel2</item>
+		<item>@raw/conversationlist_v0612graves</item>
+		<item>@raw/conversationlist_agthor</item>
+		<item>@raw/conversationlist_aulowenn</item>
+		<item>@raw/conversationlist_charwood1</item>
+		<item>@raw/conversationlist_charwood2</item>
+		<item>@raw/conversationlist_esfiume</item>
+		<item>@raw/conversationlist_falothen</item>
+		<item>@raw/conversationlist_fayvara</item>
+		<item>@raw/conversationlist_hirazinn</item>
+		<item>@raw/conversationlist_kantya</item>
+		<item>@raw/conversationlist_lethenlor</item>
+		<item>@raw/conversationlist_lleglaris</item>
+		<item>@raw/conversationlist_lodar</item>
+		<item>@raw/conversationlist_lodar0g</item>
+		<item>@raw/conversationlist_lodarfg</item>
+		<item>@raw/conversationlist_lodarfg2</item>
+		<item>@raw/conversationlist_lodarfg3</item>
+		<item>@raw/conversationlist_lodarfg4</item>
+		<item>@raw/conversationlist_lowyna</item>
+		<item>@raw/conversationlist_maevalia</item>
+		<item>@raw/conversationlist_thukuzun</item>
+		<item>@raw/conversationlist_tiqui</item>
+		<item>@raw/conversationlist_twoteeth</item>
+		<item>@raw/conversationlist_v070signs1</item>
+		<item>@raw/conversationlist_v070signs2</item>
+		<item>@raw/conversationlist_woodcabin</item>
+		<item>@raw/conversationlist_highwayman1</item>
+		<item>@raw/conversationlist_lodarmobs</item>
+		<item>@raw/conversationlist_vilegard_v070</item>
+		<item>@raw/conversationlist_fallhaven_potions</item>
+	</array>
+    <array name="loadresource_conversationlists_debug">
+		<item>@raw/conversationlist_debug</item>
+	</array>
+    <array name="loadresource_droplists">
+		<item>@raw/droplists_crossglen</item>
+		<item>@raw/droplists_crossglen_outside</item>
+		<item>@raw/droplists_fallhaven</item>
+		<item>@raw/droplists_wilderness</item>
+		<item>@raw/droplists_v068</item>
+		<item>@raw/droplists_v069_npcs</item>
+		<item>@raw/droplists_v069_monsters</item>
+		<item>@raw/droplists_v0610_shops</item>
+		<item>@raw/droplists_v0610_npcs</item>
+		<item>@raw/droplists_v0610_monsters</item>
+		<item>@raw/droplists_v0611_monsters</item>
+		<item>@raw/droplists_v0611_npcs</item>
+		<item>@raw/droplists_v0611_shops</item>
+		<item>@raw/droplists_v070_quest</item>
+		<item>@raw/droplists_v070_shops</item>
+		<item>@raw/droplists_v070_mobs</item>
+	</array>
+    <array name="loadresource_droplists_debug">
+		<item>@raw/droplists_debug</item>
+	</array>
+    <array name="loadresource_itemcategories">
+		<item>@raw/itemcategories_1</item>
+	</array>
+    <array name="loadresource_items">
+		<item>@raw/itemlist_money</item>
+		<item>@raw/itemlist_weapons</item>
+		<item>@raw/itemlist_armour</item>
+		<item>@raw/itemlist_rings</item>
+		<item>@raw/itemlist_necklaces</item>
+		<item>@raw/itemlist_junk</item>
+		<item>@raw/itemlist_food</item>
+		<item>@raw/itemlist_potions</item>
+		<item>@raw/itemlist_animal</item>
+		<item>@raw/itemlist_quest</item>
+		<item>@raw/itemlist_v068</item>
+		<item>@raw/itemlist_v069</item>
+		<item>@raw/itemlist_v069_questitems</item>
+		<item>@raw/itemlist_v069_2</item>
+		<item>@raw/itemlist_v0610_1</item>
+		<item>@raw/itemlist_v0610_2</item>
+		<item>@raw/itemlist_v0611_1</item>
+		<item>@raw/itemlist_v0611_2</item>
+		<item>@raw/itemlist_v0611_3</item>
+		<item>@raw/itemlist_v070</item>
+		<item>@raw/itemlist_v070_questitems</item>
+	</array>
+    <array name="loadresource_items_debug">
+		<item>@raw/itemlist_money</item>
+		<item>@raw/itemlist_weapons</item>
+		<item>@raw/itemlist_armour</item>
+		<item>@raw/itemlist_debug</item>
+	</array>
+    <array name="loadresource_maps">
+		<item>@xml/home</item>
+		<item>@xml/crossglen</item>
+		<item>@xml/crossglen_farmhouse</item>
+		<item>@xml/crossglen_farmhouse_basement</item>
+		<item>@xml/crossglen_hall</item>
+		<item>@xml/crossglen_smith</item>
+		<item>@xml/crossglen_cave</item>
+		<item>@xml/wild1</item>
+		<item>@xml/wild2</item>
+		<item>@xml/wild3</item>
+		<item>@xml/jan_pitcave1</item>
+		<item>@xml/jan_pitcave2</item>
+		<item>@xml/jan_pitcave3</item>
+		<item>@xml/fallhaven_nw</item>
+		<item>@xml/snakecave1</item>
+		<item>@xml/snakecave2</item>
+		<item>@xml/snakecave3</item>
+		<item>@xml/wild4</item>
+		<item>@xml/hauntedhouse1</item>
+		<item>@xml/hauntedhouse2</item>
+		<item>@xml/fallhaven_ne</item>
+		<item>@xml/fallhaven_church</item>
+		<item>@xml/fallhaven_barn</item>
+		<item>@xml/fallhaven_potions</item>
+		<item>@xml/fallhaven_gravedigger</item>
+		<item>@xml/fallhaven_clothes</item>
+		<item>@xml/fallhaven_arcir</item>
+		<item>@xml/fallhaven_arcir_basement</item>
+		<item>@xml/fallhaven_athamyr</item>
+		<item>@xml/fallhaven_rigmor</item>
+		<item>@xml/fallhaven_tavern</item>
+		<item>@xml/fallhaven_prison</item>
+		<item>@xml/fallhaven_derelict</item>
+		<item>@xml/fallhaven_nocmar</item>
+		<item>@xml/catacombs1</item>
+		<item>@xml/catacombs2</item>
+		<item>@xml/catacombs3</item>
+		<item>@xml/catacombs4</item>
+		<item>@xml/hauntedhouse3</item>
+		<item>@xml/hauntedhouse4</item>
+		<item>@xml/fallhaven_sw</item>
+		<item>@xml/wild5</item>
+		<item>@xml/wild6</item>
+		<item>@xml/wild6_house</item>
+		<item>@xml/wild7</item>
+		<item>@xml/wild8</item>
+		<item>@xml/wild9</item>
+		<item>@xml/wild10</item>
+		<item>@xml/flagstone0</item>
+		<item>@xml/flagstone_inner</item>
+		<item>@xml/flagstone_upper</item>
+		<item>@xml/flagstone1</item>
+		<item>@xml/flagstone2</item>
+		<item>@xml/flagstone3</item>
+		<item>@xml/flagstone4</item>
+		<item>@xml/wild11</item>
+		<item>@xml/wild12</item>
+		<item>@xml/wild11_clearing</item>
+		<item>@xml/clearing_level1</item>
+		<item>@xml/clearing_level2</item>
+		<item>@xml/fallhaven_se</item>
+		<item>@xml/fallhaven_lumberjack</item>
+		<item>@xml/fallhaven_alaun</item>
+		<item>@xml/fallhaven_storage</item>
+		<item>@xml/fallhaven_farmer</item>
+		<item>@xml/wild13</item>
+		<item>@xml/wild14</item>
+		<item>@xml/wild14_cave</item>
+		<item>@xml/wild14_clearing</item>
+		<item>@xml/wild15</item>
+		<item>@xml/wild15_house</item>
+		<item>@xml/road1</item>
+		<item>@xml/foaming_flask</item>
+		<item>@xml/fallhaven_derelict2</item>
+		<item>@xml/vilegard_n</item>
+		<item>@xml/vilegard_s</item>
+		<item>@xml/vilegard_sw</item>
+		<item>@xml/vilegard_ogam</item>
+		<item>@xml/vilegard_chapel</item>
+		<item>@xml/vilegard_tavern</item>
+		<item>@xml/vilegard_armorer</item>
+		<item>@xml/vilegard_smith</item>
+		<item>@xml/vilegard_wrye</item>
+		<item>@xml/vilegard_kaori</item>
+		<item>@xml/vilegard_erttu</item>
+		<item>@xml/road2</item>
+		<item>@xml/road3</item>
+		<item>@xml/road4</item>
+		<item>@xml/road4_gargoylecave</item>
+		<item>@xml/road5</item>
+		<item>@xml/road5_house</item>
+		<item>@xml/gargoylecave1</item>
+		<item>@xml/gargoylecave2</item>
+		<item>@xml/gargoylecave3</item>
+		<item>@xml/gargoylecave4</item>
+		<item>@xml/blackwater_mountain0</item>
+		<item>@xml/blackwater_mountain1</item>
+		<item>@xml/blackwater_mountain2</item>
+		<item>@xml/blackwater_mountain3</item>
+		<item>@xml/blackwater_mountain4</item>
+		<item>@xml/blackwater_mountain5</item>
+		<item>@xml/blackwater_mountain6</item>
+		<item>@xml/blackwater_mountain7</item>
+		<item>@xml/blackwater_mountain8</item>
+		<item>@xml/blackwater_mountain9</item>
+		<item>@xml/blackwater_mountain10</item>
+		<item>@xml/blackwater_mountain11</item>
+		<item>@xml/blackwater_mountain12</item>
+		<item>@xml/blackwater_mountain13</item>
+		<item>@xml/blackwater_mountain14</item>
+		<item>@xml/blackwater_mountain15</item>
+		<item>@xml/blackwater_mountain16</item>
+		<item>@xml/blackwater_mountain17</item>
+		<item>@xml/blackwater_mountain18</item>
+		<item>@xml/blackwater_mountain19</item>
+		<item>@xml/blackwater_mountain20</item>
+		<item>@xml/blackwater_mountain21</item>
+		<item>@xml/blackwater_mountain22</item>
+		<item>@xml/blackwater_mountain23</item>
+		<item>@xml/blackwater_mountain24</item>
+		<item>@xml/blackwater_mountain25</item>
+		<item>@xml/blackwater_mountain26</item>
+		<item>@xml/blackwater_mountain27</item>
+		<item>@xml/blackwater_mountain28</item>
+		<item>@xml/blackwater_mountain29</item>
+		<item>@xml/blackwater_mountain30</item>
+		<item>@xml/blackwater_mountain31</item>
+		<item>@xml/blackwater_mountain32</item>
+		<item>@xml/blackwater_mountain33</item>
+		<item>@xml/blackwater_mountain34</item>
+		<item>@xml/blackwater_mountain35</item>
+		<item>@xml/blackwater_mountain36</item>
+		<item>@xml/blackwater_mountain37</item>
+		<item>@xml/blackwater_mountain38</item>
+		<item>@xml/blackwater_mountain39</item>
+		<item>@xml/blackwater_mountain40</item>
+		<item>@xml/blackwater_mountain41</item>
+		<item>@xml/blackwater_mountain42</item>
+		<item>@xml/blackwater_mountain43</item>
+		<item>@xml/blackwater_mountain44</item>
+		<item>@xml/blackwater_mountain45</item>
+		<item>@xml/blackwater_mountain46</item>
+		<item>@xml/blackwater_mountain47</item>
+		<item>@xml/blackwater_mountain48</item>
+		<item>@xml/blackwater_mountain49</item>
+		<item>@xml/blackwater_mountain50</item>
+		<item>@xml/blackwater_mountain51</item>
+		<item>@xml/blackwater_mountain52</item>
+
+		<!-- maps for v0.6.10 -->
+		<item>@xml/wild0</item>
+		<item>@xml/crossroads</item>
+		<item>@xml/fields0</item>
+		<item>@xml/fields1</item>
+		<item>@xml/fields2</item>
+		<item>@xml/fields3</item>
+		<item>@xml/fields4</item>
+		<item>@xml/fields5</item>
+		<item>@xml/fields6</item>
+		<item>@xml/fields7</item>
+		<item>@xml/fields8</item>
+		<item>@xml/fields9</item>
+		<item>@xml/fields10</item>
+		<item>@xml/fields11</item>
+		<item>@xml/fields12</item>
+		<item>@xml/houseatcrossroads0</item>
+		<item>@xml/houseatcrossroads1</item>
+		<item>@xml/houseatcrossroads2</item>
+		<item>@xml/houseatcrossroads3</item>
+		<item>@xml/houseatcrossroads4</item>
+		<item>@xml/houseatcrossroads5</item>
+		<item>@xml/loneford1</item>
+		<item>@xml/loneford2</item>
+		<item>@xml/loneford3</item>
+		<item>@xml/loneford4</item>
+		<item>@xml/loneford5</item>
+		<item>@xml/loneford6</item>
+		<item>@xml/loneford7</item>
+		<item>@xml/loneford8</item>
+		<item>@xml/loneford9</item>
+		<item>@xml/loneford10</item>
+		<item>@xml/roadbeforecrossroads</item>
+		<item>@xml/roadtocarntower0</item>
+		<item>@xml/roadtocarntower1</item>
+		<item>@xml/roadtocarntower2</item>
+		<item>@xml/woodcave0</item>
+		<item>@xml/woodcave1</item>
+		<item>@xml/wild16</item>
+		<item>@xml/wild17</item>
+		<item>@xml/gapfiller1</item>
+		<item>@xml/gapfiller3</item>
+		<item>@xml/gapfiller4</item>
+		<item>@xml/waterway0</item>
+		<item>@xml/waterway1</item>
+		<item>@xml/waterway2</item>
+		<item>@xml/waterway3</item>
+		<item>@xml/waterwayhouse</item>
+		<item>@xml/waterwayextention</item>
+		<item>@xml/pwcave0</item>
+		<item>@xml/pwcave1</item>
+		<item>@xml/pwcave2</item>
+		<item>@xml/pwcave2a</item>
+		<item>@xml/pwcave3</item>
+		<item>@xml/pwcave4</item>
+
+		<!-- maps for v0.6.11 -->
+		<item>@xml/waterway4</item>
+		<item>@xml/waterway5</item>
+		<item>@xml/waterway6</item>
+		<item>@xml/waterway7</item>
+		<item>@xml/waterway8</item>
+		<item>@xml/waterway9</item>
+		<item>@xml/waterway10</item>
+		<item>@xml/waterway11_east</item>
+		<item>@xml/waterway11</item>
+		<item>@xml/waterway12</item>
+		<item>@xml/waterway13</item>
+		<item>@xml/waterway14</item>
+		<item>@xml/waterway15</item>
+		<item>@xml/waterwaycave</item>
+		<item>@xml/mountaincave0</item>
+		<item>@xml/mountaincave1</item>
+		<item>@xml/mountaincave2</item>
+		<item>@xml/mountaincave3</item>
+		<item>@xml/mountainlake0</item>
+		<item>@xml/mountainlake1</item>
+		<item>@xml/mountainlake2</item>
+		<item>@xml/mountainlake3</item>
+		<item>@xml/mountainlake4</item>
+		<item>@xml/mountainlake5</item>
+		<item>@xml/mountainlake6</item>
+		<item>@xml/mountainlake7</item>
+		<item>@xml/mountainlake8</item>
+		<item>@xml/mountainlake9</item>
+		<item>@xml/mountainlake10</item>
+		<item>@xml/mountainlake10a</item>
+		<item>@xml/mountainlake11</item>
+		<item>@xml/mountainlake12</item>
+		<item>@xml/mountainlake13</item>
+		<item>@xml/mountainlake13a</item>
+		<item>@xml/remgard0</item>
+		<item>@xml/remgard1</item>
+		<item>@xml/remgard2</item>
+		<item>@xml/remgard3</item>
+		<item>@xml/remgard4</item>
+		<item>@xml/remgard_armour</item>
+		<item>@xml/remgard_barn</item>
+		<item>@xml/remgard_church</item>
+		<item>@xml/remgard_clothes</item>
+		<item>@xml/remgard_farmer1</item>
+		<item>@xml/remgard_farmer2</item>
+		<item>@xml/remgard_farmer3</item>
+		<item>@xml/remgard_prison</item>
+		<item>@xml/remgard_school</item>
+		<item>@xml/remgard_tavern0</item>
+		<item>@xml/remgard_tavern1</item>
+		<item>@xml/remgard_villager1</item>
+		<item>@xml/remgard_villager2</item>
+		<item>@xml/remgard_villager3</item>
+		<item>@xml/remgard_villager4</item>
+		<item>@xml/remgard_villager5</item>
+		<item>@xml/remgard_weapon</item>
+		<item>@xml/waytobrimhaven0</item>
+		<item>@xml/waytobrimhaven1</item>
+		<item>@xml/waytobrimhaven2</item>
+		<item>@xml/waytobrimhaven3</item>
+		<item>@xml/waytobrimhavencave0</item>
+		<item>@xml/waytobrimhavencave1a</item>
+		<item>@xml/waytobrimhavencave1</item>
+		<item>@xml/waytobrimhavencave2</item>
+		<item>@xml/waytobrimhavencave3a</item>
+		<item>@xml/waytobrimhavencave3b</item>
+		<item>@xml/waytobrimhavencave3</item>
+		<item>@xml/waytobrimhavencave4</item>
+		<item>@xml/waytolake0</item>
+		<item>@xml/waytolake1</item>
+		<item>@xml/waytolake2</item>
+		<item>@xml/waytolake3</item>
+		<item>@xml/waytolake4</item>
+		<item>@xml/waytolake5</item>
+		<item>@xml/waytomountaincave0</item>
+		<item>@xml/waytomountaincave1</item>
+		<item>@xml/waytomountaincave2</item>
+		<item>@xml/lonelyhouse0</item>
+		<item>@xml/lonelyhouse1</item>
+		<item>@xml/wild16_cave</item>
+
+		<!-- maps for v0.7.0 -->
+		<item>@xml/gapfiller2</item>
+		<item>@xml/lodar0</item>
+		<item>@xml/lodar1</item>
+		<item>@xml/lodar10</item>
+		<item>@xml/lodar11</item>
+		<item>@xml/lodar12</item>
+		<item>@xml/lodar12cave0</item>
+		<item>@xml/lodar12cave1</item>
+		<item>@xml/lodar13</item>
+		<item>@xml/lodar14</item>
+		<item>@xml/lodar15</item>
+		<item>@xml/lodar16</item>
+		<item>@xml/lodar17</item>
+		<item>@xml/lodar18</item>
+		<item>@xml/lodar19</item>
+		<item>@xml/lodar1cave0</item>
+		<item>@xml/lodar2</item>
+		<item>@xml/lodar20</item>
+		<item>@xml/lodar21</item>
+		<item>@xml/lodar3</item>
+		<item>@xml/lodar4</item>
+		<item>@xml/lodar5</item>
+		<item>@xml/lodar5cave0</item>
+		<item>@xml/lodar5cave1</item>
+		<item>@xml/lodar5cave2</item>
+		<item>@xml/lodar6</item>
+		<item>@xml/lodar7</item>
+		<item>@xml/lodar8</item>
+		<item>@xml/lodar8cave0</item>
+		<item>@xml/lodar9</item>
+		<item>@xml/lodarcave0</item>
+		<item>@xml/lodarcave1</item>
+		<item>@xml/lodarcave2</item>
+		<item>@xml/lodarcave3</item>
+		<item>@xml/lodarcave4</item>
+		<item>@xml/lodarcave4a</item>
+		<item>@xml/lodarcave5</item>
+		<item>@xml/lodarcave6</item>
+		<item>@xml/lodarcave7</item>
+		<item>@xml/lodarhouse0</item>
+		<item>@xml/lodarhouse1</item>
+		<item>@xml/lostmine0</item>
+		<item>@xml/lostmine1</item>
+		<item>@xml/lostmine10</item>
+		<item>@xml/lostmine11</item>
+		<item>@xml/lostmine1a</item>
+		<item>@xml/lostmine2</item>
+		<item>@xml/lostmine2a</item>
+		<item>@xml/lostmine3</item>
+		<item>@xml/lostmine4</item>
+		<item>@xml/lostmine5</item>
+		<item>@xml/lostmine6</item>
+		<item>@xml/lostmine7</item>
+		<item>@xml/lostmine8</item>
+		<item>@xml/lostmine9</item>
+		<item>@xml/minerhouse0</item>
+		<item>@xml/minerhouse1</item>
+		<item>@xml/minerhouse2</item>
+		<item>@xml/minerhouse3</item>
+		<item>@xml/minerhouse4</item>
+		<item>@xml/minerhouse5</item>
+		<item>@xml/minerhouse6</item>
+		<item>@xml/minerhouse7</item>
+		<item>@xml/minerhouse8</item>
+		<item>@xml/minerhouse9</item>
+		<item>@xml/oldcave0</item>
+		<item>@xml/oldcave1</item>
+		<item>@xml/roadbeforecrossroads1</item>
+		<item>@xml/roadbeforecrossroads2</item>
+		<item>@xml/roadbeforecrossroads3</item>
+		<item>@xml/roadbeforecrossroads4</item>
+		<item>@xml/roadbeforecrossroads5</item>
+		<item>@xml/roadbeforecrossroads6</item>
+		<item>@xml/roadbeforecrossroads7</item>
+		<item>@xml/roadbeforecrossroads8</item>
+		<item>@xml/roadbeforecrossroads9</item>
+		<item>@xml/roadcave0</item>
+		<item>@xml/roadcave1</item>
+		<item>@xml/waytolostmine0</item>
+		<item>@xml/waytolostmine1</item>
+		<item>@xml/waytolostmine2</item>
+		<item>@xml/waytolostmine3</item>
+		<item>@xml/waytominingtown0</item>
+		<item>@xml/waytominingtown1</item>
+		<item>@xml/waytominingtown1a</item>
+		<item>@xml/waytominingtown2</item>
+		<item>@xml/waytominingtown3</item>
+		<item>@xml/woodhouse0</item>
+		<item>@xml/woodhouse1</item>
+		<item>@xml/woodhouse2</item>
+		<item>@xml/woodhouse3</item>
+		<item>@xml/woodsettlement0</item>
+		<item>@xml/tradehouse0</item>
+		<item>@xml/tradehouse1</item>
+		<item>@xml/tradehouse0a</item>
+	</array>
+    <array name="loadresource_maps_debug">
+		<item>@xml/debugmap</item>
+	</array>
+    <array name="loadresource_monsters">
+		<item>@raw/monsterlist_crossglen_animals</item>
+		<item>@raw/monsterlist_crossglen_npcs</item>
+		<item>@raw/monsterlist_fallhaven_animals</item>
+		<item>@raw/monsterlist_fallhaven_npcs</item>
+		<item>@raw/monsterlist_wilderness</item>
+		<item>@raw/monsterlist_v068_npcs</item>
+		<item>@raw/monsterlist_v069_monsters</item>
+		<item>@raw/monsterlist_v069_npcs</item>
+		<item>@raw/monsterlist_v0610_monsters1</item>
+		<item>@raw/monsterlist_v0610_npcs1</item>
+		<item>@raw/monsterlist_v0610_monsters2</item>
+		<item>@raw/monsterlist_v0611_monsters1</item>
+		<item>@raw/monsterlist_v0611_npcs1</item>
+		<item>@raw/monsterlist_v0611_npcs2</item>
+		<item>@raw/monsterlist_v070_charwood</item>
+		<item>@raw/monsterlist_v070_charwood2</item>
+		<item>@raw/monsterlist_v070_lodar1cave</item>
+		<item>@raw/monsterlist_v070_lodar5cave</item>
+		<item>@raw/monsterlist_v070_lodarcave</item>
+		<item>@raw/monsterlist_v070_lodarmaze</item>
+		<item>@raw/monsterlist_v070_lodarnpcs</item>
+		<item>@raw/monsterlist_v070_oldcave</item>
+		<item>@raw/monsterlist_v070_roadcave</item>
+		<item>@raw/monsterlist_v070_npcs</item>
+	</array>
+    <array name="loadresource_monsters_debug">
+		<item>@raw/monsterlist_debug</item>
+	</array>
+    <array name="loadresource_quests">
+		<item>@raw/questlist</item>
+		<item>@raw/questlist_nondisplayed</item>
+		<item>@raw/questlist_v068</item>
+		<item>@raw/questlist_v069</item>
+		<item>@raw/questlist_v0610</item>
+		<item>@raw/questlist_v0611</item>
+		<item>@raw/questlist_v0611_2</item>
+		<item>@raw/questlist_v0611_3</item>
+		<item>@raw/questlist_v070_charwood</item>
+		<item>@raw/questlist_v070_lodar</item>
+		<item>@raw/questlist_v070_lowyna</item>
+		<item>@raw/questlist_v070_misc</item>
+	</array>
+    <array name="loadresource_quests_debug">
+		<item>@raw/questlist_debug</item>
+	</array>
+    <string-array name="preferences_attackspeed">
+		<item>@string/preferences_attackspeed_instant</item>
+		<item>@string/preferences_attackspeed_fast</item>
+		<item>@string/preferences_attackspeed_normal</item>
+		<item>@string/preferences_attackspeed_slow</item>
+	</string-array>
+    <string-array name="preferences_attackspeed_values">
+		<item>0</item>
+		<item>400</item>
+		<item>1000</item>
+		<item>1500</item>
+	</string-array>
+    <string-array name="preferences_display_loot">
+		<item>@string/preferences_display_loot_dialog</item>
+		<item>@string/preferences_display_loot_dialog_on_items</item>
+		<item>@string/preferences_display_loot_dialog_on_items_or_toast</item>
+		<item>@string/preferences_display_loot_toast</item>
+		<item>@string/preferences_display_loot_toast_on_items</item>
+		<item>@string/preferences_display_loot_never</item>
+	</string-array>
+    <string-array name="preferences_display_loot_values">
+		<item>0</item>
+		<item>3</item>
+		<item>4</item>
+		<item>1</item>
+		<item>5</item>
+		<item>2</item>
+	</string-array>
+    <string-array name="preferences_display_overwrite_savegame_entries">
+		<item>@string/preferences_display_overwrite_savegame_entries_always_confirm</item>
+		<item>@string/preferences_display_overwrite_savegame_entries_confirm_overwrite</item>
+		<item>@string/preferences_display_overwrite_savegame_entries_never_confirm</item>
+	</string-array>
+    <string-array name="preferences_display_overwrite_savegame_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+	</string-array>
+    <string-array name="preferences_display_scaling_factor">
+		<item>@string/preferences_display_scaling_factor_normal</item>
+		<item>@string/preferences_display_scaling_factor_50_percent_larger</item>
+		<item>@string/preferences_display_scaling_factor_double</item>
+	</string-array>
+    <string-array name="preferences_display_scaling_factor_values">
+		<item>1.0f</item>
+		<item>1.5f</item>
+		<item>2.0f</item>
+	</string-array>
+    <string-array name="preferences_movement_dpad_positions">
+		<item>@string/preferences_movement_dpad_positions_disabled</item>
+		<item>@string/preferences_movement_dpad_positions_lower_right</item>
+		<item>@string/preferences_movement_dpad_positions_lower_left</item>
+		<item>@string/preferences_movement_dpad_positions_center_bottom</item>
+		<item>@string/preferences_movement_dpad_positions_center_left</item>
+		<item>@string/preferences_movement_dpad_positions_center_right</item>
+		<item>@string/preferences_movement_dpad_positions_upper_left</item>
+		<item>@string/preferences_movement_dpad_positions_upper_right</item>
+		<item>@string/preferences_movement_dpad_positions_center_top</item>
+	</string-array>
+    <string-array name="preferences_movement_dpad_positions_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+		<item>7</item>
+		<item>8</item>
+	</string-array>
+    <string-array name="preferences_movementmethod_values">
+		<item>0</item>
+		<item>1</item>
+	</string-array>
+    <string-array name="preferences_movementmethods">
+		<item>@string/preferences_movementmethods_straight</item>
+		<item>@string/preferences_movementmethods_avoid</item>
+	</string-array>
+    <string-array name="preferences_quickslots_placements">
+		<item>@string/preferences_quickslots_placements_horizontal_center_bottom</item>
+		<item>@string/preferences_quickslots_placements_vertical_center_left</item>
+		<item>@string/preferences_quickslots_placements_vertical_center_right</item>
+		<item>@string/preferences_quickslots_placements_vertical_bottom_left</item>
+		<item>@string/preferences_quickslots_placements_horizontal_bottom_left</item>
+		<item>@string/preferences_quickslots_placements_horizontal_bottom_right</item>
+		<item>@string/preferences_quickslots_placements_vertical_bottom_right</item>
+	</string-array>
+    <string-array name="preferences_quickslots_placements_values">
+		<item>0</item>
+		<item>1</item>
+		<item>2</item>
+		<item>3</item>
+		<item>4</item>
+		<item>5</item>
+		<item>6</item>
+	</string-array>
+    <string-array name="questlog_includecompleted">
+		<item>@string/questlog_includecompleted_hidecompleted</item>
+		<item>@string/questlog_includecompleted_includecompleted</item>
+		<item>@string/questlog_includecompleted_onlycompleted</item>
+	</string-array>
+    <attr format="reference" name="coordinatorLayoutStyle"/>
+    <color name="displayworldmap_background">#423921</color>
+    <color name="notification_action_color_filter">#ffffffff</color>
+    <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <color name="notification_material_background_media_default_color">#ff424242</color>
+    <color name="primary_text_default_material_dark">#ffffffff</color>
+    <color name="ripple_material_light">#1f000000</color>
+    <color name="secondary_text_default_material_dark">#b3ffffff</color>
+    <color name="secondary_text_default_material_light">#8a000000</color>
+    <dimen name="actionbar_text">12sp</dimen>
+    <dimen name="boxshape_margin">5dp</dimen>
+    <dimen name="boxshape_width">100dp</dimen>
+    <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
+    <dimen name="compat_button_inset_vertical_material">6dp</dimen>
+    <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
+    <dimen name="compat_button_padding_vertical_material">4dp</dimen>
+    <dimen name="compat_control_corner_material">2dp</dimen>
+    <dimen name="compat_notification_large_icon_max_height">320dp</dimen>
+    <dimen name="compat_notification_large_icon_max_width">320dp</dimen>
+    <dimen name="conversation_statementpadding">5dp</dimen>
+    <dimen name="conversation_textsize">16sp</dimen>
+    <dimen name="dialog_iconpadding_bottom">10sp</dimen>
+    <dimen name="dialog_iconpadding_right">10sp</dimen>
+    <dimen name="dialog_margin">10sp</dimen>
+    <dimen name="healthbar_height">12sp</dimen>
+    <dimen name="notification_action_icon_size">32dp</dimen>
+    <dimen name="notification_action_text_size">13sp</dimen>
+    <dimen name="notification_big_circle_margin">12dp</dimen>
+    <dimen name="notification_content_margin_start">8dp</dimen>
+    <dimen name="notification_large_icon_height">64dp</dimen>
+    <dimen name="notification_large_icon_width">64dp</dimen>
+    <dimen name="notification_main_column_padding_top">10dp</dimen>
+    <dimen name="notification_media_narrow_margin">@dimen/notification_content_margin_start</dimen>
+    <dimen name="notification_right_icon_size">16dp</dimen>
+    <dimen name="notification_right_side_padding_top">2dp</dimen>
+    <dimen name="notification_small_icon_background_padding">3dp</dimen>
+    <dimen name="notification_small_icon_size_as_large">24dp</dimen>
+    <dimen name="notification_subtext_size">13sp</dimen>
+    <dimen name="notification_top_pad">10dp</dimen>
+    <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="section_margin">10dp</dimen>
+    <dimen name="smalltext">10sp</dimen>
+    <dimen name="smalltext_buttonheight">35sp</dimen>
+    <dimen name="statusbar_text">11sp</dimen>
+    <dimen name="subtitle_corner_radius">2dp</dimen>
+    <dimen name="subtitle_outline_width">2dp</dimen>
+    <dimen name="subtitle_shadow_offset">2dp</dimen>
+    <dimen name="subtitle_shadow_radius">2dp</dimen>
+    <dimen name="titletext">20sp</dimen>
+    <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
+    <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
+    <item name="line1" type="id"/>
+    <item name="line3" type="id"/>
+    <item name="quick_menu_assign" type="id"/>
+    <item name="quick_menu_assign_group" type="id"/>
+    <item name="quick_menu_unassign" type="id"/>
+    <item name="tag_transition_group" type="id"/>
+    <item name="tag_unhandled_key_event_manager" type="id"/>
+    <item name="tag_unhandled_key_listeners" type="id"/>
+    <item name="text" type="id"/>
+    <item name="text2" type="id"/>
+    <item name="title" type="id"/>
+    <integer name="cancel_button_image_alpha">127</integer>
+    <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="about_authors">
+		Programming by Oskar Wiksten&lt;br />
+		&lt;a href="http://andorstrail.com/">Web site provided by Scott Devaney&lt;/a>&lt;br />
+		Additional maps done by Michael Schmid&lt;br />
+		Additional maps done by Pete Wheeler&lt;br />
+		Additional maps done by Ian Haase&lt;br />
+		Additional programming by Samuel Plentz&lt;br />
+		Additional programming by Uwe Jugel&lt;br />
+		Additional programming by Olivier Samyn&lt;br />
+		Additional programming by Ethan Wessel&lt;br />
+		Additional programming by Scott Lund&lt;br />
+		Additional programming by &lt;a href="https://github.com/Zukero">Kevin Pochat&lt;/a>&lt;br />
+		Additional graphics by Karvis&lt;br />
+		Russian translation by Dreamer..., e.solodookhin, shell.andor, konstmih, istasman, Aleksey Kabanov, Alexander Zubok, Paul Sulemenkov and dromoz&lt;br />
+		Italian translation by k6blue, liogiu, Joker and Andrea Luciano Damico&lt;br />
+		French translation by LeSanglier, Misty Soul, zorun.42, Marwane K. and olivier&lt;br />
+		German translation by Bomber, Samuel Plentz, cngunners14, Phoenixor, Tutar and Mütze&lt;br />
+		English proofreading by taws34 and Elyon&lt;br />
+		English proofreading and testing by Stephen Stalnaker&lt;br />
+		Hebrew translation by eitanbm&lt;br />
+		Portuguese(PT) translation by mira&lt;br />
+		Portuguese(BR) translation by Mauro Carvalho Chehab&lt;br />
+		Japanese translation by surgecurrent&lt;br />
+		Polish translation by tobik9090siemens, DanielS and Piotr Wieczorek&lt;br />
+		Forum moderated by Tim Davis&lt;br />
+		Forum moderated by Josh Kloos&lt;br />
+		Forum moderated by Travis Miller&lt;br />
+		Forum moderated by Matthew B. White (Nyktos)&lt;br />
+		Forum moderated by Brent May&lt;br />
+		Additional ideas by Nicholas Franks (Taledus)&lt;br />
+		Additional content and ideas by Tom Jobes&lt;br />
+		Additional content and ideas by Stan "Meirerion"&lt;br />
+		&lt;br />
+		&lt;a href="http://telles0808.deviantart.com/art/RPG-Maker-VX-RTP-Tileset-159218223">Map tilesets graphics by telles0808&lt;/a>&lt;br />
+		&lt;a href="http://ails.deviantart.com/art/420-Pixel-Art-Icons-for-RPG-129892453">Item tilesets graphics by Ails&lt;/a>&lt;br />
+		&lt;a href="http://redknight91.deviantart.com/art/Arena-Game-Sprites-154661559">Hero graphics by RedKnight91&lt;/a>&lt;br />
+		&lt;a href="http://nacred.deviantart.com/art/Sprite-Sheet-171751308">Additional monster graphics by nacred&lt;/a>&lt;br />
+		&lt;a href="http://opengameart.org/content/whispers-of-avalon-item-icons">Additional graphics by Meway, Len Pabin, Auran, Silviyius&lt;/a>&lt;br />
+		&lt;a href="http://opengameart.org/content/10-basic-rpg-enemies">Additional graphics by Stephen Challener (Redshrike)&lt;/a> &lt;a href="http://opengameart.org/content/more-rpg-enemies">(more)&lt;/a>&lt;br />
+		&lt;a href="http://opengameart.org/content/skull">Additional graphics by Jorge.Avila&lt;/a>&lt;br />
+		&lt;a href="http://opengameart.org/content/dark-fantasy-item-sprites">Additional graphics by Gwes&lt;/a>&lt;br />
+		&lt;a href="http://pousse.rapiere.free.fr/tome/">Additional graphics by David Gervais&lt;/a>&lt;br />
+		&lt;a href="http://forums.wesnoth.org/viewtopic.php?f=19&amp;t=12207&amp;start=75">Additional graphics by turin&lt;/a>&lt;br />
+		&lt;a href="http://opengameart.org/content/zombies-skeletons">Additional graphics by artisticdude&lt;/a>&lt;br />
+		&lt;a href="http://pixelhack.blogspot.com/">Additional graphics by Mindflayer / Necroleachate&lt;/a>&lt;br />
+		&lt;a href="http://opengameart.org/content/items-set">Additional graphics by Artur Reterski&lt;/a>&lt;br />
+		&lt;a href="http://opengameart.org/content/farming-tilesets-magic-animations-and-ui-elements">Additional graphics by Daniel Eddeland&lt;/a>&lt;br />
+		&lt;a href="http://opengameart.org/content/liberated-pixel-cup-base-assets-sprites-map-tiles">Additional graphics by Lanea Zimmerman (AKA Sharm)&lt;/a>&lt;br />
+		&lt;a href="http://art.gnome.org/themes/icon">Additional graphics by Gnome icon artists&lt;/a>&lt;br />
+		&lt;a href="http://forums.rpgmakerweb.com/index.php?/topic/5434-its-a-mad-mad-mad-mad-world-maddies-edits-and-clumping/">Additional graphics by Paladin-Cleric of Awesome&lt;/a>&lt;br />
+		&lt;a href="http://ayene-chan.deviantart.com/gallery/32324562">Additional graphics by Ayene-chan&lt;/a>&lt;br />
+		&lt;a href="http://vxresource.wordpress.com/2010/03/17/the-real-macks-tileset/">Additional graphics by Mack&lt;/a>&lt;br />
+		&lt;a href="http://forums.rpgmakerweb.com/index.php?/topic/9178-amazing-avys-awesome-arrrpg-maker-stuff/ ">Additional graphics by Avery, Gits&lt;/a>&lt;br />
+		&lt;a href="http://vxresource.wordpress.com/category/resources/tilesets/">Additional graphics by vxresource.wordpress.com&lt;/a>&lt;br />
+		This website shares tiles with the general public for free with the agreement of their original creators.&lt;br />
+		&lt;br />
+		Additional graphics by DeBray Bailey&lt;br />
+		&lt;a href="http://rltiles.sourceforge.net">Monster tileset graphics by rltiles.sourceforge.net&lt;/a>&lt;br />
+		Part of (or All) the graphic tiles used in this program is the public domain roguelike tileset "RLTiles".
+		Some of the tiles have been modified by Oskar Wiksten.
+		You can find the original tileset at &lt;a href="http://rltiles.sf.net">http://rltiles.sf.net&lt;/a>&lt;br />
+		&lt;br />
+		Some of the graphic data in this software are free game resources distributed by REFMAP (&lt;a href="http://www.tekepon.net/fsm">http://www.tekepon.net/fsm&lt;/a>).
+		You must not use the graphic data which is in this software, for the purpose except playing this game. When you want to get these resources, go to the website above.&lt;br />
+	</string>
+    <string name="about_button1">Help</string>
+    <string name="about_button2">Authors</string>
+    <string name="about_button3">License</string>
+    <string name="about_button4">About</string>
+    <string name="about_contents1">
+		Welcome to Andor\'s Trail, an open-source roguelike RPG on Android.&lt;br />
+		&lt;br />
+		&lt;a href="http://andorstrail.com/">Game forums on andorstrail.com for questions and gameplay discussions.&lt;/a>&lt;br />
+		&lt;br />
+		&lt;a href="http://andorstrail.com/wiki">Game wiki for info about the Andor\'s Trail world, among other things.&lt;/a>&lt;br />
+		&lt;br />
+		&lt;a href="http://code.google.com/p/andors-trail/">Project homepage on code.google.com for developers.&lt;/a>&lt;br />
+		&lt;br />
+		Please visit the forums to discuss the game with other players.&lt;br />
+	</string>
+    <string name="about_contents3">
+		This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.&lt;br />
+		&lt;br />
+		This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.&lt;br />
+		&lt;br />
+		You should have received a copy of the GNU General Public License along with this program; if not, see &lt;a href="http://www.gnu.org/licenses">http://www.gnu.org/licenses&lt;/a>&lt;br />
+		&lt;br />
+		For source code and feature requests, please visit the project page at &lt;a href="http://code.google.com/p/andors-trail/">http://code.google.com/p/andors-trail/&lt;/a>&lt;br />
+	</string>
+    <string name="about_copyright">Copyright © 2010–2013 Oskar Wiksten&lt;br />&lt;br /></string>
+    <string name="about_interface"><![CDATA[
+
+<div><b>Game Settings</b> can be found by pressing your device\'s Menu Button.</div>
+
+<p>________________</p>
+<h1>Interface Icons</h1>
+
+<div><b>The Chest</b><img alt="chest" src="chest.png" /></div>
+<p>Quickslots [Long press the pouches inside to assign items for instant use]</p>
+
+<div><b>The Hero</b><img alt="hero" src="char_hero.png" /></div>
+<p>Menu [Overview, Quests, Skills &amp; Inventory *]</p>
+<p>* (While in inventory, "press" an item for information &amp; "long press" for more options)</p>
+
+<div><b>The Enemy</b><img alt="monster" src="monster.png" /></div>
+<p>Information [Appears during Combat]</p>
+
+
+
+<p>________________</p>
+<h1>Combat</h1>
+
+<p>Actions taken during battle cost AP...</p>
+
+<div><b>Attacking</b> - [3AP] *</div>
+<img alt="attacking" src="doubleattackexample.png" />
+<p>* (Equipping Gear &amp; Using Items may alter AP &amp; usage cost)</p>
+
+<div><b>Using Items</b> - [5AP]</div>
+<div><b>Fleeing</b> - [6AP]</div>
+
+
+
+<p>________________</p>
+<h1>Advanced Combat</h1>
+
+<div>During Combat, long press a tile adjacent to the Hero...</div>
+
+<div><b>To Flee</b></div>
+<p>(chosen tile is highlighted - Attack Button changes to Move)</p>
+<img alt="flee" src="flee_example.png" />
+<p>[flee mode activated - Long press enemy to re-enter combat]</p>
+
+<div><b>To Change Targets</b></div>
+<p>(the red target highlight shifts between enemies)</p>
+<p>[the target has been changed]</p>
+
+]]></string>
+    <string name="actorcondition_categories_blood">Blood Disorder</string>
+    <string name="actorcondition_categories_mental">Mental</string>
+    <string name="actorcondition_categories_physical">Physical Capacity</string>
+    <string name="actorcondition_categories_spiritual">Spiritual</string>
+    <string name="actorcondition_info_removes_all">Removes all %1$s</string>
+    <string name="actorconditioninfo_category">Condition category: %1$s</string>
+    <string name="actorconditioninfo_constant_effect">Constant effect</string>
+    <string name="actorconditioninfo_effect_every_full_round">Every full round</string>
+    <string name="actorconditioninfo_effect_every_round">Every round</string>
+    <string name="actorinfo_attack">Attack:</string>
+    <string name="actorinfo_basetraits">Base combat statistics (without equipment and skills)</string>
+    <string name="actorinfo_class">Class:</string>
+    <string name="actorinfo_currentconditions">Active conditions</string>
+    <string name="actorinfo_currenttraits">Combat statistics (current)</string>
+    <string name="actorinfo_defense">Defense:</string>
+    <string name="actorinfo_difficulty">Difficulty:</string>
+    <string name="actorinfo_health">Health:</string>
+    <string name="actorinfo_immune_criticals">Immune to critical hits</string>
+    <string name="actorinfo_movecost">Move cost (AP):</string>
+    <string name="app_description">Quest-driven fantasy RPG</string>
+    <string name="app_name">Andor\'s Trail</string>
+    <string name="bulkselection_select_all">All</string>
+    <string name="bulkselection_sell_confirmation">Are you sure you want to sell %1$s? This item is %2$s and you might not be able to recover it.</string>
+    <string name="bulkselection_sell_confirmation_title">Are you sure?</string>
+    <string name="bulkselection_totalcost_buy">Total cost: %1$d gold</string>
+    <string name="bulkselection_totalcost_sell">Total cost: %1$d gold</string>
+    <string name="change_locale_requires_restart">Changing locale requires restart. Andor\'s Trail has been closed.</string>
+    <string name="combat_attack">Attack (%1$d AP)</string>
+    <string name="combat_begin_flee">You can now flee combat by clicking in the direction you want to move.</string>
+    <string name="combat_endturn">End turn</string>
+    <string name="combat_flee">Flee</string>
+    <string name="combat_flee_failed">You failed to flee!</string>
+    <string name="combat_hero_dies">You fall unconscious, but fortunately wake up alive, dazed and fatigued. You lost %1$d experience.</string>
+    <string name="combat_log_title">Combat log</string>
+    <string name="combat_monsteraction">%1$s is attacking.</string>
+    <string name="combat_monsterhealth">HP:</string>
+    <string name="combat_move">Move (%1$d AP)</string>
+    <string name="combat_not_enough_ap">Not enough AP left this round.</string>
+    <string name="combat_result_herohit">You hit %1$s for %2$d hp!</string>
+    <string name="combat_result_herohitcritical">You get a critical hit on %1$s for %2$d hp!</string>
+    <string name="combat_result_herokillsmonster">%1$s dies!</string>
+    <string name="combat_result_heromiss">Your attack misses.</string>
+    <string name="combat_result_monsterhit">%1$s hits you for %2$d hp!</string>
+    <string name="combat_result_monsterhitcritical">%1$s gets a critical hit for %2$d hp!</string>
+    <string name="combat_result_monstermiss">%1$s misses!</string>
+    <string name="combat_result_monstermoved">%1$s moves.</string>
+    <string name="combat_status_ap">AP: %1$d</string>
+    <string name="combat_use">Use item</string>
+    <string name="conversation_leave">Leave</string>
+    <string name="conversation_lostgold"> [You lost %1$d gold]</string>
+    <string name="conversation_next">Next</string>
+    <string name="conversation_reward_quest_finished">[Quest completed: \"%1$s\"]</string>
+    <string name="conversation_reward_quest_updated">[Quest updated: \"%1$s\"]</string>
+    <string name="conversation_rewardexp"> [You gained %1$d experience]</string>
+    <string name="conversation_rewardgold"> [You gained %1$d gold]</string>
+    <string name="conversation_rewarditem"> [You gained an item]</string>
+    <string name="conversation_rewarditems"> [You gained %1$d items]</string>
+    <string name="dialog_close">Close</string>
+    <string name="dialog_groundloot_message">You found some items. </string>
+    <string name="dialog_groundloot_title">Items</string>
+    <string name="dialog_loading_failed_incorrectversion">Andor\'s Trail was unable to load the savegame file. This savegame file is created with a newer version than what is currently running.</string>
+    <string name="dialog_loading_failed_message">Andor\'s Trail was unable to load the savegame file.\n\n:(\n\nThe file may be damaged or incomplete.</string>
+    <string name="dialog_loading_failed_title">Load Failed</string>
+    <string name="dialog_loading_message">Loading resources…</string>
+    <string name="dialog_loot_foundgold">You found %1$d gold. </string>
+    <string name="dialog_loot_pickall">Pick up all</string>
+    <string name="dialog_loot_pickedupitem">You picked up an item. </string>
+    <string name="dialog_loot_pickedupitems">You picked up %1$d items. </string>
+    <string name="dialog_monsterencounter_info">Info</string>
+    <string name="dialog_monsterencounter_message">Do you want to attack?\nDifficulty: %1$s</string>
+    <string name="dialog_monsterencounter_title">Encounter</string>
+    <string name="dialog_monsterloot_gainedexp">You gained %1$d experience. </string>
+    <string name="dialog_monsterloot_message">You survived the encounter. </string>
+    <string name="dialog_monsterloot_title">Victory</string>
+    <string name="dialog_newversion_message">
+		Thank you for downloading Andor\'s Trail!\n\n
+		Please note that this version of Andor\'s Trail is a WORK IN PROGRESS, which means that all maps are not yet complete.\n
+		Please visit the project forums to discuss the game with other players or to help make the game even better (see "about").\n
+		\n
+		Thanks for all the feedback!
+	</string>
+    <string name="dialog_newversion_title">Welcome</string>
+    <string name="dialog_rest_confirm_message">Do you want to rest here?</string>
+    <string name="dialog_rest_message">You have rested and regained your full health.</string>
+    <string name="dialog_rest_title">Rest</string>
+    <string name="display_worldmap_not_available">The map cannot be displayed from this location.</string>
+    <string name="display_worldmap_title">Map</string>
+    <string name="exit_to_menu">Exit to menu</string>
+    <string name="heroinfo_actionpoints">Action points (AP):</string>
+    <string name="heroinfo_char">Overview</string>
+    <string name="heroinfo_gamestats">Game statistics</string>
+    <string name="heroinfo_gamestats_bonemeals">Bonemeal potions used</string>
+    <string name="heroinfo_gamestats_deaths">Times fallen unconscious</string>
+    <string name="heroinfo_gamestats_fav_item">Most commonly used item</string>
+    <string name="heroinfo_gamestats_fav_monsters">Most commonly killed monsters</string>
+    <string name="heroinfo_gamestats_name_and_qty">%1$s (%2$d)</string>
+    <string name="heroinfo_gamestats_num_killed_monsters">Monsters killed</string>
+    <string name="heroinfo_gamestats_num_used_items">Items used</string>
+    <string name="heroinfo_gamestats_quests">Completed quests</string>
+    <string name="heroinfo_gamestats_spent_gold">Gold spent in shops</string>
+    <string name="heroinfo_gamestats_top_boss">Most powerful monster killed</string>
+    <string name="heroinfo_gamestats_visited_maps">Places visited</string>
+    <string name="heroinfo_gold">Gold: %1$d</string>
+    <string name="heroinfo_inv">Items</string>
+    <string name="heroinfo_inventory">Inventory</string>
+    <string name="heroinfo_level">Level</string>
+    <string name="heroinfo_levelup">Level up</string>
+    <string name="heroinfo_quests">Quests</string>
+    <string name="heroinfo_reequip_cost">Re-equip cost (AP):</string>
+    <string name="heroinfo_skill">Skills</string>
+    <string name="heroinfo_totalexperience">Total experience</string>
+    <string name="heroinfo_useitem_cost">Use item cost (AP):</string>
+    <string name="heroinfo_wornequipment">Worn equipment</string>
+    <string name="inventory_assign">Assign quick slot</string>
+    <string name="inventory_assign_slot1">Slot 1</string>
+    <string name="inventory_assign_slot2">Slot 2</string>
+    <string name="inventory_assign_slot3">Slot 3</string>
+    <string name="inventory_drop">Drop</string>
+    <string name="inventory_equip">Equip</string>
+    <string name="inventory_equip_offhand">Equip (offhand)</string>
+    <string name="inventory_info">Info</string>
+    <string name="inventory_item_dropped">%1$s was dropped.</string>
+    <string name="inventory_item_equipped">You equipped %1$s.</string>
+    <string name="inventory_item_used">You used %1$s.</string>
+    <string name="inventory_movebottom">Move to bottom</string>
+    <string name="inventory_movetop">Move to top</string>
+    <string name="inventory_unassign">Un-assign quick slot</string>
+    <string name="inventory_unequip">Unequip</string>
+    <string name="inventory_use">Use</string>
+    <string name="iteminfo_action_equip">Equip</string>
+    <string name="iteminfo_action_equip_ap">Equip (%1$d AP)</string>
+    <string name="iteminfo_action_unequip">Unequip</string>
+    <string name="iteminfo_action_unequip_ap">Unequip (%1$d AP)</string>
+    <string name="iteminfo_action_use">Use</string>
+    <string name="iteminfo_action_use_ap">Use (%1$d AP)</string>
+    <string name="iteminfo_category">Category: </string>
+    <string name="iteminfo_displaytypes_extraordinary">Extraordinary</string>
+    <string name="iteminfo_displaytypes_legendary">Legendary</string>
+    <string name="iteminfo_displaytypes_ordinary">Ordinary</string>
+    <string name="iteminfo_displaytypes_quest">Quest item</string>
+    <string name="iteminfo_displaytypes_rare">Rare</string>
+    <string name="iteminfo_effect_chance_of">%1$s chance of %2$s</string>
+    <string name="iteminfo_effect_critical_multiplier">Enables critical hits with a multiplier of x%1$.1f</string>
+    <string name="iteminfo_effect_decrease_attack_chance">Lowers attack chance by %1$d %%</string>
+    <string name="iteminfo_effect_decrease_attack_cost">Lowers attack cost by %1$d AP</string>
+    <string name="iteminfo_effect_decrease_attack_damage">Lowers attack damage by %1$d</string>
+    <string name="iteminfo_effect_decrease_attack_damage_minmax">Lowers attack damage by %1$d-%2$d</string>
+    <string name="iteminfo_effect_decrease_block_chance">Lowers block chance by %1$d %%</string>
+    <string name="iteminfo_effect_decrease_critical_skill">Lowers critical skill by %1$d</string>
+    <string name="iteminfo_effect_decrease_current_ap">Drains %1$s AP</string>
+    <string name="iteminfo_effect_decrease_current_hp">Drains %1$s HP</string>
+    <string name="iteminfo_effect_decrease_damage_resistance">Lowers damage resistance by %1$d</string>
+    <string name="iteminfo_effect_decrease_max_ap">Lowers max AP by %1$d</string>
+    <string name="iteminfo_effect_decrease_max_hp">Lowers max HP by %1$d</string>
+    <string name="iteminfo_effect_decrease_movecost">Lowers move cost %1$d AP</string>
+    <string name="iteminfo_effect_decrease_reequip_cost">Lowers AP cost of equipping items in combat by %1$d AP</string>
+    <string name="iteminfo_effect_decrease_use_cost">Lowers AP cost of using items in combat by %1$d AP</string>
+    <string name="iteminfo_effect_duration">(%1$d rounds)</string>
+    <string name="iteminfo_effect_increase_attack_chance">Increases attack chance by %1$d %%</string>
+    <string name="iteminfo_effect_increase_attack_cost">Increases attack cost by %1$d AP</string>
+    <string name="iteminfo_effect_increase_attack_damage">Increases attack damage by %1$d</string>
+    <string name="iteminfo_effect_increase_attack_damage_minmax">Increases attack damage by %1$d-%2$d</string>
+    <string name="iteminfo_effect_increase_block_chance">Increases block chance by %1$d %%</string>
+    <string name="iteminfo_effect_increase_critical_skill">Increases critical skill by %1$d</string>
+    <string name="iteminfo_effect_increase_current_ap">Restores %1$s AP</string>
+    <string name="iteminfo_effect_increase_current_hp">Restores %1$s HP</string>
+    <string name="iteminfo_effect_increase_damage_resistance">Raises damage resistance by %1$d</string>
+    <string name="iteminfo_effect_increase_max_ap">Raises max AP +%1$d</string>
+    <string name="iteminfo_effect_increase_max_hp">Raises max HP +%1$d</string>
+    <string name="iteminfo_effect_increase_movecost">Move cost penalty +%1$d AP</string>
+    <string name="iteminfo_effect_increase_reequip_cost">Increases AP cost of equipping items in combat by %1$d AP</string>
+    <string name="iteminfo_effect_increase_use_cost">Increases AP cost of using items in combat by %1$d AP</string>
+    <string name="iteminfo_effect_weapon_attack_chance">Attack chance: %1$d %%</string>
+    <string name="iteminfo_effect_weapon_attack_cost">Attack cost: %1$d AP</string>
+    <string name="iteminfo_effect_weapon_attack_damage">Attack damage: %1$d</string>
+    <string name="iteminfo_effect_weapon_attack_damage_minmax">Attack damage: %1$d-%2$d</string>
+    <string name="iteminfo_effect_works_on_source">On source</string>
+    <string name="iteminfo_effect_works_on_target">On target</string>
+    <string name="iteminfo_effect_works_when_equipped">When equipped</string>
+    <string name="iteminfo_effect_works_when_hitting_target">When hitting target</string>
+    <string name="iteminfo_effect_works_when_killing_target">On every kill</string>
+    <string name="iteminfo_effect_works_when_used">When used</string>
+    <string name="levelup_add_attackchance">Increase attack chance (+%1$d %%)</string>
+    <string name="levelup_add_attackchance_description">Adds %1$d%% to your base attack chance.</string>
+    <string name="levelup_add_attackdamage">Increase attack damage (+%1$d)</string>
+    <string name="levelup_add_attackdamage_description">Adds %1$d to your base attack damage.</string>
+    <string name="levelup_add_blockchance">Increase block chance (+%1$d %%)</string>
+    <string name="levelup_add_blockchance_description">Adds %1$d%% to your base block chance.</string>
+    <string name="levelup_add_health">Increase health (+%1$d HP)</string>
+    <string name="levelup_add_health_description">Adds %1$d to your maximum health.</string>
+    <string name="levelup_adds_new_skillpoint">This level also gives you a new skill point to spend!</string>
+    <string name="levelup_buttontext">Level up</string>
+    <string name="levelup_description">Welcome to level %1$d!</string>
+    <string name="levelup_title">Level up</string>
+    <string name="loadsave_save_overwrite_confirmation">This savegame contains a different player name (%1$s) than your current player name (%2$s). Are you sure you want to overwrite this savegame?</string>
+    <string name="loadsave_save_overwrite_confirmation_all">Are you sure you want to overwrite this savegame?</string>
+    <string name="loadsave_save_overwrite_confirmation_slot">(slot %1$d)</string>
+    <string name="loadsave_save_overwrite_confirmation_title">Overwrite savegame?</string>
+    <string name="loadsave_save_to_new_slot">Create new savegame slot</string>
+    <string name="loadsave_selectslot">Select slot</string>
+    <string name="loadsave_title_load">Load saved game</string>
+    <string name="loadsave_title_save">Save game</string>
+    <string name="localize_resources_from_mo_filename"/>
+    <string name="menu_button_worldmap">Map</string>
+    <string name="menu_button_worldmap_failed">Map cannot be displayed.</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_save_failed">Failed to save game! Is the SD card mounted and writable?</string>
+    <string name="menu_save_gamesaved">Game was saved to slot %1$d</string>
+    <string name="menu_save_saving_not_allowed_in_combat">Cannot save the game while in combat.</string>
+    <string name="menu_settings">Preferences</string>
+    <string name="monster_difficulty_easy">Easy</string>
+    <string name="monster_difficulty_hard">Hard</string>
+    <string name="monster_difficulty_impossible">Impossible</string>
+    <string name="monster_difficulty_normal">Normal</string>
+    <string name="monster_difficulty_veryeasy">Very easy</string>
+    <string name="monster_difficulty_veryhard">Very hard</string>
+    <string name="preferences_attackspeed_fast">Fast</string>
+    <string name="preferences_attackspeed_instant">Instant (no animations)</string>
+    <string name="preferences_attackspeed_normal">Normal</string>
+    <string name="preferences_attackspeed_slow">Slow</string>
+    <string name="preferences_combat_category">Combat</string>
+    <string name="preferences_combat_speed">Determines how fast monsters attack.</string>
+    <string name="preferences_combat_speed_title">Combat speed</string>
+    <string name="preferences_dialog_category">Dialog confirmation</string>
+    <string name="preferences_dialog_confirmattack">Enables the \'Do you want to attack..?\' dialog box when attacking a monster.</string>
+    <string name="preferences_dialog_confirmattack_title">Confirm attack</string>
+    <string name="preferences_dialog_confirmrest">Gives a question about whether you want to rest when entering a bed. Otherwise, you will always automatically rest.</string>
+    <string name="preferences_dialog_confirmrest_title">Confirm rest</string>
+    <string name="preferences_dialog_monsterloot">Choose how you want to show the results of a fight to be shown (gold, experience, items).</string>
+    <string name="preferences_dialog_monsterloot_title">Display monster loot</string>
+    <string name="preferences_dialog_overwrite_savegame">Gives a question about whether you want to overwrite when saving to a savegame slot that already contains a savegame.</string>
+    <string name="preferences_dialog_overwrite_savegame_title">Confirm overwriting savegames</string>
+    <string name="preferences_display_category">Display</string>
+    <string name="preferences_display_fullscreen">Displays the game in fullscreen mode. (Requires restart)</string>
+    <string name="preferences_display_fullscreen_title">Fullscreen</string>
+    <string name="preferences_display_loot_dialog">Always show loot dialog box</string>
+    <string name="preferences_display_loot_dialog_on_items">Show loot dialog box when finding items</string>
+    <string name="preferences_display_loot_dialog_on_items_or_toast">Dialog for items, notif. otherwise</string>
+    <string name="preferences_display_loot_never">Do not display</string>
+    <string name="preferences_display_loot_toast">Show short notification</string>
+    <string name="preferences_display_loot_toast_on_items">Show notification only when finding items</string>
+    <string name="preferences_display_overwrite_savegame_entries_always_confirm">Always show confirmation dialog box</string>
+    <string name="preferences_display_overwrite_savegame_entries_confirm_overwrite">Only show when overwriting a different playername</string>
+    <string name="preferences_display_overwrite_savegame_entries_never_confirm">Never display confirmation dialog box</string>
+    <string name="preferences_display_scaling_factor">Makes the game view display everything larger.</string>
+    <string name="preferences_display_scaling_factor_50_percent_larger">1.5x size</string>
+    <string name="preferences_display_scaling_factor_double">Double size</string>
+    <string name="preferences_display_scaling_factor_normal">Normal size</string>
+    <string name="preferences_display_scaling_factor_title">Scaling factor</string>
+    <string name="preferences_movement_category">Movement</string>
+    <string name="preferences_movement_dpad_minimizeable">If the virtual d-pad is enabled, this setting allows the d-pad to be minimized by pressing its center.</string>
+    <string name="preferences_movement_dpad_minimizeable_title">Minimizable d-pad</string>
+    <string name="preferences_movement_dpad_position">Enables a virtual on-screen directional pad to guide movement.</string>
+    <string name="preferences_movement_dpad_position_title">Virtual d-pad</string>
+    <string name="preferences_movement_dpad_positions_center_bottom">Center bottom</string>
+    <string name="preferences_movement_dpad_positions_center_left">Center left</string>
+    <string name="preferences_movement_dpad_positions_center_right">Center right</string>
+    <string name="preferences_movement_dpad_positions_center_top">Center top</string>
+    <string name="preferences_movement_dpad_positions_disabled">Disabled</string>
+    <string name="preferences_movement_dpad_positions_lower_left">Lower left corner</string>
+    <string name="preferences_movement_dpad_positions_lower_right">Lower right corner</string>
+    <string name="preferences_movement_dpad_positions_upper_left">Upper left corner</string>
+    <string name="preferences_movement_dpad_positions_upper_right">Upper right corner</string>
+    <string name="preferences_movementmethod">Type of movement method and handling of obstacles.</string>
+    <string name="preferences_movementmethod_title">Movement method</string>
+    <string name="preferences_movementmethods_avoid">Avoiding obstacles</string>
+    <string name="preferences_movementmethods_straight">Straight (original)</string>
+    <string name="preferences_optimized_drawing">Disable this if you see graphical artifacts. Enabling this option will make the game only redraw changed parts of the screen every frame.</string>
+    <string name="preferences_optimized_drawing_title">Optimized drawing</string>
+    <string name="preferences_quickslots_placement">Quickslot position</string>
+    <string name="preferences_quickslots_placement_summary">Where to place the quickslots</string>
+    <string name="preferences_quickslots_placements_horizontal_bottom_left">Bottom left, along bottom border</string>
+    <string name="preferences_quickslots_placements_horizontal_bottom_right">Bottom right, along bottom border</string>
+    <string name="preferences_quickslots_placements_horizontal_center_bottom">Center bottom</string>
+    <string name="preferences_quickslots_placements_vertical_bottom_left">Bottom left, along left border</string>
+    <string name="preferences_quickslots_placements_vertical_bottom_right">Bottom right, along right border</string>
+    <string name="preferences_quickslots_placements_vertical_center_left">Middle left</string>
+    <string name="preferences_quickslots_placements_vertical_center_right">Middle right</string>
+    <string name="preferences_ui_category">Interface</string>
+    <string name="preferences_ui_enable_animations">Show animations for various interface elements, such as the combat bar.</string>
+    <string name="preferences_ui_enable_animations_title">Enable animations</string>
+    <string name="preferences_ui_show_quickslots_when_toolbox_is_visible">Makes the quickslot buttons be displayed as soon as the toolbox is opened</string>
+    <string name="preferences_ui_show_quickslots_when_toolbox_is_visible_title">Show quickslots when toolbox is opened</string>
+    <string name="preferences_ui_use_localized_resources">Use translation of interface and content, where available. (requires restart)</string>
+    <string name="preferences_ui_use_localized_resources_title">Use localized resources</string>
+    <string name="questlog_includecompleted_hidecompleted">Hide completed quests</string>
+    <string name="questlog_includecompleted_includecompleted">Include completed quests</string>
+    <string name="questlog_includecompleted_onlycompleted">Only completed quests</string>
+    <string name="questlog_includecompleted_prompt">Select quests to show</string>
+    <string name="questlog_queststatus">Status: %1$s</string>
+    <string name="questlog_queststatus_completed">Completed</string>
+    <string name="questlog_queststatus_inprogress">In progress</string>
+    <string name="savegame_currenthero_displayinfo">level %1$d, %2$d exp, %3$d gold</string>
+    <string name="shop_buy">Buy</string>
+    <string name="shop_buyitem">Buy (%1$d gold)</string>
+    <string name="shop_infoitem">Info</string>
+    <string name="shop_item_bought">%1$s bought.</string>
+    <string name="shop_item_sold">%1$s sold.</string>
+    <string name="shop_sell">Sell</string>
+    <string name="shop_sellitem">Sell (%1$d gold)</string>
+    <string name="shop_yourgold">Your gold: %1$d</string>
+    <string name="skill_current_level">Current level: %1$d</string>
+    <string name="skill_current_level_with_maximum">Current level: %1$d / %2$d</string>
+    <string name="skill_longdescription_armor_prof_heavy">For every skill level, increases the block chance of every piece of heavy armor being worn by %1$d %% of their original block chances. Pieces of heavy armor have their movement penalties reduced by %2$d %% per skill level, and their attack speed penalties reduced by %3$d %% per skill level. Heavy armors include metal armors, chain mail and plate mail.</string>
+    <string name="skill_longdescription_armor_prof_light">For every skill level, increases the block chance of every piece of light armor being worn by %1$d %% of their original block chances. Light armors include leather, light metal and hide armors.</string>
+    <string name="skill_longdescription_armor_prof_shield">Increase damage resistance by %1$d per skill level while having a shield equipped.</string>
+    <string name="skill_longdescription_armor_prof_unarmored">While fighting without having any piece of armor equipped, gain %1$d %% block chance per skill level. Items made of cloth are not considered as being armor.</string>
+    <string name="skill_longdescription_barkskin">Increases damage resistance by %1$d for each skill level.</string>
+    <string name="skill_longdescription_barter">For every skill level, decreases the buying and selling gold penalty by %1$d percentage points.</string>
+    <string name="skill_longdescription_better_criticals">Increases any existing critical multiplier given by equipment by %1$d %% for each skill level.</string>
+    <string name="skill_longdescription_cleave">Gives +%1$d action points (AP) on every kill per skill level.</string>
+    <string name="skill_longdescription_coinfinder">Increases chance of finding gold in monster drops by %1$d %%, and increases amount of gold in drops by %2$d %% for each skill level (up to the maximum amount that the monster drops).</string>
+    <string name="skill_longdescription_concussion">When making an attack on a target whose block chance (BC) is at least %1$d lower than your attack chance (AC), there is a %2$d %% chance that the hit will cause a concussion on the target. A concussion will severely lower the target\'s offensive combat abilities, making the target less able to land successful attacks.</string>
+    <string name="skill_longdescription_crit1">For every critical hit made, there is a %1$d %% chance that the hit will cause internal bleeding on the target, effectively causing the \'Internal bleeding\' condition on the target. Internal bleeding severely lowers offensive combat abilities, making the target less able to land successful attacks.</string>
+    <string name="skill_longdescription_crit2">For every critical hit made, there is a %1$d %% chance that the hit will fracture some of the target\'s bones, effectively causing the \'Fracture\' condition on the target. This will severely lower the target\'s defensive combat abilities, making it less able to defend itself in subsequent attacks.</string>
+    <string name="skill_longdescription_dodge">Increases block chance by %1$d percentage points for each skill level.</string>
+    <string name="skill_longdescription_eater">Gives +%1$d health points (HP) on every kill per skill level.</string>
+    <string name="skill_longdescription_evasion">For every skill level, reduces both the chance of failed flee attempts by %1$d %% and the chance that an adjacent monster will attack by %2$d %%.</string>
+    <string name="skill_longdescription_fightstyle_2hand">"Gives benefits when using weapons that require both hands to wield, such as two-handed swords, greataxes or giant hammers.
+
+Every skill level increases damage potential of two-handed weapons with %1$d %% of the original damage potential."</string>
+    <string name="skill_longdescription_fightstyle_dualwield">"Gives benefits when fighting with two weapons at the same time, one in the main hand and one in the off-hand.
+
+Without this skill, only %1$d %% of a weapon\'s qualities may be used when equipped in the off-hand. This includes attack chance, critical skill, damage potential and block chance. Without this skill, attack speed (AP cost) of making an attack is the sum of the attack speed of the main weapon and that of the weapon used in the off-hand.
+
+With one level of this skill, %2$d %% of the off-hand\'s weapon\'s qualities may be used, and the attack speed is the attack speed of the weapon in the main hand plus %3$d %% of the attack speed of the weapon in the off-hand.
+
+With two levels of this skill, %4$d %% of the off-hand\'s weapon\'s qualities may be used, and the attack speed equals the highest of the attack speeds of the two equipped weapons."</string>
+    <string name="skill_longdescription_fightstyle_weapon_shield">"Gives benefits when fighting with a weapon in the main hand and having a shield equipped in the off-hand.
+
+Every skill level increases the attack chance of weapons with %1$d %% of their original attack chances, and the block chance of shields by %2$d %% of their original block chances."</string>
+    <string name="skill_longdescription_fortitude">On every subsequent level-up, maximum health points (HP) will be raised by %1$d per skill level. This is not applied retroactively, only subsequent level-ups will be affected.</string>
+    <string name="skill_longdescription_lower_exploss">For every skill level, reduces the amount of lost experience caused by death by %1$d %% (percentage of existing exp loss value, not percentage points). %2$d levels will remove all experience loss caused by death.</string>
+    <string name="skill_longdescription_magicfinder">Increases the chance of finding non-ordinary items by %1$d %% for every skill level.</string>
+    <string name="skill_longdescription_more_criticals">Increases any existing critical skill given by equipment by %1$d %% for each skill level (percentage of existing critical skill value, not percentage points).</string>
+    <string name="skill_longdescription_more_exp">Increases amount of exp given by defeating monsters by %1$d %% for each skill level.</string>
+    <string name="skill_longdescription_regeneration">Gain +%1$d health points (HP) on every round per skill level when no monsters are directly adjacent.</string>
+    <string name="skill_longdescription_rejuvenation">Every round (6 seconds), there is a %1$d %% chance that one of the active negative actor conditions will be lowered by one magnitude. This applies to all temporary effect types that affect the body; mental conditions such as Dazed, physical capacity conditions such as Fatigue and also blood disorders such as poison.</string>
+    <string name="skill_longdescription_resistance_blood_disorder">Lowers the chance of being afflicted with disorders of the blood by %1$d %% for every skill level, up to a maximum of %2$d %%. This includes conditions caused by monster attacks such as Poison or bleeding wounds.</string>
+    <string name="skill_longdescription_resistance_mental">Lowers the chance of being afflicted with mental conditions by %1$d %% for every skill level, up to a maximum of %2$d %%. This includes conditions caused by monster attacks such as Dazed or Weapon Feebleness.</string>
+    <string name="skill_longdescription_resistance_physical_capacity">Lowers the chance of being afflicted with conditions affecting your physical capacity by %1$d %% for every skill level, up to a maximum of %2$d %%. This includes conditions caused by monster attacks such as Fatigue.</string>
+    <string name="skill_longdescription_shadow_bless">Lowers the chance of being afflicted with all types of conditions by %1$d %%. This includes all types of conditions caused by monster attacks such as Poison, Dazed or Fatigue.</string>
+    <string name="skill_longdescription_specialization_2hand">Increases damage potential of two-handed weapons by an additional %1$d %% of the original damage potential, in addition to the benefits given by the weapon style skill. The attack chances of two-handed weapons are also increased by %2$d %% of their original attack chances.</string>
+    <string name="skill_longdescription_specialization_dualwield">Increases the attack chance of both wielded weapons by an additional %1$d %% of their original attack chances, in addition to the benefits given by the weapon style skill. The block chances of both wielded weapons are also increased by %2$d %% of their original block chances.</string>
+    <string name="skill_longdescription_specialization_weapon_shield">Increases both attack chances and damage potential of weapons. The attack chance is increased by %1$d %% of the original attack chance, and the damage potential is increased by %2$d %% of the original damage potential.</string>
+    <string name="skill_longdescription_speed">Increases maximum action points (AP) by %1$d for each skill level.</string>
+    <string name="skill_longdescription_taunt">When an attacker makes an attack that misses, there is a %1$d %% chance that the attacker loses %2$d action points (AP). This applies to all types of melee attacks against you.</string>
+    <string name="skill_longdescription_weapon_chance">Increases attack chance by %1$d percentage points for each skill level.</string>
+    <string name="skill_longdescription_weapon_dmg">Increases max damage by %1$d for each skill level.</string>
+    <string name="skill_longdescription_weapon_prof_1hsword">For each skill level, increases attack chance of rapiers, longswords and broadswords by %1$d %% of the item\'s base attack chance, increases block chance by %2$d %% of the item\'s base block chance, and increases critical skill by %3$d %% of the item\'s base critical skill.</string>
+    <string name="skill_longdescription_weapon_prof_2hsword">For each skill level, increases attack chance of two-handed swords by %1$d %% of the item\'s base attack chance, increases block chance by %2$d %% of the item\'s base block chance, and increases critical skill by %3$d %% of the item\'s base critical skill.</string>
+    <string name="skill_longdescription_weapon_prof_axe">For each skill level, increases attack chance of axes and greataxes by %1$d %% of the item\'s base attack chance, increases block chance by %2$d %% of the item\'s base block chance, and increases critical skill by %3$d %% of the item\'s base critical skill.</string>
+    <string name="skill_longdescription_weapon_prof_blunt">For each skill level, increases attack chance of bludgeoning weapons by %1$d %% of the item\'s base attack chance, increases block chance by %2$d %% of the item\'s base block chance, and increases critical skill by %3$d %% of the item\'s base critical skill. This includes clubs, quarterstaves, maces, scepters, warhammers and giant hammers.</string>
+    <string name="skill_longdescription_weapon_prof_dagger">For each skill level, increases attack chance when using daggers and shortswords by %1$d %% of the item\'s base attack chance, increases block chance by %2$d %% of the item\'s base block chance, and increases critical skill by %3$d %% of the item\'s base critical skill.</string>
+    <string name="skill_longdescription_weapon_prof_unarmed">When fighting without a weapon and shield, gain %1$d %% attack chance, %2$d damage potential and %3$d %% block chance per skill level.</string>
+    <string name="skill_number_of_increases_one">You may select one skill to increase.</string>
+    <string name="skill_number_of_increases_several">You may select %1$d skills to increase.</string>
+    <string name="skill_prerequisite_level">To level up this skill, you need at least experience level %1$d.</string>
+    <string name="skill_prerequisite_other_skill">To level up this skill, you need at least level %1$d of the %2$s skill.</string>
+    <string name="skill_prerequisite_stat">To level up this skill, you need at least %1$d %2$s (base stats).</string>
+    <string name="skill_shortdescription_armor_prof_heavy">Make better use of heavy armor</string>
+    <string name="skill_shortdescription_armor_prof_light">Make better use of light armor</string>
+    <string name="skill_shortdescription_armor_prof_shield">Make better use of shields</string>
+    <string name="skill_shortdescription_armor_prof_unarmored">Better at fighting without armor</string>
+    <string name="skill_shortdescription_barkskin">Damage resistance</string>
+    <string name="skill_shortdescription_barter">Better shop prices</string>
+    <string name="skill_shortdescription_better_criticals">Increased critical damage</string>
+    <string name="skill_shortdescription_cleave">Recover action points on every kill</string>
+    <string name="skill_shortdescription_coinfinder">Higher chance of finding gold</string>
+    <string name="skill_shortdescription_concussion">Chance of concussion</string>
+    <string name="skill_shortdescription_crit1">Chance of internal bleeding</string>
+    <string name="skill_shortdescription_crit2">Chance of bone fracture</string>
+    <string name="skill_shortdescription_dodge">Increased block chance</string>
+    <string name="skill_shortdescription_eater">Recover health points on every kill</string>
+    <string name="skill_shortdescription_evasion">Increased chance of fleeing</string>
+    <string name="skill_shortdescription_fightstyle_2hand">Make better use of weapons that require both hands</string>
+    <string name="skill_shortdescription_fightstyle_dualwield">Wield two weapons at the same time</string>
+    <string name="skill_shortdescription_fightstyle_weapon_shield">Better at fighting with weapon and shield</string>
+    <string name="skill_shortdescription_fortitude">Gain health on each level up</string>
+    <string name="skill_shortdescription_lower_exploss">Decrease amount of lost experience when dying</string>
+    <string name="skill_shortdescription_magicfinder">Increased chance of finding magic items</string>
+    <string name="skill_shortdescription_more_criticals">Increased critical skill</string>
+    <string name="skill_shortdescription_more_exp">More experience from monster kills</string>
+    <string name="skill_shortdescription_regeneration">Gain health every round</string>
+    <string name="skill_shortdescription_rejuvenation">Chance of effect removal</string>
+    <string name="skill_shortdescription_resistance_blood_disorder">Resistance against blood disorders</string>
+    <string name="skill_shortdescription_resistance_mental">Resistance against mental conditions</string>
+    <string name="skill_shortdescription_resistance_physical_capacity">Resistance against physical capacity conditions</string>
+    <string name="skill_shortdescription_shadow_bless">Resistance against all types of conditions</string>
+    <string name="skill_shortdescription_specialization_2hand">Expert at two-handed weapons</string>
+    <string name="skill_shortdescription_specialization_dualwield">Expert at dual wielding</string>
+    <string name="skill_shortdescription_specialization_weapon_shield">Expert at fighting with weapon and shield</string>
+    <string name="skill_shortdescription_speed">Increased maximum action points</string>
+    <string name="skill_shortdescription_taunt">Attacker loses AP on miss</string>
+    <string name="skill_shortdescription_weapon_chance">Increased attack chance</string>
+    <string name="skill_shortdescription_weapon_dmg">Increased attack damage</string>
+    <string name="skill_shortdescription_weapon_prof_1hsword">Better at fighting with one-handed swords</string>
+    <string name="skill_shortdescription_weapon_prof_2hsword">Better at fighting with two-handed swords</string>
+    <string name="skill_shortdescription_weapon_prof_axe">Better at fighting with axes</string>
+    <string name="skill_shortdescription_weapon_prof_blunt">Better at fighting with bludgeoning weapons</string>
+    <string name="skill_shortdescription_weapon_prof_dagger">Better at fighting with daggers</string>
+    <string name="skill_shortdescription_weapon_prof_unarmed">Better at fighting without weapons</string>
+    <string name="skill_title_armor_prof_heavy">Heavy armor proficiency</string>
+    <string name="skill_title_armor_prof_light">Light armor proficiency</string>
+    <string name="skill_title_armor_prof_shield">Shield proficiency</string>
+    <string name="skill_title_armor_prof_unarmored">Unarmored fighting</string>
+    <string name="skill_title_barkskin">Bark Skin</string>
+    <string name="skill_title_barter">Merchant</string>
+    <string name="skill_title_better_criticals">Better Criticals</string>
+    <string name="skill_title_cleave">Cleave</string>
+    <string name="skill_title_coinfinder">Treasure Hunter</string>
+    <string name="skill_title_concussion">Concussion</string>
+    <string name="skill_title_crit1">Internal bleeding</string>
+    <string name="skill_title_crit2">Fracture</string>
+    <string name="skill_title_dodge">Dodge</string>
+    <string name="skill_title_eater">Corpse Eater</string>
+    <string name="skill_title_evasion">Evasion</string>
+    <string name="skill_title_fightstyle_2hand">Fighting style: Two-handed weapon</string>
+    <string name="skill_title_fightstyle_dualwield">Fighting style: Dual wield</string>
+    <string name="skill_title_fightstyle_weapon_shield">Fighting style: Weapon and shield</string>
+    <string name="skill_title_fortitude">Increased Fortitude</string>
+    <string name="skill_title_lower_exploss">Failure Mastery</string>
+    <string name="skill_title_magicfinder">Magic Finder</string>
+    <string name="skill_title_more_criticals">More Criticals</string>
+    <string name="skill_title_more_exp">Quick Learner</string>
+    <string name="skill_title_regeneration">Regeneration</string>
+    <string name="skill_title_rejuvenation">Rejuvenation</string>
+    <string name="skill_title_resistance_blood_disorder">Pure Blood</string>
+    <string name="skill_title_resistance_mental">Strong Mind</string>
+    <string name="skill_title_resistance_physical_capacity">Enduring Body</string>
+    <string name="skill_title_shadow_bless">Dark blessing of the Shadow</string>
+    <string name="skill_title_specialization_2hand">Specialization: Two-handed weapon</string>
+    <string name="skill_title_specialization_dualwield">Specialization: Dual wield</string>
+    <string name="skill_title_specialization_weapon_shield">Specialization: Weapon and shield</string>
+    <string name="skill_title_speed">Combat Speed</string>
+    <string name="skill_title_taunt">Taunt</string>
+    <string name="skill_title_weapon_chance">Weapon Accuracy</string>
+    <string name="skill_title_weapon_dmg">Hard Hit</string>
+    <string name="skill_title_weapon_prof_1hsword">One-handed sword proficiency</string>
+    <string name="skill_title_weapon_prof_2hsword">Two-handed sword proficiency</string>
+    <string name="skill_title_weapon_prof_axe">Axe proficiency</string>
+    <string name="skill_title_weapon_prof_blunt">Bludgeoning weapon proficiency</string>
+    <string name="skill_title_weapon_prof_dagger">Dagger proficiency</string>
+    <string name="skill_title_weapon_prof_unarmed">Unarmed fighting</string>
+    <string name="skillinfo_action_levelup">Level up</string>
+    <string name="startscreen_about">About/help</string>
+    <string name="startscreen_continue">Continue current game</string>
+    <string name="startscreen_enterheroname">Enter hero name</string>
+    <string name="startscreen_incompatible_savegames">This is a development version of Andor\'s Trail. Savegames produced by this version are incompatible with the release version.</string>
+    <string name="startscreen_load">Load</string>
+    <string name="startscreen_newgame">New game</string>
+    <string name="startscreen_newgame_confirm">You will lose your current game and your current character, are you sure you want to start a new game?</string>
+    <string name="startscreen_non_release_version">This is a prerelease version of Andor\'s Trail. Savegames produced by this version might not be compatible with the release version.</string>
+    <string name="status_ap">AP:</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="status_exp">Level:</string>
+    <string name="status_hp">HP:</string>
+    <string name="traitsinfo_attack_chance">Attack chance:</string>
+    <string name="traitsinfo_attack_cost">Attack cost (AP):</string>
+    <string name="traitsinfo_attack_damage">Attack damage:</string>
+    <string name="traitsinfo_base_max_ap">Max AP:</string>
+    <string name="traitsinfo_base_max_hp">Max HP:</string>
+    <string name="traitsinfo_criticalhit_effectivechance">Effective critical chance:</string>
+    <string name="traitsinfo_criticalhit_multiplier">Critical multiplier:</string>
+    <string name="traitsinfo_criticalhit_skill">Critical hit skill:</string>
+    <string name="traitsinfo_defense_chance">Block chance:</string>
+    <string name="traitsinfo_defense_damageresist">Damage resistance:</string>
+    <string name="worldmap_template">"<![CDATA[<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
+<html xmlns=\"http://www.w3.org/1999/xhtml\">
+<head>
+	<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />
+	<title></title>
+	<style type=\"text/css\">
+html, body { height:100\%%; padding:0; margin:0; }
+div#table { height:100\%%; width:100\%%; display:table; }
+div#cell { display:table-cell; vertical-align:middle; text-align:center;}
+div#maps { width:{{sizex}}px; height:{{sizey}}px; position:relative; display:inline-block; }
+div#playerPosition { position:absolute; z-index:3; font-size:19pt; color:red; text-shadow:rgba(0, 0, 0, 1) 2px 2px 2px; }
+img { z-index:1; position:absolute; }
+.namedarea { position: absolute; z-index:2; font-size:16pt; text-shadow:black 0.1em 0.1em 0.2em; text-align:center; }
+.namedarea span { display:inline-block; vertical-align:middle; line-height:1em; }
+.settlement { color:white; }
+.other { color:#cccccc; }
+	</style>
+</head>
+<body>
+
+<div id=\"table\">
+<div id=\"cell\">
+<div id=\"maps\">
+{{maps}}
+{{areas}}
+<div id=\"playerPosition\">x</div>
+</div>
+</div>
+</div>
+
+<script type=\"text/javascript\">
+var player = document.getElementById(\"playerPosition\");
+var params = window.location.search.substring(1);
+if (params) {
+	var pos = params.split(\",\");
+	var x = parseInt(pos[0])-{{offsetx}};
+	var y = parseInt(pos[1])-{{offsety}};
+	player.style.top = y + \"px\";
+	player.style.left = x + \"px\";
+	window.scrollTo(x-100, y-100);
+} else {
+	player.style.display = \"none\";
+}
+</script>
+
+</body>
+</html>
+
+]]></string>
+    <style name="ConversationListView" parent="@android:style/Widget.ListView">
+		<!-- Not used here. Overridden in values-v10/ -->
+	</style>
+    <style name="TextAppearance.Compat.Notification" parent="@android:style/TextAppearance.StatusBar.EventContent"/>
+    <style name="TextAppearance.Compat.Notification.Info">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Media"/>
+    <style name="TextAppearance.Compat.Notification.Time">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Time.Media"/>
+    <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="TextAppearance.Compat.Notification.Title.Media"/>
+    <style name="Theme.NoBackground" parent="android:Theme">
+		<item name="android:windowBackground">@null</item>
+	</style>
+    <style name="Widget.Compat.NotificationActionContainer" parent=""/>
+    <style name="Widget.Compat.NotificationActionText" parent=""/>
+    <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
+        <item name="statusBarBackground">#000000</item>
+    </style>
+    <style name="actorinfo_sectionheader">
+		<item name="android:layout_marginTop">@dimen/section_margin</item>
+	</style>
+    <style name="quickButton">
+		<item name="android:longClickable">true</item>
+		<item name="android:textSize">@dimen/actionbar_text</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">@dimen/smalltext_buttonheight</item>
+	</style>
+    <style name="statsBoxStyle" parent="android:Widget.TextView">
+		<item name="android:background">@drawable/ui_boxshape</item>
+		<item name="android:drawablePadding">@dimen/boxshape_margin</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:layout_margin">@dimen/boxshape_margin</item>
+		<item name="android:padding">@dimen/boxshape_margin</item>
+		<item name="android:textSize">@dimen/smalltext</item>
+	</style>
+    <style name="textWithIcon" parent="android:Widget.TextView">
+		<item name="android:drawablePadding">@dimen/dialog_iconpadding_right</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+    <style name="titleWithIcon" parent="@style/textWithIcon">
+		<item name="android:textSize">@dimen/titletext</item>
+		<item name="android:paddingBottom">@dimen/dialog_iconpadding_bottom</item>
+	</style>
+    <style name="toolboxButtonDrawable">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:padding">0dp</item>
+	</style>
+    <style name="toolboxButtonTile">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+	</style>
+    <style name="traitsinfo_2linelabel" parent="android:Widget.TextView">
+	</style>
+    <style name="traitsinfo_2linevalue" parent="android:Widget.TextView">
+		<item name="android:layout_marginLeft">30sp</item>
+	</style>
+    <style name="traitsinfo_label" parent="android:Widget.TextView">
+		<item name="android:layout_marginRight">10sp</item>
+	</style>
+    <declare-styleable name="ColorStateListItem">
+        <!-- Base color for this state. -->
+        <attr name="android:color"/>
+        <!-- Alpha multiplier applied to the base color. -->
+        <attr format="float" name="alpha"/>
+        <attr name="android:alpha"/>
+    </declare-styleable>
+    <declare-styleable name="CoordinatorLayout">
+        <!-- A reference to an array of integers representing the
+             locations of horizontal keylines in dp from the starting edge.
+             Child views can refer to these keylines for alignment using
+             layout_keyline="index" where index is a 0-based index into
+             this array. -->
+        <attr format="reference" name="keylines"/>
+        <!-- Drawable to display behind the status bar when the view is set to draw behind it. -->
+        <attr format="color|reference" name="statusBarBackground"/>
+    </declare-styleable>
+    <declare-styleable name="CoordinatorLayout_Layout">
+        <attr name="android:layout_gravity"/>
+        <!-- The class name of a Behavior class defining special runtime behavior
+             for this child view. -->
+        <attr format="string" name="layout_behavior"/>
+        <!-- The id of an anchor view that this view should position relative to. -->
+        <attr format="reference" name="layout_anchor"/>
+        <!-- The index of a keyline this view should position relative to.
+             android:layout_gravity will affect how the view aligns to the
+             specified keyline. -->
+        <attr format="integer" name="layout_keyline"/>
+
+        <!-- Specifies how an object should position relative to an anchor, on both the X and Y axes,
+             within its parent's bounds.  -->
+        <attr name="layout_anchorGravity">
+            <!-- Push object to the top of its container, not changing its size. -->
+            <flag name="top" value="0x30"/>
+            <!-- Push object to the bottom of its container, not changing its size. -->
+            <flag name="bottom" value="0x50"/>
+            <!-- Push object to the left of its container, not changing its size. -->
+            <flag name="left" value="0x03"/>
+            <!-- Push object to the right of its container, not changing its size. -->
+            <flag name="right" value="0x05"/>
+            <!-- Place object in the vertical center of its container, not changing its size. -->
+            <flag name="center_vertical" value="0x10"/>
+            <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill_vertical" value="0x70"/>
+            <!-- Place object in the horizontal center of its container, not changing its size. -->
+            <flag name="center_horizontal" value="0x01"/>
+            <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+            <flag name="fill_horizontal" value="0x07"/>
+            <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+            <flag name="center" value="0x11"/>
+            <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill" value="0x77"/>
+            <!-- Additional option that can be set to have the top and/or bottom edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. -->
+            <flag name="clip_vertical" value="0x80"/>
+            <!-- Additional option that can be set to have the left and/or right edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the horizontal gravity: a left gravity will clip the right
+                 edge, a right gravity will clip the left edge, and neither will clip both edges. -->
+            <flag name="clip_horizontal" value="0x08"/>
+            <!-- Push object to the beginning of its container, not changing its size. -->
+            <flag name="start" value="0x00800003"/>
+            <!-- Push object to the end of its container, not changing its size. -->
+            <flag name="end" value="0x00800005"/>
+        </attr>
+
+        <!-- Specifies how this view insets the CoordinatorLayout and make some other views
+             dodge it. -->
+        <attr format="enum" name="layout_insetEdge">
+            <!-- Don't inset. -->
+            <enum name="none" value="0x0"/>
+            <!-- Inset the top edge. -->
+            <enum name="top" value="0x30"/>
+            <!-- Inset the bottom edge. -->
+            <enum name="bottom" value="0x50"/>
+            <!-- Inset the left edge. -->
+            <enum name="left" value="0x03"/>
+            <!-- Inset the right edge. -->
+            <enum name="right" value="0x05"/>
+            <!-- Inset the start edge. -->
+            <enum name="start" value="0x00800003"/>
+            <!-- Inset the end edge. -->
+            <enum name="end" value="0x00800005"/>
+        </attr>
+        <!-- Specifies how this view dodges the inset edges of the CoordinatorLayout. -->
+        <attr name="layout_dodgeInsetEdges">
+            <!-- Don't dodge any edges -->
+            <flag name="none" value="0x0"/>
+            <!-- Dodge the top inset edge. -->
+            <flag name="top" value="0x30"/>
+            <!-- Dodge the bottom inset edge. -->
+            <flag name="bottom" value="0x50"/>
+            <!-- Dodge the left inset edge. -->
+            <flag name="left" value="0x03"/>
+            <!-- Dodge the right inset edge. -->
+            <flag name="right" value="0x05"/>
+            <!-- Dodge the start inset edge. -->
+            <flag name="start" value="0x00800003"/>
+            <!-- Dodge the end inset edge. -->
+            <flag name="end" value="0x00800005"/>
+            <!-- Dodge all the inset edges. -->
+            <flag name="all" value="0x77"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="FontFamily">
+        <!-- The authority of the Font Provider to be used for the request. -->
+        <attr format="string" name="fontProviderAuthority"/>
+        <!-- The package for the Font Provider to be used for the request. This is used to verify
+        the identity of the provider. -->
+        <attr format="string" name="fontProviderPackage"/>
+        <!-- The query to be sent over to the provider. Refer to your font provider's documentation
+        on the format of this string. -->
+        <attr format="string" name="fontProviderQuery"/>
+        <!-- The sets of hashes for the certificates the provider should be signed with. This is
+        used to verify the identity of the provider, and is only required if the provider is not
+        part of the system image. This value may point to one list or a list of lists, where each
+        individual list represents one collection of signature hashes. Refer to your font provider's
+        documentation for these values. -->
+        <attr format="reference" name="fontProviderCerts"/>
+        <!-- The strategy to be used when fetching font data from a font provider in XML layouts.
+        This attribute is ignored when the resource is loaded from code, as it is equivalent to the
+        choice of API between {@link
+    androidx.core.content.res.ResourcesCompat#getFont(Context, int)} (blocking) and
+        {@link
+    androidx.core.content.res.ResourcesCompat#getFont(Context, int, FontCallback, Handler)}
+        (async). -->
+        <attr name="fontProviderFetchStrategy">
+            <!-- The blocking font fetch works as follows.
+              First, check the local cache, then if the requested font is not cached, request the
+              font from the provider and wait until it is finished.  You can change the length of
+              the timeout by modifying fontProviderFetchTimeout.  If the timeout happens, the
+              default typeface will be used instead. -->
+            <enum name="blocking" value="0"/>
+            <!-- The async font fetch works as follows.
+              First, check the local cache, then if the requeted font is not cached, trigger a
+              request the font and continue with layout inflation. Once the font fetch succeeds, the
+              target text view will be refreshed with the downloaded font data. The
+              fontProviderFetchTimeout will be ignored if async loading is specified. -->
+            <enum name="async" value="1"/>
+        </attr>
+        <!-- The length of the timeout during fetching. -->
+        <attr format="integer" name="fontProviderFetchTimeout">
+            <!-- A special value for the timeout. In this case, the blocking font fetching will not
+              timeout and wait until a reply is received from the font provider. -->
+            <enum name="forever" value="-1"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="FontFamilyFont">
+        <!-- The style of the given font file. This will be used when the font is being loaded into
+         the font stack and will override any style information in the font's header tables. If
+         unspecified, the value in the font's header tables will be used. -->
+        <attr name="fontStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+        </attr>
+        <!-- The reference to the font file to be used. This should be a file in the res/font folder
+         and should therefore have an R reference value. E.g. @font/myfont -->
+        <attr format="reference" name="font"/>
+        <!-- The weight of the given font file. This will be used when the font is being loaded into
+         the font stack and will override any weight information in the font's header tables. Must
+         be a positive number, a multiple of 100, and between 100 and 900, inclusive. The most
+         common values are 400 for regular weight and 700 for bold weight. If unspecified, the value
+         in the font's header tables will be used. -->
+        <attr format="integer" name="fontWeight"/>
+        <!-- The variation settings to be applied to the font. The string should be in the following
+         format: "'tag1' value1, 'tag2' value2, ...". If the default variation settings should be
+         used, or the font used does not support variation settings, this attribute needs not be
+         specified. -->
+        <attr format="string" name="fontVariationSettings"/>
+        <!-- The index of the font in the tcc font file. If the font file referenced is not in the
+        tcc format, this attribute needs not be specified. -->
+        <attr format="integer" name="ttcIndex"/>
+        <!-- References to the framework attrs -->
+        <attr name="android:fontStyle"/>
+        <attr name="android:font"/>
+        <attr name="android:fontWeight"/>
+        <attr name="android:fontVariationSettings"/>
+        <attr name="android:ttcIndex"/>
+    </declare-styleable>
+    <declare-styleable name="GradientColor">
+        <!-- Start color of the gradient. -->
+        <attr name="android:startColor"/>
+        <!-- Optional center color. -->
+        <attr name="android:centerColor"/>
+        <!-- End color of the gradient. -->
+        <attr name="android:endColor"/>
+        <!-- Type of gradient. The default type is linear. -->
+        <attr name="android:type"/>
+
+        <!-- Only applied to RadialGradient-->
+        <!-- Radius of the gradient, used only with radial gradient. -->
+        <attr name="android:gradientRadius"/>
+
+        <!-- Only applied to SweepGradient / RadialGradient-->
+        <!-- X coordinate of the center of the gradient within the path. -->
+        <attr name="android:centerX"/>
+        <!-- Y coordinate of the center of the gradient within the path. -->
+        <attr name="android:centerY"/>
+
+        <!-- LinearGradient specific -->
+        <!-- X coordinate of the start point origin of the gradient.
+             Defined in same coordinates as the path itself -->
+        <attr name="android:startX"/>
+        <!-- Y coordinate of the start point of the gradient within the shape.
+             Defined in same coordinates as the path itself -->
+        <attr name="android:startY"/>
+        <!-- X coordinate of the end point origin of the gradient.
+             Defined in same coordinates as the path itself -->
+        <attr name="android:endX"/>
+        <!-- Y coordinate of the end point of the gradient within the shape.
+             Defined in same coordinates as the path itself -->
+        <attr name="android:endY"/>
+
+        <!-- Defines the tile mode of the gradient. SweepGradient doesn't support tiling. -->
+        <attr name="android:tileMode"/>
+    </declare-styleable>
+    <declare-styleable name="GradientColorItem">
+        <!-- The offset (or ratio) of this current color item inside the gradient.
+             The value is only meaningful when it is between 0 and 1. -->
+        <attr name="android:offset"/>
+        <!-- The current color for the offset inside the gradient. -->
+        <attr name="android:color"/>
+    </declare-styleable>
+</resources>

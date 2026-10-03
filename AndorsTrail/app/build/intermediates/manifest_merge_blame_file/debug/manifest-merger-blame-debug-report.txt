@@ -1,0 +1,146 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.gpl.rpg.AndorsTrail.custom"
+4    android:installLocation="auto"
+5    android:versionCode="42"
+6    android:versionName="0.7.2dev" >
+7
+8    <uses-sdk
+8-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:10:2-13:5
+9        android:minSdkVersion="14"
+9-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:11:3-28
+10        android:targetSdkVersion="28" />
+10-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:12:3-32
+11
+12    <supports-screens
+12-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:15:2-21:5
+13        android:anyDensity="true"
+13-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:20:3-28
+14        android:largeScreens="true"
+14-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:18:3-30
+15        android:normalScreens="true"
+15-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:17:3-31
+16        android:smallScreens="true"
+16-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:16:3-30
+17        android:xlargeScreens="true" />
+17-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:19:3-31
+18
+19    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+19-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:23:2-25:8
+19-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:24:6-62
+20
+21    <application
+21-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:27:2-63:16
+22        android:name="com.gpl.rpg.AndorsTrail.AndorsTrailApplication"
+22-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:28:3-41
+23        android:allowBackup="true"
+23-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:32:9-35
+24        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+24-->[com.android.support:support-compat:28.0.0] C:\Users\IntoTheAbyss\.gradle\caches\transforms-2\files-2.1\06f6df44c76c4a181cad1895980d5a87\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+25        android:debuggable="true"
+26        android:description="@string/app_description"
+26-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:31:3-48
+27        android:icon="@drawable/icon"
+27-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:30:3-32
+28        android:label="@string/app_name" >
+28-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:29:3-35
+29        <activity
+29-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:34:3-42:14
+30            android:name="com.gpl.rpg.AndorsTrail.activity.StartScreenActivity"
+30-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:35:7-51
+31            android:clearTaskOnLaunch="true" >
+31-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:36:7-39
+32            <intent-filter>
+32-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:38:4-41:20
+33                <action android:name="android.intent.action.MAIN" />
+33-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:39:5-57
+33-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:39:13-54
+34
+35                <category android:name="android.intent.category.LAUNCHER" />
+35-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:40:5-65
+35-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:40:15-62
+36            </intent-filter>
+37        </activity>
+38        <activity
+38-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:43:6-47:6
+39            android:name="com.gpl.rpg.AndorsTrail.activity.MainActivity"
+39-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:44:4-41
+40            android:label="@string/app_name"
+40-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:45:4-36
+41            android:theme="@style/Theme.NoBackground" />
+41-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:46:4-45
+42        <activity android:name="com.gpl.rpg.AndorsTrail.activity.HeroinfoActivity" />
+42-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:48:3-57
+42-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:48:13-54
+43        <activity
+43-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:49:3-104
+44            android:name="com.gpl.rpg.AndorsTrail.activity.MonsterInfoActivity"
+44-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:49:13-57
+45            android:theme="@android:style/Theme.Dialog" />
+45-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:49:58-101
+46        <activity
+46-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:50:3-101
+47            android:name="com.gpl.rpg.AndorsTrail.activity.ItemInfoActivity"
+47-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:50:13-54
+48            android:theme="@android:style/Theme.Dialog" />
+48-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:50:55-98
+49        <activity
+49-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:51:3-100
+50            android:name="com.gpl.rpg.AndorsTrail.activity.LevelUpActivity"
+50-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:51:13-53
+51            android:theme="@android:style/Theme.Dialog" />
+51-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:51:54-97
+52        <activity
+52-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:52:3-109
+53            android:name="com.gpl.rpg.AndorsTrail.activity.MonsterEncounterActivity"
+53-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:52:13-62
+54            android:theme="@android:style/Theme.Dialog" />
+54-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:52:63-106
+55        <activity
+55-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:53:3-105
+56            android:name="com.gpl.rpg.AndorsTrail.activity.ConversationActivity"
+56-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:53:13-58
+57            android:theme="@android:style/Theme.Dialog" />
+57-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:53:59-102
+58        <activity android:name="com.gpl.rpg.AndorsTrail.activity.ShopActivity" />
+58-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:54:3-53
+58-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:54:13-50
+59        <activity android:name="com.gpl.rpg.AndorsTrail.activity.AboutActivity" />
+59-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:55:3-54
+59-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:55:13-51
+60        <activity android:name="com.gpl.rpg.AndorsTrail.activity.LoadingActivity" />
+60-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:56:3-56
+60-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:56:13-53
+61        <activity android:name="com.gpl.rpg.AndorsTrail.activity.Preferences" />
+61-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:57:3-52
+61-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:57:13-49
+62        <activity
+62-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:58:3-101
+63            android:name="com.gpl.rpg.AndorsTrail.activity.LoadSaveActivity"
+63-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:58:13-54
+64            android:theme="@android:style/Theme.Dialog" />
+64-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:58:55-98
+65        <activity
+65-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:59:3-111
+66            android:name="com.gpl.rpg.AndorsTrail.activity.ActorConditionInfoActivity"
+66-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:59:13-64
+67            android:theme="@android:style/Theme.Dialog" />
+67-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:59:65-108
+68        <activity
+68-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:60:3-107
+69            android:name="com.gpl.rpg.AndorsTrail.activity.BulkSelectionInterface"
+69-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:60:13-60
+70            android:theme="@android:style/Theme.Dialog" />
+70-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:60:61-104
+71        <activity
+71-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:61:3-102
+72            android:name="com.gpl.rpg.AndorsTrail.activity.SkillInfoActivity"
+72-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:61:13-55
+73            android:theme="@android:style/Theme.Dialog" />
+73-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:61:56-99
+74        <activity android:name="com.gpl.rpg.AndorsTrail.activity.DisplayWorldMapActivity" />
+74-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:62:3-64
+74-->C:\Users\IntoTheAbyss\AndroidStudioProjects\AndorsTrail\app\src\main\AndroidManifest.xml:62:13-61
+75    </application>
+76
+77</manifest>

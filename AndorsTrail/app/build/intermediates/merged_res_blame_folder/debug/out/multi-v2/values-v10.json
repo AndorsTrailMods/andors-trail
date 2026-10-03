@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\IntoTheAbyss\\AndroidStudioProjects\\AndorsTrail\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v10\\values-v10.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\IntoTheAbyss\\AndroidStudioProjects\\AndorsTrail\\app\\src\\main\\res\\values-v10\\ui_listviewstyle.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "1",
+                        "startOffsets": "52",
+                        "endLines": "6",
+                        "endColumns": "9",
+                        "endOffsets": "357"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "9",
+                        "endOffsets": "360"
+                    }
+                }
+            ]
+        }
+    ]
+}
