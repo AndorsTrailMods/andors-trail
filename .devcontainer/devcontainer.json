@@ -1,0 +1,16 @@
+{
+  "name": "Android Codespace",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "jdkDistro": "ms"
+    },
+    "ghcr.io/NordcomInc/devcontainer-features/android-sdk:1": {
+      "platform": "37",
+      "build_tools": "37.0.0"
+    }
+  },
+  "postCreateCommand": "yes | sdkmanager --licenses"
+}
+
