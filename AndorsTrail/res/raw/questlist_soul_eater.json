@@ -1,0 +1,13 @@
+[
+  {
+    "id":"soul_eater_bounties",
+    "name":"The soul's hunger",
+    "showInLog":1,
+    "stages":[
+      {
+        "progress":10,
+        "logText":"The Soul-Eater feeds on specific monster souls. Its current bounty and progress are recorded below."
+      }
+    ]
+  }
+]

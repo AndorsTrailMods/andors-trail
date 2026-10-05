@@ -42,4 +42,12 @@ public final class MonsterTypeCollection {
 	public void initialize(MonsterTypeParser parser, String input) {
 		parser.parseRows(input, monsterTypesById);
 	}
+
+	/**
+	 * Returns an iterable collection of all known MonsterType objects.
+	 * Used by gameplay code that needs to aggregate kills across target families.
+	 */
+	public java.util.Collection<MonsterType> getAllMonsterTypes() {
+		return monsterTypesById.values();
+	}
 }

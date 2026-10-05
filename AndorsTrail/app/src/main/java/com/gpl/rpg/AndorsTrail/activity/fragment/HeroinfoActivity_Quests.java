@@ -22,6 +22,7 @@ import com.gpl.rpg.AndorsTrail.model.actor.Player;
 import com.gpl.rpg.AndorsTrail.model.quest.Quest;
 import com.gpl.rpg.AndorsTrail.model.quest.QuestLogEntry;
 import com.gpl.rpg.AndorsTrail.view.SpinnerEmulator;
+import com.gpl.rpg.AndorsTrail.mod.SoulEaterEvolution;
 
 public final class HeroinfoActivity_Quests extends Fragment {
 
@@ -155,6 +156,21 @@ public final class HeroinfoActivity_Quests extends Fragment {
 						}
 						continue;
 					}
+				}
+			}
+			if (SoulEaterEvolution.QUEST_ID.equals(q.questID)) {
+				item = new HashMap<String, Object>();
+				item.put(mn_logText, getString(
+						R.string.soul_eater_journal_progress,
+						SoulEaterEvolution.getCurrentBountyName(world, player),
+						SoulEaterEvolution.getCurrentBountyKills(world, player),
+						SoulEaterEvolution.getCurrentBountyRequiredKills(world, player),
+						SoulEaterEvolution.getLevelRequiredForNextMilestone(world, player)));
+				logItemList.add(item);
+				if (SoulEaterEvolution.isCombatPowerCapped(world, player)) {
+					item = new HashMap<String, Object>();
+					item.put(mn_logText, getString(R.string.soul_eater_journal_power_capped));
+					logItemList.add(item);
 				}
 			}
 			childList.add(logItemList);

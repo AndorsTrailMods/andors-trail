@@ -26,6 +26,7 @@ import com.gpl.rpg.AndorsTrail.model.item.ItemTraits_OnUse;
 import com.gpl.rpg.AndorsTrail.model.item.ItemType;
 import com.gpl.rpg.AndorsTrail.model.map.MonsterSpawnArea;
 import com.gpl.rpg.AndorsTrail.model.map.PredefinedMap;
+import com.gpl.rpg.AndorsTrail.mod.SoulEaterEvolution;
 import com.gpl.rpg.AndorsTrail.resource.VisualEffectCollection;
 
 public final class ActorStatsController {
@@ -599,6 +600,11 @@ public final class ActorStatsController {
 			if (type == null) continue;
 
 			applyUseEffect(player, null, type.effects_kill);
+		}
+		if (SoulEaterEvolution.hasGodlyKillEffect(player) && Constants.roll100(1)) {
+			boolean apWasMissing = !player.ap.isMax();
+			setActorMaxAP(player);
+			if (apWasMissing) world.model.combatLog.append("The Soul-Eater restores your action points!");
 		}
 	}
 	

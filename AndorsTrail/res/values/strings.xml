@@ -5,6 +5,10 @@
 	<string name="app_description">Quest-driven fantasy RPG</string>
 	<string name="mirror_pendant_deflects">The Mirror Pendant deflects the status effect!</string>
 	<string name="mirror_pendant_inflicts_condition">The Mirror Pendant inflicts %1$s on %2$s.</string>
+	<string name="soul_eater_journal_progress">Current bounty: %1$s — %2$d/%3$d kills. Next milestone requires level %4$d.</string>
+	<string name="soul_eater_journal_power_capped">The Soul-Eater has reached its combat-power limit. Further bounties continue without increasing its stats.</string>
+	<string name="soul_eater_grows_stronger">The Soul-Eater grows stronger!</string>
+	<string name="soul_eater_power_capped">The Soul-Eater has reached its combat-power limit.</string>
 
 	<string name="exit_to_menu">Exit to menu</string>
 	<string name="menu_settings">Preferences</string>

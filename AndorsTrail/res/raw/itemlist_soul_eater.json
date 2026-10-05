@@ -1,0 +1,157 @@
+[
+  {
+    "id":"soul_eater_dormant",
+    "iconID":"items_weapons:0",
+    "name":"Dormant Soul-Eater",
+    "category":"lsword",
+    "displaytype":"rare",
+    "equipEffect":{
+      "increaseAttackDamage":{ "min":0, "max":0 },
+      "increaseAttackCost":7,
+      "setNonWeaponDamageModifier":95,
+      "increaseAttackChance":-5
+    },
+    "description":"A blank, cursed blade. It is awkward and weak until fed the souls of its first rat or insect prey."
+  },
+  {
+    "id":"soul_eater_base",
+    "iconID":"items_weapons:0",
+    "name":"Soul-Eater",
+    "baseMarketCost":10,
+    "category":"lsword",
+    "displaytype":"rare",
+    "equipEffect":{
+      "increaseAttackDamage":{ "min":1, "max":1 },
+      "increaseAttackCost":5,
+      "setNonWeaponDamageModifier":100
+    },
+    "description":"The Soul-Eater has awakened, gaining +1 damage after its first rat and insect bounty."
+  },
+  {
+    "id":"soul_eater_honed",
+    "iconID":"items_weapons:0",
+    "name":"Soul-Eater (Honed)",
+    "baseMarketCost":60,
+    "category":"lsword",
+    "displaytype":"extraordinary",
+    "equipEffect":{
+      "increaseAttackDamage":{ "min":1, "max":2 },
+      "increaseAttackCost":5,
+      "setNonWeaponDamageModifier":110,
+      "increaseAttackChance":3
+    },
+    "description":"Izthiel souls have honed the blade, granting +3 attack precision."
+  },
+  {
+    "id":"soul_eater_awakened",
+    "iconID":"items_weapons:0",
+    "name":"Soul-Eater (Awakened)",
+    "baseMarketCost":180,
+    "category":"lsword",
+    "displaytype":"legendary",
+    "equipEffect":{
+      "increaseAttackDamage":{ "min":2, "max":3 },
+      "increaseAttackCost":5,
+      "setNonWeaponDamageModifier":120,
+      "increaseAttackChance":5,
+      "increaseDamageResistance":1
+    },
+    "description":"Wyrm souls awaken a protective ward, granting +1 damage resistance."
+  },
+  {
+    "id":"soul_eater_godly",
+    "iconID":"items_weapons:0",
+    "name":"Soul-Eater (Godly)",
+    "baseMarketCost":450,
+    "category":"lsword",
+    "displaytype":"legendary",
+    "equipEffect":{
+      "increaseAttackDamage":{ "min":2, "max":3 },
+      "increaseAttackCost":5,
+      "setNonWeaponDamageModifier":125,
+      "increaseAttackChance":6,
+      "increaseDamageResistance":1
+    },
+    "description":"Endgame demon and cultist souls empower the blade. It has a 1% chance to restore your AP on a kill."
+  },
+  {
+    "id":"soul_eater_evolved_base",
+    "iconID":"items_weapons:1",
+    "name":"Soul-Eater Prime",
+    "baseMarketCost":900,
+    "category":"lsword",
+    "displaytype":"legendary",
+    "equipEffect":{
+      "increaseAttackDamage":{ "min":3, "max":4 },
+      "increaseAttackCost":6,
+      "setNonWeaponDamageModifier":135,
+      "increaseAttackChance":8,
+      "increaseDamageResistance":2
+    },
+    "description":"The Soul-Eater evolves after another rat and insect bounty. It has a 1% chance to restore your AP on a kill. Further level-gated bounties improve it, but its combat power is capped."
+  },
+  {
+    "id":"soul_eater_prime_honed",
+    "iconID":"items_weapons:1",
+    "name":"Soul-Eater Prime (Honed)",
+    "baseMarketCost":1100,
+    "category":"lsword",
+    "displaytype":"legendary",
+    "equipEffect":{
+      "increaseAttackDamage":{ "min":3, "max":4 },
+      "increaseAttackCost":6,
+      "setNonWeaponDamageModifier":140,
+      "increaseAttackChance":9,
+      "increaseDamageResistance":2
+    },
+    "description":"The evolved blade is honed by the next Izthiel bounty, improving its precision. It retains its 1% AP reset chance on a kill."
+  },
+  {
+    "id":"soul_eater_prime_awakened",
+    "iconID":"items_weapons:1",
+    "name":"Soul-Eater Prime (Awakened)",
+    "baseMarketCost":1300,
+    "category":"lsword",
+    "displaytype":"legendary",
+    "equipEffect":{
+      "increaseAttackDamage":{ "min":3, "max":4 },
+      "increaseAttackCost":6,
+      "setNonWeaponDamageModifier":145,
+      "increaseAttackChance":10,
+      "increaseDamageResistance":2
+    },
+    "description":"The evolved blade awakens further after another wyrm bounty and retains its 1% AP reset chance on a kill."
+  },
+  {
+    "id":"soul_eater_prime_ascendant",
+    "iconID":"items_weapons:1",
+    "name":"Soul-Eater Prime (Ascendant)",
+    "baseMarketCost":1550,
+    "category":"lsword",
+    "displaytype":"legendary",
+    "equipEffect":{
+      "increaseAttackDamage":{ "min":4, "max":5 },
+      "increaseAttackCost":6,
+      "setNonWeaponDamageModifier":145,
+      "increaseAttackChance":10,
+      "increaseDamageResistance":2
+    },
+    "description":"The evolved blade rises after a new demon and cultist bounty, gaining a little damage. It retains its 1% AP reset chance on a kill."
+  },
+  {
+    "id":"soul_eater_prime_eternal",
+    "iconID":"items_weapons:1",
+    "name":"Soul-Eater Prime (Eternal)",
+    "baseMarketCost":1800,
+    "category":"lsword",
+    "displaytype":"legendary",
+    "equipEffect":{
+      "increaseAttackDamage":{ "min":4, "max":5 },
+      "increaseAttackCost":6,
+      "setNonWeaponDamageModifier":150,
+      "increaseAttackChance":11,
+      "increaseDamageResistance":3
+    },
+    "description":"The final balanced form. It retains its 1% AP reset chance on a kill. Further level-gated bounties remain endless, but cannot increase its combat power."
+  }
+]
