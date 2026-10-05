@@ -11,6 +11,7 @@
 	<array name="loadresource_items_debug">
 		<item>@raw/itemlist_money</item>
 		<item>@raw/itemlist_weapons</item>
+		<item>@raw/itemlist_soul_eater</item>
 		<item>@raw/itemlist_armour</item>
 		<item>@raw/itemlist_debug</item>
 	</array>
@@ -25,6 +26,7 @@
 
 	<array name="loadresource_quests_debug">
 		<item>@raw/questlist_debug</item>
+		<item>@raw/questlist_soul_eater</item>
 	</array>
 
 	<array name="loadresource_conversationlists_debug">

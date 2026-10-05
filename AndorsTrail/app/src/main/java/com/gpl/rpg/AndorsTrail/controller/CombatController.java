@@ -20,10 +20,13 @@ import com.gpl.rpg.AndorsTrail.model.actor.Monster;
 import com.gpl.rpg.AndorsTrail.model.actor.MonsterType;
 import com.gpl.rpg.AndorsTrail.model.actor.Player;
 import com.gpl.rpg.AndorsTrail.model.item.ItemContainer;
+import com.gpl.rpg.AndorsTrail.model.item.Inventory;
 import com.gpl.rpg.AndorsTrail.model.item.ItemTraits_OnHitReceived;
 import com.gpl.rpg.AndorsTrail.model.item.ItemTraits_OnUse;
+import com.gpl.rpg.AndorsTrail.model.item.ItemType;
 import com.gpl.rpg.AndorsTrail.model.item.Loot;
 import com.gpl.rpg.AndorsTrail.model.map.MonsterSpawnArea;
+import com.gpl.rpg.AndorsTrail.mod.SoulEaterEvolution;
 import com.gpl.rpg.AndorsTrail.resource.VisualEffectCollection;
 import com.gpl.rpg.AndorsTrail.util.Coord;
 
@@ -254,8 +257,33 @@ public final class CombatController implements VisualEffectCompletedCallback {
 		controllers.actorStatsController.addActorAP(player, player.getSkillLevel(SkillCollection.SkillID.cleave) * SkillCollection.PER_SKILLPOINT_INCREASE_CLEAVE_AP);
 		controllers.actorStatsController.addActorHealth(player, player.getSkillLevel(SkillCollection.SkillID.eater) * SkillCollection.PER_SKILLPOINT_INCREASE_EATER_HEALTH);
 
+		ItemType previousWeapon = player.inventory.getItemTypeInWearSlot(Inventory.WearSlot.weapon);
+		int previousSoulEaterMilestone = SoulEaterEvolution.isSoulEater(previousWeapon)
+				? SoulEaterEvolution.getUnlockedMilestones(world, player)
+				: -1;
+		boolean soulEaterBountyKill = SoulEaterEvolution.isCurrentBountyTarget(world, player, killedMonster.monsterType);
 		world.model.statistics.addMonsterKill(killedMonster.monsterType);
+		if (soulEaterBountyKill) {
+			controllers.effectController.startEffect(
+					killedMonster.position,
+					VisualEffectCollection.VisualEffectID.blueSwirl,
+					null,
+					null,
+					0);
+		}
 		controllers.actorStatsController.addExperience(loot.exp);
+		int soulEaterMilestone = SoulEaterEvolution.checkAndEvolve(world, player);
+		ItemType currentWeapon = player.inventory.getItemTypeInWearSlot(Inventory.WearSlot.weapon);
+		boolean soulEaterEvolved = previousWeapon != currentWeapon;
+		if (soulEaterEvolved || soulEaterMilestone > previousSoulEaterMilestone) {
+			controllers.actorStatsController.recalculatePlayerStats(player);
+		}
+		if (soulEaterMilestone > previousSoulEaterMilestone) {
+			int messageId = soulEaterMilestone <= SoulEaterEvolution.POWER_CAP_MILESTONE
+					? R.string.soul_eater_grows_stronger
+					: R.string.soul_eater_power_capped;
+			world.model.combatLog.append(controllers.getResources().getString(messageId));
+		}
 		world.model.combatLog.append(controllers.getResources().getString(R.string.dialog_monsterloot_gainedexp, loot.exp));
 
 		totalExpThisFight += loot.exp;

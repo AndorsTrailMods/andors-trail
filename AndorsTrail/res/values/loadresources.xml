@@ -64,6 +64,7 @@
     <array name="loadresource_items">
         <item>@raw/itemlist_money</item>
         <item>@raw/itemlist_weapons</item>
+        <item>@raw/itemlist_soul_eater</item>
         <item>@raw/itemlist_armour</item>
         <item>@raw/itemlist_rings</item>
         <item>@raw/itemlist_necklaces</item>
@@ -221,6 +222,7 @@
         
     <array name="loadresource_quests">
         <item>@raw/questlist</item>
+        <item>@raw/questlist_soul_eater</item>
         <item>@raw/questlist_nondisplayed</item>
         <item>@raw/questlist_v068</item>
         <item>@raw/questlist_v069</item>
