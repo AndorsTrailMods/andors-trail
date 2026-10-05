@@ -3,6 +3,7 @@ package com.gpl.rpg.AndorsTrail.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gpl.rpg.AndorsTrail.R;
 import com.gpl.rpg.AndorsTrail.context.ControllerContext;
 import com.gpl.rpg.AndorsTrail.context.WorldContext;
 import com.gpl.rpg.AndorsTrail.controller.listeners.ActorConditionListeners;
@@ -504,13 +505,13 @@ public final class ActorStatsController {
 
 		if (effect.addedConditions_source != null) {
 			for (ActorConditionEffect e : effect.addedConditions_source) {
-				rollForConditionEffect(source, e);
+				rollForConditionEffect(source, source, e, false, false);
 			}
 		}
 		if (target != null) {
 			if (effect.addedConditions_target != null) {
 				for (ActorConditionEffect e : effect.addedConditions_target) {
-					rollForConditionEffect(target, e);
+					rollForConditionEffect(source, target, e, true, false);
 				}
 			}
 		}
@@ -528,14 +529,33 @@ public final class ActorStatsController {
 		}
 	}
 
-	private void rollForConditionEffect(Actor actor, ActorConditionEffect conditionEffect) {
+	private void rollForConditionEffect(Actor source, Actor target, ActorConditionEffect conditionEffect, boolean canBeDeflected, boolean isReflected) {
 		int chanceRollBias = 0;
-		if (actor.isPlayer) chanceRollBias = SkillController.getActorConditionEffectChanceRollBias(conditionEffect, (Player) actor);
+		if (target.isPlayer) chanceRollBias = SkillController.getActorConditionEffectChanceRollBias(conditionEffect, (Player) target);
 
 		if (!Constants.rollResult(conditionEffect.chance, chanceRollBias)) return;
-		if (actor.isPlayer) combatActionListeners.onPlayerReceviesActorCondition(conditionEffect);
-		else combatActionListeners.onMonsterReceivesActorCondition(conditionEffect, (Monster)actor);
-		applyActorCondition(actor, conditionEffect);
+
+		if (canBeDeflected && source != null && !source.isPlayer && target.isPlayer
+				&& isWearingMirrorPendant((Player) target) && Constants.roll100(30)) {
+			world.model.combatLog.append(controllers.getResources().getString(R.string.mirror_pendant_deflects));
+			rollForConditionEffect(target, source, conditionEffect, false, true);
+			return;
+		}
+
+		if (target.isPlayer) combatActionListeners.onPlayerReceviesActorCondition(conditionEffect);
+		else combatActionListeners.onMonsterReceivesActorCondition(conditionEffect, (Monster)target);
+		applyActorCondition(target, conditionEffect);
+		if (isReflected) {
+			world.model.combatLog.append(controllers.getResources().getString(
+					R.string.mirror_pendant_inflicts_condition,
+					conditionEffect.conditionType.name,
+					target.getName()));
+		}
+	}
+
+	private static boolean isWearingMirrorPendant(Player player) {
+		ItemType necklace = player.inventory.getItemTypeInWearSlot(Inventory.WearSlot.neck);
+		return necklace != null && "mirror_pendant".equals(necklace.id);
 	}
 
 	private boolean applyStatsModifierEffect(Actor actor, StatsModifierTraits effect, int magnitude) {

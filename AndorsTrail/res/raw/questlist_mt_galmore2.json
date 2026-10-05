@@ -453,6 +453,22 @@
         ]
     },
     {
+        "id":"vaelric_mirror_pendant",
+        "name":"A mirror in the mire",
+        "showInLog":1,
+        "stages":[
+            {
+                "progress":10,
+                "logText":"After I dealt with the venomous swamp creature, Vaelric told me he had kept one of its glassy scales. He believes he can shape it into a protective pendant."
+            },
+            {
+                "progress":20,
+                "logText":"Vaelric fashioned the creature's reflective scale into a Mirror Pendant and gave it to me.",
+                "finishesQuest":1
+            }
+        ]
+    },
+    {
         "id":"mg_restless_grave",
         "name":"Restless in the grave",
         "showInLog":1,

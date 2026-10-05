@@ -1108,12 +1108,93 @@
                         "value":115
                     }
                 ]
+            },
+            {
+                "text":"That venomous creature left behind a glassy scale. Have you any use for it?",
+                "nextPhraseID":"vaelric_mirror_pendant_10",
+                "requires":[
+                    {
+                        "requireType":"questProgress",
+                        "requireID":"swamp_healer",
+                        "value":30
+                    },
+                    {
+                        "requireType":"questProgress",
+                        "requireID":"vaelric_mirror_pendant",
+                        "value":10,
+                        "negate":true
+                    }
+                ]
+            },
+            {
+                "text":"Could we finish shaping that glassy scale into a pendant?",
+                "nextPhraseID":"vaelric_mirror_pendant_10",
+                "requires":[
+                    {
+                        "requireType":"questProgress",
+                        "requireID":"vaelric_mirror_pendant",
+                        "value":10
+                    },
+                    {
+                        "requireType":"questProgress",
+                        "requireID":"vaelric_mirror_pendant",
+                        "value":20,
+                        "negate":true
+                    }
+                ]
             }
         ]
     },
     {
         "id":"vaelric_met_10",
         "message":"No, no, no. I said \"if you want my aid, you'll need to earn it\", and indeed you did receive my aid as I taught you about the leeches."
+    },
+    {
+        "id":"vaelric_mirror_pendant_10",
+        "message":"I kept one of its scales. Smooth as glass, and strangely resistant to the creature's own venom. I believe I can shape it into a charm that may turn a hostile affliction back upon its source.",
+        "replies":[
+            {
+                "text":"Please make it into a pendant.",
+                "nextPhraseID":"vaelric_mirror_pendant_20"
+            },
+            {
+                "text":"Perhaps another time.",
+                "nextPhraseID":"vaelric_met"
+            }
+        ],
+        "rewards":[
+            {
+                "rewardType":"questProgress",
+                "rewardID":"vaelric_mirror_pendant",
+                "value":10
+            }
+        ]
+    },
+    {
+        "id":"vaelric_mirror_pendant_20",
+        "message":"Vaelric polishes the scale and sets it in a simple silver frame. Its surface catches the light like still water. \"It will not turn aside every blow, but perhaps it can send a curse back where it came from.\"",
+        "replies":[
+            {
+                "text":"Thank you. I'll put it to good use.",
+                "nextPhraseID":"vaelric_mirror_pendant_30"
+            }
+        ]
+    },
+    {
+        "id":"vaelric_mirror_pendant_30",
+        "message":"Vaelric hands you the Mirror Pendant.",
+        "rewards":[
+            {
+                "rewardType":"giveItem",
+                "rewardID":"mirror_pendant",
+                "value":1
+            },
+            {
+                "rewardType":"questProgress",
+                "rewardID":"vaelric_mirror_pendant",
+                "value":20
+            }
+        ]
     },
     {
         "id":"vaelric_andor_20",

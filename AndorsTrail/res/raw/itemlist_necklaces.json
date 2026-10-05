@@ -31,5 +31,17 @@
         "equipEffect":{
             "increaseBlockChance":12
         }
+    },
+    {
+        "id":"mirror_pendant",
+        "iconID":"items_jewelry:7",
+        "name":"Mirror Pendant",
+        "description":"Grants +6 block chance. When an enemy's status effect successfully affects you, this pendant has a 30% chance to deflect the attempt. If deflected, you avoid the effect and the attacker rerolls that effect's original chance against itself.",
+        "displaytype":"rare",
+        "baseMarketCost":2400,
+        "category":"neck",
+        "equipEffect":{
+            "increaseBlockChance":6
+        }
     }
 ]

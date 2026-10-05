@@ -3,6 +3,8 @@
 <resources>
 	<string name="app_name">Andor\'s Trail</string>
 	<string name="app_description">Quest-driven fantasy RPG</string>
+	<string name="mirror_pendant_deflects">The Mirror Pendant deflects the status effect!</string>
+	<string name="mirror_pendant_inflicts_condition">The Mirror Pendant inflicts %1$s on %2$s.</string>
 
 	<string name="exit_to_menu">Exit to menu</string>
 	<string name="menu_settings">Preferences</string>
