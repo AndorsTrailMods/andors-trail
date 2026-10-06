@@ -102,7 +102,12 @@
 	<string name="magic_tree_content_description">Magic skill tree: Mana Regeneration at the top, with two mirrored branches of one, two, three, and four ability slots. Crow Form is in the leftmost first slot.</string>
 	<string name="magic_tree_skill_level">Level %1$d / %2$d</string>
 	<string name="magic_crowform_title">Crow Form</string>
-	<string name="magic_crowform_description">Prime this defense in combat at no AP cost. The next attack that would hit is nullified as you burst into illusionary crows; a missed attack leaves it primed. Upgrades improve it as follows: level 1 costs 5 MP with a 10-turn cooldown; level 2 costs 5 MP with an 8-turn cooldown; level 3 costs 4 MP with a 6-turn cooldown; level 4 costs 3 MP with a 4-turn cooldown; level 5 costs 2 MP with a 2-turn cooldown and lets you nullify two attacks before the cooldown begins.</string>
+	<string name="magic_crowform_description">Prime this defense in combat at no AP cost. The next attack that would hit is nullified as you burst into illusionary crows; a missed attack leaves it primed.</string>
+	<string name="magic_crowform_current_stats">Current Cost: %1$d MP    Cooldown: %2$d turns</string>
+	<string name="magic_crowform_next_upgrade_stats">Next Upgrade Cost: %1$d MP    Cooldown: %2$d turns</string>
+	<string name="magic_crowform_uses_before_cooldown">Uses before cooldown: %1$d</string>
+	<string name="magic_crowform_next_upgrade_uses">Next upgrade uses before cooldown: %1$d</string>
+	<string name="magic_crowform_max_level">Maximum level reached.</string>
 	<string name="magic_crowform_cost">Mana cost: %1$d MP</string>
 	<string name="magic_crowform_cooldown_info">Cooldown: %1$d player turns</string>
 	<string name="magic_crowform_requires">Requires Mage level 1</string>

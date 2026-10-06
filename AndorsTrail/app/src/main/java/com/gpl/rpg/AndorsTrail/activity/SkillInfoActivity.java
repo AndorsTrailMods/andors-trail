@@ -41,12 +41,14 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 		TextView skillinfo_title = (TextView) findViewById(R.id.skillinfo_title);
 		skillinfo_title.setText(getSkillTitleResourceID(skillID));
 
-		TextView skillinfo_longdescription = (TextView) findViewById(R.id.skillinfo_longdescription);
-		skillinfo_longdescription.setText(getSkillLongDescription(skillID, res));
-
-		TextView skillinfo_currentlevel = (TextView) findViewById(R.id.skillinfo_currentlevel);
 		final int playerSkillLevel = player.getSkillLevel(skillID);
 		final int nextSkillLevel = playerSkillLevel + 1;
+		TextView skillinfo_longdescription = (TextView) findViewById(R.id.skillinfo_longdescription);
+		skillinfo_longdescription.setText(skillID == SkillCollection.SkillID.crowForm
+				? getCrowFormDescription(res, playerSkillLevel)
+				: getSkillLongDescription(skillID, res));
+
+		TextView skillinfo_currentlevel = (TextView) findViewById(R.id.skillinfo_currentlevel);
 		if (skill.hasMaxLevel()) {
 			skillinfo_currentlevel.setText(res.getString(R.string.skill_current_level_with_maximum, playerSkillLevel, skill.maxLevel));
 		} else if (player.hasSkill(skillID)) {
@@ -161,6 +163,33 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 		}
 	}
 
+	private static String getCrowFormDescription(Resources res, int skillLevel) {
+		StringBuilder description = new StringBuilder(res.getString(R.string.magic_crowform_description));
+		if (skillLevel > 0) {
+			description.append('\n').append(res.getString(R.string.magic_crowform_current_stats,
+					SkillCollection.getCrowFormManaCost(skillLevel),
+					SkillCollection.getCrowFormCooldownTurns(skillLevel)));
+			if (SkillCollection.getCrowFormUsesBeforeCooldown(skillLevel) > 1) {
+				description.append('\n').append(res.getString(R.string.magic_crowform_uses_before_cooldown,
+						SkillCollection.getCrowFormUsesBeforeCooldown(skillLevel)));
+			}
+		}
+
+		if (skillLevel < SkillCollection.MAX_LEVEL_CROW_FORM) {
+			int nextLevel = skillLevel + 1;
+			description.append('\n').append(res.getString(R.string.magic_crowform_next_upgrade_stats,
+					SkillCollection.getCrowFormManaCost(nextLevel),
+					SkillCollection.getCrowFormCooldownTurns(nextLevel)));
+			if (SkillCollection.getCrowFormUsesBeforeCooldown(nextLevel) > 1) {
+				description.append('\n').append(res.getString(R.string.magic_crowform_next_upgrade_uses,
+						SkillCollection.getCrowFormUsesBeforeCooldown(nextLevel)));
+			}
+		} else {
+			description.append('\n').append(res.getString(R.string.magic_crowform_max_level));
+		}
+		return description.toString();
+	}
+
 	private static String getSkillLongDescription(final SkillCollection.SkillID skill, final Resources res) {
 		switch (skill) {
 		case weaponChance: return res.getString(R.string.skill_longdescription_weapon_chance, SkillCollection.PER_SKILLPOINT_INCREASE_WEAPON_CHANCE);
@@ -211,7 +240,6 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 				SkillCollection.PER_SKILLPOINT_INCREASE_UNARMED_UNARMORED_CM_PERCENT);
 		case fightstyleMage: return res.getString(R.string.skill_longdescription_fightstyle_mage);
 		case manaRegeneration: return res.getString(R.string.skill_longdescription_mana_regeneration, SkillCollection.MAX_LEVEL_MANA_REGENERATION);
-		case crowForm: return res.getString(R.string.magic_crowform_description);
 		case specializationDualWield: return res.getString(R.string.skill_longdescription_specialization_dualwield, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_DUALWIELD_AC_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_DUALWIELD_BC_PERCENT);
 		case specialization2hand: return res.getString(R.string.skill_longdescription_specialization_2hand, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_2HAND_DMG_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_2HAND_AC_PERCENT);
 		case specializationWeaponShield: return res.getString(R.string.skill_longdescription_specialization_weapon_shield, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_WEAPON_AC_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_WEAPON_DMG_PERCENT);
