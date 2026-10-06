@@ -6,6 +6,7 @@ import com.gpl.rpg.AndorsTrail.model.actor.Player;
 public interface ActorStatsListener {
 	void onActorHealthChanged(Actor actor);
 	void onActorAPChanged(Actor actor);
+	void onActorMPChanged(Player player);
 	void onActorAttackCostChanged(Actor actor, int newAttackCost);
 	void onActorMoveCostChanged(Actor actor, int newMoveCost);
 	void onPlayerReequipCostChanged(Player actor, int newAttackCost);

@@ -80,6 +80,14 @@ public final class LevelUpActivity extends AndorsTrailBaseActivity {
 			}
 		});
 		b.setText(getString(R.string.levelup_add_blockchance, Constants.LEVELUP_EFFECT_DEF_CH));
+
+		b = (Button) findViewById(R.id.levelup_add_mana);
+		b.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				levelup(ActorStatsController.LevelUpSelection.mana);
+			}
+		});
 	}
 
 	@Override

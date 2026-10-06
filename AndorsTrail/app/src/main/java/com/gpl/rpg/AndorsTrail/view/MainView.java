@@ -37,6 +37,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
+import android.graphics.Path;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.util.AttributeSet;
@@ -74,6 +75,8 @@ public final class MainView extends SurfaceView
 	private final SurfaceHolder holder;
 	private final Paint mPaint = new Paint();
 	private final Paint debugPaint = new Paint();
+	private final Paint crowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+	private final Paint crowGlowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 	private final int[] debugColors = {Color.MAGENTA, Color.BLUE, Color.CYAN, Color.GREEN, Color.YELLOW, Color.RED, Color.WHITE};
 	private final CoordRect p1x1 = new CoordRect(new Coord(), new Size(1,1));
 	private boolean hasSurface = false;
@@ -287,13 +290,84 @@ public final class MainView extends SurfaceView
 	private void renderEffects(Canvas canvas ,List<VisualEffectAnimation> effects) {
 		if(effects == null) return;
 		for (VisualEffectAnimation effect : effects) {
-			int tileID = effect.tileID;
-			int textYOffset = effect.textYOffset;
-			drawFromMapPosition(canvas, effect.area, effect.position, tileID);
-			if (effect.displayText != null) {
-				drawEffectText(canvas, effect.area, effect, textYOffset, effect.getTextPaint());
+			if (effect.isCrowFlock()) {
+				drawCrowFlock(canvas, effect);
+			} else {
+				int tileID = effect.tileID;
+				int textYOffset = effect.textYOffset;
+				drawFromMapPosition(canvas, effect.area, effect.position, tileID);
+				if (effect.displayText != null) {
+					drawEffectText(canvas, effect.area, effect, textYOffset, effect.getTextPaint());
+				}
 			}
 		}
+	}
+
+	private void drawCrowFlock(Canvas canvas, VisualEffectAnimation effect) {
+		float progress = effect.getCrowProgress();
+		float centerX = (effect.position.x - mapViewArea.topLeft.x) * tileSize + tileSize / 2f;
+		float centerY = (effect.position.y - mapViewArea.topLeft.y) * tileSize + tileSize / 2f;
+		float flight = tileSize * (0.15f + progress * 0.95f);
+		float[] xPaths = {-0.9f, -0.48f, 0.04f, 0.55f, 0.92f};
+		float[] yPaths = {-0.32f, 0.46f, -0.58f, 0.38f, -0.08f};
+		float[] headings = {-34f, 22f, -14f, 31f, -26f};
+		float timeline = effect.getCurrentFrame() / (float) Math.max(1, effect.getLastFrame());
+		int alpha = (int) (255 * Math.min(1f, (1f - timeline) * 5f));
+		float returningRotation = effect.areCrowsReturning() ? 180f : 0f;
+
+		for (int i = 0; i < xPaths.length; i++) {
+			float x = centerX + xPaths[i] * flight;
+			float y = centerY + yPaths[i] * flight;
+			float wingBeat = (float) Math.sin(timeline * Math.PI * 16 + i * 1.7f) * 0.45f;
+			float size = tileSize * (0.38f + (i % 2) * 0.06f);
+			drawCrow(canvas, x, y, size, headings[i] + returningRotation, wingBeat, alpha);
+		}
+	}
+
+	private void drawCrow(Canvas canvas, float x, float y, float size, float rotation, float wingBeat, int alpha) {
+		canvas.save();
+		canvas.translate(x, y);
+		canvas.rotate(rotation);
+		canvas.scale(size, size);
+
+		Path silhouette = new Path();
+		silhouette.moveTo(-0.28f, -0.05f);
+		silhouette.lineTo(-0.92f, -0.42f);
+		silhouette.lineTo(-0.62f, -0.02f);
+		silhouette.lineTo(-0.97f, 0.12f);
+		silhouette.lineTo(-0.45f, 0.12f);
+		silhouette.lineTo(-0.18f, 0.22f);
+		silhouette.lineTo(0.36f, 0.12f);
+		silhouette.lineTo(0.78f, 0.02f);
+		silhouette.lineTo(0.38f, -0.08f);
+		silhouette.close();
+
+		Path wings = new Path();
+		wings.moveTo(-0.18f, -0.02f);
+		wings.quadTo(-0.48f, -0.3f - wingBeat, -0.84f, -0.92f - wingBeat);
+		wings.quadTo(-0.18f, -0.66f - wingBeat, 0.02f, -0.02f);
+		wings.quadTo(0.44f, -0.68f + wingBeat, 0.78f, -0.86f + wingBeat);
+		wings.quadTo(0.5f, -0.2f + wingBeat, 0.25f, 0.02f);
+		wings.close();
+
+		crowGlowPaint.setColor(Color.argb(alpha / 4, 130, 185, 255));
+		crowGlowPaint.setStyle(Paint.Style.STROKE);
+		crowGlowPaint.setStrokeWidth(0.1f);
+		canvas.drawPath(silhouette, crowGlowPaint);
+		canvas.drawPath(wings, crowGlowPaint);
+		crowPaint.setColor(Color.argb(alpha, 18, 21, 35));
+		crowPaint.setStyle(Paint.Style.FILL);
+		canvas.drawPath(silhouette, crowPaint);
+		canvas.drawPath(wings, crowPaint);
+		canvas.drawOval(-0.22f, -0.12f, 0.42f, 0.18f, crowPaint);
+		canvas.drawCircle(0.38f, -0.13f, 0.13f, crowPaint);
+		Path beak = new Path();
+		beak.moveTo(0.46f, -0.15f);
+		beak.lineTo(0.78f, -0.1f);
+		beak.lineTo(0.47f, -0.04f);
+		beak.close();
+		canvas.drawPath(beak, crowPaint);
+		canvas.restore();
 	}
 	
 	private boolean isRedrawRectWholeScreen(Rect redrawRect) {
@@ -419,14 +493,16 @@ public final class MainView extends SurfaceView
 			}
 		}
 
-		if (!model.player.hasVFXRunning) {
-			drawFromMapPosition(canvas, area, playerPosition, model.player.mapIconID);
-		} else if (area.contains(playerPosition)) {
-			int vfxElapsedTime = (int) (System.currentTimeMillis() - model.player.vfxStartTime);
-			if (vfxElapsedTime > model.player.vfxDuration) vfxElapsedTime = model.player.vfxDuration;
-			int x = ((model.player.position.x - mapViewArea.topLeft.x) * tileSize * vfxElapsedTime + ((model.player.lastPosition.x - mapViewArea.topLeft.x) * tileSize * (model.player.vfxDuration - vfxElapsedTime))) / model.player.vfxDuration;
-			int y = ((model.player.position.y - mapViewArea.topLeft.y) * tileSize * vfxElapsedTime + ((model.player.lastPosition.y - mapViewArea.topLeft.y) * tileSize * (model.player.vfxDuration - vfxElapsedTime))) / model.player.vfxDuration;
-			tiles.drawTile(canvas, model.player.mapIconID, x, y, mPaint);
+		if (!model.player.crowFormAnimating) {
+			if (!model.player.hasVFXRunning) {
+				drawFromMapPosition(canvas, area, playerPosition, model.player.mapIconID);
+			} else if (area.contains(playerPosition)) {
+				int vfxElapsedTime = (int) (System.currentTimeMillis() - model.player.vfxStartTime);
+				if (vfxElapsedTime > model.player.vfxDuration) vfxElapsedTime = model.player.vfxDuration;
+				int x = ((model.player.position.x - mapViewArea.topLeft.x) * tileSize * vfxElapsedTime + ((model.player.lastPosition.x - mapViewArea.topLeft.x) * tileSize * (model.player.vfxDuration - vfxElapsedTime))) / model.player.vfxDuration;
+				int y = ((model.player.position.y - mapViewArea.topLeft.y) * tileSize * vfxElapsedTime + ((model.player.lastPosition.y - mapViewArea.topLeft.y) * tileSize * (model.player.vfxDuration - vfxElapsedTime))) / model.player.vfxDuration;
+				tiles.drawTile(canvas, model.player.mapIconID, x, y, mPaint);
+			}
 		}
 		for (MonsterSpawnArea a : currentMap.spawnAreas) {
 			for (Monster m : a.monsters) {

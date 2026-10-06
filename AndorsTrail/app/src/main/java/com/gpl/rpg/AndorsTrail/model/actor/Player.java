@@ -35,6 +35,7 @@ import com.gpl.rpg.AndorsTrail.util.Size;
 public final class Player extends Actor {
 
 	public static final int DEFAULT_PLAYER_ATTACKCOST = 4;
+	private static final int LEGACY_DEVELOPMENT_SAVEGAME_VERSION_WITHOUT_MANA = 999;
 	public final Coord nextPosition;
 
 	// TODO: Should be privates
@@ -49,6 +50,11 @@ public final class Player extends Actor {
 	public int reequipCost;
 	public int totalExperience;
 	public final Range weaponDamage = new Range();
+	public final Range mana = new Range();
+	public boolean crowFormPrimed;
+	public boolean crowFormAnimating;
+	public int crowFormCooldownTurns;
+	public int crowFormUsesSinceCooldown;
 
 	private final LinkedHashMap<String, LinkedHashSet<Integer>> questProgress = new LinkedHashMap<String, LinkedHashSet<Integer> >();
 	private String spawnMap;
@@ -126,6 +132,11 @@ public final class Player extends Actor {
 		this.skillLevels.clear();
 		this.availableSkillIncreases = 0;
 		this.alignments.clear();
+		this.mana.set(0, 0);
+		this.crowFormPrimed = false;
+		this.crowFormAnimating = false;
+		this.crowFormCooldownTurns = 0;
+		this.crowFormUsesSinceCooldown = 0;
 		this.ap.set(baseTraits.maxAP, baseTraits.maxAP);
 		this.health.set(baseTraits.maxHP, baseTraits.maxHP);
 		this.conditions.clear();
@@ -431,6 +442,9 @@ public final class Player extends Actor {
 			this.id = src.readUTF();
 			this.savedVersion = src.readLong();
 		}
+		if (hasManaSaveData(fileversion)) {
+			this.mana.readFromParcel(src, fileversion);
+		}
 	}
 
 	public void writeToParcel(DataOutputStream dest) throws IOException {
@@ -490,6 +504,7 @@ public final class Player extends Actor {
 		}
 		dest.writeUTF(id);
 		dest.writeLong(savedVersion);
+		mana.writeToParcel(dest);
 	}
 	public void addToChecksum(ChecksumBuilder builder) {
 		addToChecksum(builder, AndorsTrailApplication.CURRENT_VERSION);
@@ -551,5 +566,10 @@ public final class Player extends Actor {
 		}
 		builder.add(id);
 		builder.add(savedVersion);
+		if (hasManaSaveData(fileversion)) mana.addToChecksum(builder);
+	}
+
+	private static boolean hasManaSaveData(int fileversion) {
+		return fileversion >= 91 && fileversion != LEGACY_DEVELOPMENT_SAVEGAME_VERSION_WITHOUT_MANA;
 	}
 }

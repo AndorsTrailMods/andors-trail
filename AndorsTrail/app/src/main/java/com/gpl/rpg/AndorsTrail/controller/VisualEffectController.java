@@ -50,6 +50,23 @@ public final class VisualEffectController {
 		animation.start();
 	}
 
+	public void startCrowFlockEffect(Coord position, VisualEffectCompletedCallback callback, int callbackValue) {
+		VisualEffect baseEffect = effectTypes.getVisualEffect(VisualEffectCollection.VisualEffectID.blueSwirl);
+		int[] roundTripFrames = new int[baseEffect.frameIconIDs.length * 2 - 1];
+		for (int i = 0; i < baseEffect.frameIconIDs.length; i++) {
+			roundTripFrames[i] = baseEffect.frameIconIDs[i];
+		}
+		for (int i = baseEffect.frameIconIDs.length - 2, frame = baseEffect.frameIconIDs.length;
+				i >= 0; i--, frame++) {
+			roundTripFrames[frame] = baseEffect.frameIconIDs[i];
+		}
+		VisualEffect slowerCrowEffect = new VisualEffect(roundTripFrames, 700, baseEffect.textColor);
+		VisualEffectAnimation animation = new VisualEffectAnimation(
+				slowerCrowEffect,
+				position, null, callback, callbackValue, true);
+		animation.start();
+	}
+
 	private void startAnimation(VisualEffectAnimation animation) {
 		activeAnimations.add(animation);
 		animation.update();
@@ -176,17 +193,18 @@ public final class VisualEffectController {
 				return;
 			}
 
-			tileID = effect.frameIconIDs[currentFrame];
+			if (!crowFlock) tileID = effect.frameIconIDs[currentFrame];
 			textYOffset = -2 * (currentFrame);
 
 			if (currentFrame >= beginFadeAtFrame && displayText != null) {
 				textPaint.setAlpha(255 * (effect.lastFrame - currentFrame) / (effect.lastFrame - beginFadeAtFrame));
 			}
 
-			area.topLeft.y = position.y - 1;
+			area.topLeft.y = position.y - (crowFlock ? 2 : 1);
 		}
 
 		private void onCompleted() {
+			if (crowFlock) world.model.player.crowFormAnimating = false;
 			visualEffectFrameListeners.onAnimationCompleted(this);
 			if (callback != null) callback.onVisualEffectCompleted(callbackValue);
 		}
@@ -208,21 +226,39 @@ public final class VisualEffectController {
 		private final int beginFadeAtFrame;
 		private final VisualEffectCompletedCallback callback;
 		private final int callbackValue;
+		private final boolean crowFlock;
 
 		public VisualEffectAnimation(VisualEffect effect, Coord position, String displayValue, VisualEffectCompletedCallback callback, int callbackValue) {
+			this(effect, position, displayValue, callback, callbackValue, false);
+		}
+
+		private VisualEffectAnimation(VisualEffect effect, Coord position, String displayValue, VisualEffectCompletedCallback callback, int callbackValue, boolean crowFlock) {
 			this.position = position;
 			this.callback = callback;
 			this.callbackValue = callbackValue;
 			this.effect = effect;
+			this.crowFlock = crowFlock;
 			this.displayText = displayValue == null ? "" : displayValue;
 			textPaint.setColor(effect.textColor);
 			textPaint.setTextSize(world.tileManager.tileSize * 0.5f); // 32dp.
 			Rect textBounds = new Rect();
 			textPaint.getTextBounds(displayText, 0, displayText.length(), textBounds);
-			int widthNeededInTiles = 1 + (textBounds.width() / world.tileManager.tileSize);
+			int widthNeededInTiles = crowFlock ? 5 : 1 + (textBounds.width() / world.tileManager.tileSize);
 			if (widthNeededInTiles % 2 == 0) widthNeededInTiles++;
-			this.area = new CoordRect(new Coord(position.x - (widthNeededInTiles / 2), position.y - 1), new Size(widthNeededInTiles, 2));
+			this.area = new CoordRect(new Coord(position.x - (widthNeededInTiles / 2), position.y - (crowFlock ? 2 : 1)), new Size(widthNeededInTiles, crowFlock ? 5 : 2));
 			this.beginFadeAtFrame = effect.lastFrame / 2;
+		}
+
+		public boolean isCrowFlock() { return crowFlock; }
+		public int getCurrentFrame() { return currentFrame; }
+		public int getLastFrame() { return effect.lastFrame; }
+		public float getCrowProgress() {
+			if (!crowFlock) return 0;
+			float progress = currentFrame / (float) Math.max(1, effect.lastFrame);
+			return progress <= 0.5f ? progress * 2f : (1f - progress) * 2f;
+		}
+		public boolean areCrowsReturning() {
+			return crowFlock && currentFrame > effect.lastFrame / 2;
 		}
 
 		public Paint getTextPaint(){

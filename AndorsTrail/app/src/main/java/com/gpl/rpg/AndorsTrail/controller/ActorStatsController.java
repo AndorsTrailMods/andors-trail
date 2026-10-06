@@ -609,6 +609,7 @@ public final class ActorStatsController {
 		,attackChance
 		,attackDamage
 		,blockChance
+		,mana
 	}
 
 	public void addLevelupEffect(Player player, LevelUpSelection selectionID) {
@@ -626,6 +627,9 @@ public final class ActorStatsController {
 			break;
 		case blockChance:
 			player.baseTraits.blockChance += Constants.LEVELUP_EFFECT_DEF_CH;
+			break;
+		case mana:
+			addPlayerMaxMana(player, 1, true);
 			break;
 		}
 		if (player.nextLevelAddsNewSkillpoint()) {
@@ -705,6 +709,29 @@ public final class ActorStatsController {
 		if (actor.ap.isMax()) return;
 		actor.ap.setMax();
 		actorStatsListeners.onActorAPChanged(actor);
+	}
+	public void setPlayerMaxMana(Player player) {
+		if (player.mana.isMax()) return;
+		player.mana.setMax();
+		actorStatsListeners.onActorMPChanged(player);
+	}
+	public void regeneratePlayerMana(Player player) {
+		int amount = player.getSkillLevel(SkillCollection.SkillID.manaRegeneration);
+		if (amount > 0 && player.mana.add(amount, false)) {
+			actorStatsListeners.onActorMPChanged(player);
+		}
+	}
+	public void addPlayerMaxMana(Player player, int amount, boolean affectCurrentMana) {
+		if (amount == 0) return;
+		player.mana.addToMax(amount);
+		if (affectCurrentMana) player.mana.add(amount, false);
+		actorStatsListeners.onActorMPChanged(player);
+	}
+	public boolean usePlayerMana(Player player, int cost) {
+		if (player.mana.current < cost) return false;
+		player.mana.subtract(cost, false);
+		actorStatsListeners.onActorMPChanged(player);
+		return true;
 	}
 	public void capActorAPAtMax(Actor actor) {
 		if (actor.ap.capAtMax()) actorStatsListeners.onActorAPChanged(actor);

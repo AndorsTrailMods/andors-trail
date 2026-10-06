@@ -115,6 +115,9 @@ public final class StatusView extends RelativeLayout implements PlayerStatsListe
 	public void onActorAPChanged(Actor actor) { }
 
 	@Override
+	public void onActorMPChanged(Player player) { }
+
+	@Override
 	public void onActorAttackCostChanged(Actor actor, int newAttackCost) { }
 
 	@Override

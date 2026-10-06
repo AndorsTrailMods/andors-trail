@@ -46,6 +46,7 @@
 
 	<string name="status_hp">HP:</string>
 	<string name="status_ap">AP:</string>
+	<string name="status_mp">MP:</string>
 	<string name="status_exp">XP:</string>
 
 	<string name="heroinfo_char">Overview</string>
@@ -88,7 +89,20 @@
 	<string name="heroinfo_healthpoints">Health points (HP):</string>
 	<string name="heroinfo_experiencepoints">Experience points (XP):</string>
 	<string name="heroinfo_actionpoints">Action points (AP):</string>
+	<string name="heroinfo_manapoints">Mana points (MP):</string>
 	<string name="heroinfo_quests">Quests</string>
+	<string name="heroinfo_magic">Magic</string>
+	<string name="magic_tree_mana_regeneration">Mana Regeneration</string>
+	<string name="magic_tree_content_description">Magic skill tree: Mana Regeneration at the top, with two mirrored branches of one, two, three, and four ability slots. Crow Form is in the leftmost first slot.</string>
+	<string name="magic_tree_skill_level">Level %1$d / %2$d</string>
+	<string name="magic_crowform_title">Crow Form</string>
+	<string name="magic_crowform_description">Prime this defense in combat at no AP cost. The next attack that would hit is nullified as you burst into illusionary crows; a missed attack leaves it primed. Upgrades improve it as follows: level 1 costs 5 MP with a 10-turn cooldown; level 2 costs 5 MP with an 8-turn cooldown; level 3 costs 4 MP with a 6-turn cooldown; level 4 costs 3 MP with a 4-turn cooldown; level 5 costs 2 MP with a 2-turn cooldown and lets you nullify two attacks before the cooldown begins.</string>
+	<string name="magic_crowform_cost">Mana cost: %1$d MP</string>
+	<string name="magic_crowform_cooldown_info">Cooldown: %1$d player turns</string>
+	<string name="magic_crowform_requires">Requires Mage level 1</string>
+	<string name="magic_crowform_available">Costs 1 skill point to learn</string>
+	<string name="magic_crowform_unlocked">Learned</string>
+	<string name="skill_shortdescription_crow_form">Prime to nullify the next attack that hits; upgrades reduce mana cost and cooldown.</string>
 
     <string name="heroinfo_unlimited_lives_and_saves">Standard\n(Unlimited lives and saves)</string>
     <string name="heroinfo_unlimited_lives">Unlimited lives, 1 save</string>
@@ -104,6 +118,10 @@
 	<string name="combat_begin_flee">You can now flee combat by clicking in the direction you want to move.</string>
 	<string name="combat_flee_failed">You failed to flee!</string>
 	<string name="combat_status_ap">AP: %1$,d</string>
+	<string name="combat_crowform">Crow Form (%1$d MP)</string>
+	<string name="combat_crowform_primed">Crows primed</string>
+	<string name="combat_crowform_cooldown">Crow Form (cooldown: %1$d turn(s))</string>
+	<string name="combat_result_crowform">%1$s\'s attack is nullified as you burst into crows!</string>
 	<string name="combat_monsterhealth">HP:</string>
 	<string name="combat_monsteraction">%1$s is attacking.</string>
 	<!-- <string name="combat_cannotexitcombat">You cannot exit combat since there are adjacent monsters. You first have to move by long-clicking a place with no adjacent monster, before you may end the combat.</string> -->
@@ -237,6 +255,7 @@
 	<string name="levelup_add_attackdamage_description">Adds %1$,d to your base attack damage.</string>
 	<string name="levelup_add_blockchance">Increase block chance (+%1$,d)</string>
 	<string name="levelup_add_blockchance_description">Adds %1$,d to your base block chance.</string>
+	<string name="levelup_add_mana">Increase maximum mana (+1 MP)</string>
 
 	<string name="dialog_rest_title">Rest</string>
 	<string name="dialog_rest_confirm_message">Do you want to rest here?</string>
@@ -694,9 +713,12 @@
 	<string name="skill_title_fightstyle_2hand">Fighting style: Two-handed weapon</string>
 	<string name="skill_title_fightstyle_weapon_shield">Fighting style: Weapon and shield</string>
 	<string name="skill_title_fightstyle_unarmed_unarmored">Fighting style: Way of the monk</string>
+	<string name="skill_title_fightstyle_mage">Fighting style: Mage</string>
+	<string name="skill_title_mana_regeneration">Mana Regeneration</string>
 	<string name="skill_title_specialization_dualwield">Specialization: Dual wield</string>
 	<string name="skill_title_specialization_2hand">Specialization: Two-handed weapon</string>
 	<string name="skill_title_specialization_weapon_shield">Specialization: Weapon and shield</string>
+	<string name="skill_title_specialization_warlock">Specialization: Warlock</string>
 	<string name="skill_title_weapon_prof_pole">Pole weapon proficiency</string>
 
 	<string name="skill_shortdescription_weapon_prof_dagger">Better at fighting with daggers</string>
@@ -713,9 +735,12 @@
 	<string name="skill_shortdescription_fightstyle_2hand">Make better use of weapons that require both hands</string>
 	<string name="skill_shortdescription_fightstyle_weapon_shield">Better at fighting with weapon and shield</string>
 	<string name="skill_shortdescription_fightstyle_unarmed_unarmored">Better at fighting unarmed/unarmored</string>
+	<string name="skill_shortdescription_fightstyle_mage">A novice in magic.</string>
+	<string name="skill_shortdescription_mana_regeneration">Restore +1 MP per turn for each skill level</string>
 	<string name="skill_shortdescription_specialization_dualwield">Expert at dual wielding</string>
 	<string name="skill_shortdescription_specialization_2hand">Expert at two-handed weapons</string>
 	<string name="skill_shortdescription_specialization_weapon_shield">Expert at fighting with weapon and shield</string>
+	<string name="skill_shortdescription_specialization_warlock">An expert in magic</string>
 	<string name="skill_shortdescription_weapon_prof_pole">Better at fighting with pole weapons</string>
 
 	<string name="skill_longdescription_weapon_prof_dagger">For each skill level, increases attack chance when using daggers and shortswords by %1$,d %% of the item\'s base attack chance, increases block chance by %2$,d %% of the item\'s base block chance, and increases critical skill by %3$,d %% of the item\'s base critical skill.</string>
@@ -744,9 +769,12 @@ Every skill level increases the attack chance of weapons in the main hand with %
 	<string name="skill_longdescription_fightstyle_unarmed_unarmored">"While fighting without having any piece of armor equipped and without using a weapon or shield, gain %1$,d attack chance, %2$,d block chance, %3$,d damage resistance and increase the maximum damage by %4$,d per skill level. The skill also gives a critical multiplier of 1 plus 0.%5$,d per level.
 
 Items made of cloth are not considered as being armor." </string>
+	<string name="skill_longdescription_fightstyle_mage">A novice in magic.</string>
+	<string name="skill_longdescription_mana_regeneration">Restores 1 MP at the start of each player combat turn for every level of this skill, up to %1$d MP per turn. Resting restores MP to maximum.</string>
 	<string name="skill_longdescription_specialization_dualwield">Increases the attack chance of both wielded weapons by an additional %1$,d %% of their original attack chances, in addition to the benefits given by the weapon style skill. The block chances of both wielded weapons are also increased by %2$,d %% of their original block chances.</string>
 	<string name="skill_longdescription_specialization_2hand">Increases damage potential of two-handed weapons by an additional %1$,d %% of the original damage potential, in addition to the benefits given by the weapon style skill. The attack chances of two-handed weapons are also increased by %2$,d %% of their original attack chances.</string>
 	<string name="skill_longdescription_specialization_weapon_shield">Increases both attack chances and damage potential of weapons in the main hand. The attack chance is increased by %1$,d %% of the original attack chance, and the damage potential is increased by %2$,d %% of the original damage potential.</string>
+	<string name="skill_longdescription_specialization_warlock">An expert in magic</string>
 	<string name="skill_longdescription_weapon_prof_pole">For each skill level, increases attack chance when using pole weapons by %1$,d %% of the item\'s base attack chance, increases block chance by %2$,d %% of the item\'s base block chance, and increases critical skill by %3$,d %% of the item\'s base critical skill.</string>
 
 	<string name="preferences_quickslots_placement">Quickslot position</string>

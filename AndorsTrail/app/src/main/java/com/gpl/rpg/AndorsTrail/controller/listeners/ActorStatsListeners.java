@@ -13,6 +13,9 @@ public final class ActorStatsListeners extends ListOfListeners<ActorStatsListene
 	private final Function1<ActorStatsListener, Actor> onActorAPChanged = new Function1<ActorStatsListener, Actor>() {
 		@Override public void call(ActorStatsListener listener, Actor actor) { listener.onActorAPChanged(actor); }
 	};
+	private final Function1<ActorStatsListener, Player> onActorMPChanged = new Function1<ActorStatsListener, Player>() {
+		@Override public void call(ActorStatsListener listener, Player player) { listener.onActorMPChanged(player); }
+	};
 
 	private final Function2<ActorStatsListener, Actor, Integer> onActorAttackCostChanged = new Function2<ActorStatsListener, Actor, Integer>() {
 		@Override public void call(ActorStatsListener listener, Actor actor, Integer newAttackCost) { listener.onActorAttackCostChanged(actor, newAttackCost); }
@@ -38,6 +41,10 @@ public final class ActorStatsListeners extends ListOfListeners<ActorStatsListene
 	@Override
 	public void onActorAPChanged(Actor actor) {
 		callAllListeners(this.onActorAPChanged, actor);
+	}
+	@Override
+	public void onActorMPChanged(Player player) {
+		callAllListeners(this.onActorMPChanged, player);
 	}
 
 	@Override

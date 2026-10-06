@@ -71,6 +71,9 @@ public final class SkillInfo {
 		public static SkillLevelRequirement requireOtherSkill(SkillCollection.SkillID skillID, int everySkillLevelRequiresThisAmount) {
 			return new SkillLevelRequirement(RequirementType.skillLevel, everySkillLevelRequiresThisAmount, 0, skillID.name());
 		}
+		public static SkillLevelRequirement requireOtherSkillAtLeast(SkillCollection.SkillID skillID, int requiredSkillLevel) {
+			return new SkillLevelRequirement(RequirementType.skillLevel, 0, requiredSkillLevel, skillID.name());
+		}
 		public static SkillLevelRequirement requireExperienceLevels(int everySkillLevelRequiresThisAmount, int initialRequiredAmount) {
 			return new SkillLevelRequirement(RequirementType.experienceLevel, everySkillLevelRequiresThisAmount, initialRequiredAmount, null);
 		}
