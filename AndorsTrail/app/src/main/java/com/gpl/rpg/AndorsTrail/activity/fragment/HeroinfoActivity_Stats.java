@@ -52,6 +52,7 @@ public final class HeroinfoActivity_Stats extends Fragment {
 	private RangeBar rangebar_hp;
 	private RangeBar rangebar_exp;
 	private RangeBar rangebar_ap;
+	private RangeBar rangebar_mp;
 	private ItemEffectsView actorinfo_onhiteffects;
 	private TableLayout heroinfo_basestats_table;
 	private ViewGroup heroinfo_container;
@@ -102,6 +103,9 @@ public final class HeroinfoActivity_Stats extends Fragment {
 		rangebar_ap = (RangeBar) v.findViewById(R.id.heroinfo_apbar);
 		rangebar_ap.init(R.drawable.ui_progress_ap, R.string.heroinfo_actionpoints);
 		rangebar_ap.setLargeLabel(true);
+		rangebar_mp = (RangeBar) v.findViewById(R.id.heroinfo_mpbar);
+		rangebar_mp.init(R.drawable.ui_progress_mp, R.string.heroinfo_manapoints);
+		rangebar_mp.setLargeLabel(true);
 
 		levelUpButton = (Button) v.findViewById(R.id.heroinfo_levelup);
 		levelUpButton.setOnClickListener(new OnClickListener() {
@@ -167,6 +171,7 @@ public final class HeroinfoActivity_Stats extends Fragment {
 		rangebar_hp.update(player.getMaxHP(), player.getCurrentHP());
 		rangebar_exp.update(player.getMaxLevelExperience(), player.getCurrentLevelExperience());
 		rangebar_ap.update(player.getMaxAP(), player.getCurrentAP());
+		rangebar_mp.update(player.mana.max, player.mana.current);
 
 		TraitsInfoView.update(heroinfo_container, player);
 		TraitsInfoView.updateTraitsTable(

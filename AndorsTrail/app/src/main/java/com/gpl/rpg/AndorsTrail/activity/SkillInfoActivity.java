@@ -147,9 +147,13 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 		case fightstyle2hand: return R.string.skill_title_fightstyle_2hand;
 		case fightstyleWeaponShield: return R.string.skill_title_fightstyle_weapon_shield;
 		case fightstyleUnarmedUnarmored: return R.string.skill_title_fightstyle_unarmed_unarmored;
+		case fightstyleMage: return R.string.skill_title_fightstyle_mage;
+		case manaRegeneration: return R.string.skill_title_mana_regeneration;
+		case crowForm: return R.string.magic_crowform_title;
 		case specializationDualWield: return R.string.skill_title_specialization_dualwield;
 		case specialization2hand: return R.string.skill_title_specialization_2hand;
 		case specializationWeaponShield: return R.string.skill_title_specialization_weapon_shield;
+		case specializationWarlock: return R.string.skill_title_specialization_warlock;
 		case weaponProficiencyPole: return R.string.skill_title_weapon_prof_pole;
 		case sporeImmunity: return R.string.skill_title_spore_immunity;
 		default:
@@ -205,9 +209,13 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 				SkillCollection.PER_SKILLPOINT_INCREASE_UNARMED_UNARMORED_DR,
 				SkillCollection.PER_SKILLPOINT_INCREASE_UNARMED_UNARMORED_DMG_MAX,
 				SkillCollection.PER_SKILLPOINT_INCREASE_UNARMED_UNARMORED_CM_PERCENT);
+		case fightstyleMage: return res.getString(R.string.skill_longdescription_fightstyle_mage);
+		case manaRegeneration: return res.getString(R.string.skill_longdescription_mana_regeneration, SkillCollection.MAX_LEVEL_MANA_REGENERATION);
+		case crowForm: return res.getString(R.string.magic_crowform_description);
 		case specializationDualWield: return res.getString(R.string.skill_longdescription_specialization_dualwield, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_DUALWIELD_AC_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_DUALWIELD_BC_PERCENT);
 		case specialization2hand: return res.getString(R.string.skill_longdescription_specialization_2hand, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_2HAND_DMG_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_2HAND_AC_PERCENT);
 		case specializationWeaponShield: return res.getString(R.string.skill_longdescription_specialization_weapon_shield, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_WEAPON_AC_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_WEAPON_DMG_PERCENT);
+		case specializationWarlock: return res.getString(R.string.skill_longdescription_specialization_warlock);
 		case weaponProficiencyPole: return res.getString(R.string.skill_longdescription_weapon_prof_pole, SkillCollection.PER_SKILLPOINT_INCREASE_WEAPON_PROF_AC_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_WEAPON_PROF_BC_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_WEAPON_PROF_CS_PERCENT);
 		default:
 			return "";

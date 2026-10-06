@@ -8,16 +8,19 @@ import android.widget.ImageView;
 import com.gpl.rpg.AndorsTrail.AndorsTrailApplication;
 import com.gpl.rpg.AndorsTrail.R;
 import com.gpl.rpg.AndorsTrail.activity.fragment.HeroinfoActivity_Inventory;
+import com.gpl.rpg.AndorsTrail.activity.fragment.HeroinfoActivity_Magic;
 import com.gpl.rpg.AndorsTrail.activity.fragment.HeroinfoActivity_Quests;
 import com.gpl.rpg.AndorsTrail.activity.fragment.HeroinfoActivity_Skills;
 import com.gpl.rpg.AndorsTrail.activity.fragment.HeroinfoActivity_Stats;
 import com.gpl.rpg.AndorsTrail.context.WorldContext;
 import com.gpl.rpg.AndorsTrail.controller.InputController;
+import com.gpl.rpg.AndorsTrail.model.ability.SkillCollection;
 import com.gpl.rpg.AndorsTrail.util.ThemeHelper;
 
 public final class HeroinfoActivity extends AndorsTrailBaseFragmentActivity {
 	private WorldContext world;
 	private AndorsTrailApplication app;
+	private boolean magicTabAdded;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -30,8 +33,9 @@ public final class HeroinfoActivity extends AndorsTrailBaseFragmentActivity {
 		setupTabHost(R.layout.tabbedlayout, R.id.realtabcontent);
 
 		addTab("char",   R.string.heroinfo_char,   R.drawable.char_hero,          HeroinfoActivity_Stats.class);
-		addTab("quests", R.string.heroinfo_quests,  R.drawable.ui_icon_quest,      HeroinfoActivity_Quests.class);
-		addTab("skills", R.string.heroinfo_skill,   R.drawable.ui_icon_skill,      HeroinfoActivity_Skills.class);
+		addTab("quests", R.string.heroinfo_quests, R.drawable.ui_icon_quest,      HeroinfoActivity_Quests.class);
+		updateMagicTabAvailability();
+		addTab("skills", R.string.heroinfo_skill,   R.drawable.ui_icon_skill,     HeroinfoActivity_Skills.class);
 		addTab("inv",    R.string.heroinfo_inv,     R.drawable.ui_icon_equipment,  HeroinfoActivity_Inventory.class);
 
 		String t = world.model.uiSelections.selectedTabHeroInfo;
@@ -41,10 +45,17 @@ public final class HeroinfoActivity extends AndorsTrailBaseFragmentActivity {
 		updateIconForPlayer();
 	}
 
+	public void updateMagicTabAvailability() {
+		if (magicTabAdded || world == null
+				|| world.model.player.getSkillLevel(SkillCollection.SkillID.fightstyleMage) < 1) return;
+		addTab("magic", R.string.heroinfo_magic, R.drawable.ui_icon_combat, HeroinfoActivity_Magic.class);
+		magicTabAdded = true;
+	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
+		updateMagicTabAvailability();
 		updateIconForPlayer();
 	}
 

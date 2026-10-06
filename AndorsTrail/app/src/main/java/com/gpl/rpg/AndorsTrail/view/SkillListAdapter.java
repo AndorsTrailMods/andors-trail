@@ -69,6 +69,8 @@ public final class SkillListAdapter extends ArrayAdapter<SkillInfo> {
 		return result;
 	}
 	private static boolean shouldDisplaySkill(SkillInfo skill, Player player) {
+		if (skill.id == SkillCollection.SkillID.manaRegeneration
+				|| skill.id == SkillCollection.SkillID.crowForm) return false;
 		if (player.hasSkill(skill.id)) return true;
 		if (skill.levelupVisibility == SkillInfo.LevelUpType.alwaysShown) return true;
 		return false;
@@ -156,9 +158,13 @@ public final class SkillListAdapter extends ArrayAdapter<SkillInfo> {
 		case fightstyle2hand: return R.string.skill_shortdescription_fightstyle_2hand;
 		case fightstyleWeaponShield: return R.string.skill_shortdescription_fightstyle_weapon_shield;
 		case fightstyleUnarmedUnarmored: return R.string.skill_shortdescription_fightstyle_unarmed_unarmored;
+		case fightstyleMage: return R.string.skill_shortdescription_fightstyle_mage;
+		case manaRegeneration: return R.string.skill_shortdescription_mana_regeneration;
+		case crowForm: return R.string.skill_shortdescription_crow_form;
 		case specializationDualWield: return R.string.skill_shortdescription_specialization_dualwield;
 		case specialization2hand: return R.string.skill_shortdescription_specialization_2hand;
 		case specializationWeaponShield: return R.string.skill_shortdescription_specialization_weapon_shield;
+		case specializationWarlock: return R.string.skill_shortdescription_specialization_warlock;
 		case weaponProficiencyPole: return R.string.skill_shortdescription_weapon_prof_pole;
 		case sporeImmunity: return R.string.skill_shortdescription_spore_immunity;
 		default:

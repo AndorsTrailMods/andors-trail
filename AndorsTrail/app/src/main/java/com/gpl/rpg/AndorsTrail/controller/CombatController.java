@@ -77,6 +77,9 @@ public final class CombatController implements VisualEffectCompletedCallback {
 	public void exitCombat(boolean pickupLootBags, boolean canceledCombat) {
 		setCombatSelection(null, null);
 		world.model.uiSelections.isInCombat = false;
+		world.model.player.crowFormPrimed = false;
+		world.model.player.crowFormCooldownTurns = 0;
+		world.model.player.crowFormUsesSinceCooldown = 0;
 		if (pickupLootBags) {
 			recordLootInCombatLog();
 		}
@@ -377,6 +380,10 @@ public final class CombatController implements VisualEffectCompletedCallback {
 	}
 
 	public void endPlayerTurn() {
+		Player player = world.model.player;
+		if (player.crowFormCooldownTurns > 0 && --player.crowFormCooldownTurns == 0) {
+			player.crowFormUsesSinceCooldown = 0;
+		}
 		beginMonsterTurn(false);
 	}
 	private void beginMonsterTurn(boolean isFirstRound) {
@@ -481,7 +488,10 @@ public final class CombatController implements VisualEffectCompletedCallback {
 		AttackResult attack = monsterAttacks(currentActiveMonster);
 		this.lastAttackResult = attack;
 
-		if (attack.isHit) {
+		if (attack.isCrowForm) {
+			combatActionListeners.onMonsterAttackMissed(currentActiveMonster, attack);
+			controllers.effectController.startCrowFlockEffect(world.model.player.position, this, CALLBACK_MONSTERATTACK);
+		} else if (attack.isHit) {
 			combatActionListeners.onMonsterAttackSuccess(currentActiveMonster, attack);
 			controllers.skillController.applySkillEffectsFromMonsterAttack(attack, currentActiveMonster);
 			startAttackEffect(attack, world.model.player.position, this, CALLBACK_MONSTERATTACK);
@@ -490,6 +500,20 @@ public final class CombatController implements VisualEffectCompletedCallback {
 			controllers.skillController.applySkillEffectsFromMonsterAttack(attack, currentActiveMonster);
 			startMissedEffect(attack, world.model.player.position, this, CALLBACK_MONSTERATTACK);
 		}
+	}
+
+	public boolean primeCrowForm() {
+		Player player = world.model.player;
+		int skillLevel = player.getSkillLevel(SkillCollection.SkillID.crowForm);
+		int manaCost = SkillCollection.getCrowFormManaCost(skillLevel);
+		if (!world.model.uiSelections.isInCombat
+				|| !world.model.uiSelections.isPlayersCombatTurn
+				|| player.crowFormPrimed
+				|| skillLevel < 1
+				|| player.crowFormCooldownTurns > 0
+				|| !controllers.actorStatsController.usePlayerMana(player, manaCost)) return false;
+		player.crowFormPrimed = true;
+		return true;
 	}
 
 	private static final int CALLBACK_MONSTERATTACK = 0;
@@ -554,6 +578,7 @@ public final class CombatController implements VisualEffectCompletedCallback {
 			return;
 		}
 		controllers.actorStatsController.setActorMaxAP(world.model.player);
+		controllers.actorStatsController.regeneratePlayerMana(world.model.player);
 		if (!isFirstRound) controllers.gameRoundController.onNewPlayerRound();
 		world.model.uiSelections.isPlayersCombatTurn = true;
 		combatTurnListeners.onNewPlayerTurn();
@@ -645,6 +670,17 @@ public final class CombatController implements VisualEffectCompletedCallback {
 		if (!Constants.roll100(hitChance)) {
 			applyAttackMissStatusEffects(attacker, target);
 			return AttackResult.MISS;
+		}
+		if (target == world.model.player && world.model.player.crowFormPrimed) {
+			Player player = world.model.player;
+			player.crowFormPrimed = false;
+			player.crowFormAnimating = true;
+			player.crowFormUsesSinceCooldown++;
+			int skillLevel = player.getSkillLevel(SkillCollection.SkillID.crowForm);
+			if (player.crowFormUsesSinceCooldown >= SkillCollection.getCrowFormUsesBeforeCooldown(skillLevel)) {
+				player.crowFormCooldownTurns = SkillCollection.getCrowFormCooldownTurns(skillLevel);
+			}
+			return AttackResult.CROW_FORM;
 		}
 
 		int damage = Constants.rollValue(attacker.getDamagePotential());

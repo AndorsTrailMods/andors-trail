@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.gpl.rpg.AndorsTrail.AndorsTrailApplication;
 import com.gpl.rpg.AndorsTrail.Dialogs;
 import com.gpl.rpg.AndorsTrail.R;
+import com.gpl.rpg.AndorsTrail.activity.HeroinfoActivity;
 import com.gpl.rpg.AndorsTrail.context.ControllerContext;
 import com.gpl.rpg.AndorsTrail.context.WorldContext;
 import com.gpl.rpg.AndorsTrail.model.ability.SkillCollection;
@@ -140,6 +141,9 @@ public final class HeroinfoActivity_Skills extends Fragment {
 
 			SkillCollection.SkillID skillID = SkillCollection.SkillID.valueOf(data.getExtras().getString("skillID"));
 			controllers.skillController.levelUpSkillManually(player, world.skills.getSkill(skillID));
+			if (getActivity() instanceof HeroinfoActivity) {
+				((HeroinfoActivity) getActivity()).updateMagicTabAvailability();
+			}
 			break;
 		}
 		update();

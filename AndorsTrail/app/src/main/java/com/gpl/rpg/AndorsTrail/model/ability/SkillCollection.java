@@ -55,6 +55,10 @@ public final class SkillCollection {
 		,weaponProficiencyPole
 		,fightstyleUnarmedUnarmored
 		,sporeImmunity
+		,fightstyleMage
+		,specializationWarlock
+		,manaRegeneration
+		,crowForm
 	}
 
 	// should be in the same number &U order as in arrays.xml
@@ -90,6 +94,8 @@ public final class SkillCollection {
 	public static final int PER_SKILLPOINT_INCREASE_EVASION_FLEE_CHANCE_PERCENTAGE = 5;
 	public static final int PER_SKILLPOINT_INCREASE_EVASION_MONSTER_ATTACK_CHANCE_PERCENTAGE = 5;
 	public static final int PER_SKILLPOINT_INCREASE_REGENERATION = 1;
+	public static final int MAX_LEVEL_MANA_REGENERATION = 10;
+	public static final int MAX_LEVEL_CROW_FORM = 5;
 	public static final int PER_SKILLPOINT_INCREASE_EXPLOSS_PERCENT = 20;
 	public static final int PER_SKILLPOINT_INCREASE_RESISTANCE_CHANCE_PERCENT = 10;
 	public static final int PER_SKILLPOINT_INCREASE_RESISTANCE_SHADOW_BLESS = 5;
@@ -107,6 +113,19 @@ public final class SkillCollection {
 	public static final int PER_SKILLPOINT_INCREASE_UNARMED_DMG = 2;
 	public static final int PER_SKILLPOINT_INCREASE_UNARMED_BC = 5;
 	public static final int PER_SKILLPOINT_INCREASE_SHIELD_PROF_DR = 1;
+
+	public static int getCrowFormManaCost(int skillLevel) {
+		if (skillLevel <= 2) return 5;
+		return Math.max(2, 7 - Math.min(skillLevel, MAX_LEVEL_CROW_FORM));
+	}
+
+	public static int getCrowFormCooldownTurns(int skillLevel) {
+		return 12 - 2 * Math.max(1, Math.min(skillLevel, MAX_LEVEL_CROW_FORM));
+	}
+
+	public static int getCrowFormUsesBeforeCooldown(int skillLevel) {
+		return skillLevel >= MAX_LEVEL_CROW_FORM ? 2 : 1;
+	}
 	public static final int PER_SKILLPOINT_INCREASE_UNARMORED_BC = 10;
 	public static final int PER_SKILLPOINT_INCREASE_LIGHT_ARMOR_BC_PERCENT = 30;
 	public static final int PER_SKILLPOINT_INCREASE_HEAVY_ARMOR_BC_PERCENT = 20;
@@ -232,6 +251,9 @@ public final class SkillCollection {
 		initializeSkill(new SkillInfo(SkillID.fightstyleUnarmedUnarmored, 3, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, new SkillLevelRequirement[] {
 				SkillLevelRequirement.requireExperienceLevels(15, 0)
 		}, position++));
+		initializeSkill(new SkillInfo(SkillID.fightstyleMage, 2, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, new SkillLevelRequirement[] {
+				SkillLevelRequirement.requireExperienceLevels(5, 0)
+			}, position++));
 		initializeSkill(new SkillInfo(SkillID.specializationDualWield, 1, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, new SkillLevelRequirement[] {
 				SkillLevelRequirement.requireExperienceLevels(45, 0)
 				,SkillLevelRequirement.requireOtherSkill(SkillID.fightstyleDualWield, 2)
@@ -244,7 +266,15 @@ public final class SkillCollection {
 				SkillLevelRequirement.requireExperienceLevels(45, 0)
 				,SkillLevelRequirement.requireOtherSkill(SkillID.fightstyleWeaponShield, 2)
 			}, position++));
+		initializeSkill(new SkillInfo(SkillID.specializationWarlock, 1, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, new SkillLevelRequirement[] {
+				SkillLevelRequirement.requireExperienceLevels(45, 0)
+				,SkillLevelRequirement.requireOtherSkill(SkillID.fightstyleMage, 2)
+			}, position++));
 		initializeSkill(new SkillInfo(SkillID.sporeImmunity, 1, SkillInfo.LevelUpType.onlyByQuests, SkillCategory.immunity, null, position++));
+		initializeSkill(new SkillInfo(SkillID.manaRegeneration, MAX_LEVEL_MANA_REGENERATION, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, null, position++));
+		initializeSkill(new SkillInfo(SkillID.crowForm, MAX_LEVEL_CROW_FORM, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, new SkillLevelRequirement[] {
+				SkillLevelRequirement.requireOtherSkillAtLeast(SkillID.fightstyleMage, 1)
+			}, position++));
 	}
 
 	public SkillInfo getSkill(SkillID skillID) {

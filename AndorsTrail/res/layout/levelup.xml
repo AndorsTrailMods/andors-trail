@@ -58,6 +58,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/levelup_add_blockchance" />
 
+            <Button
+                android:id="@+id/levelup_add_mana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/levelup_add_mana" />
+
             <TextView
                 android:id="@+id/levelup_adds_new_skillpoint"
                 style="@style/textWithIcon"

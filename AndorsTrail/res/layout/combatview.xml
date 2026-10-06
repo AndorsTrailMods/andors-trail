@@ -17,45 +17,73 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/combatview_moveattack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:minHeight="0dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/combat_attack"
+                    android:textSize="@dimen/actionbar_text" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <com.gpl.rpg.AndorsTrail.view.RangeBar
+                        android:id="@+id/combatview_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <com.gpl.rpg.AndorsTrail.view.RangeBar
+                        android:id="@+id/combatview_manastatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/combatview_endturn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:minHeight="0dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/combat_endturn"
+                    android:textSize="@dimen/actionbar_text" />
+
+                <Button
+                    android:id="@+id/combatview_flee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:minHeight="0dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/combat_flee"
+                    android:textSize="@dimen/actionbar_text" />
+            </LinearLayout>
 
             <Button
-                android:id="@+id/combatview_moveattack"
-                android:layout_width="wrap_content"
+                android:id="@+id/combatview_crowform"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="marquee"
                 android:minHeight="0dp"
-                android:scrollHorizontally="true"
                 android:singleLine="true"
-                android:text="@string/combat_attack"
-                android:textSize="@dimen/actionbar_text" />
-
-            <com.gpl.rpg.AndorsTrail.view.RangeBar
-                android:id="@+id/combatview_status"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/combatview_endturn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="marquee"
-                android:minHeight="0dp"
-                android:scrollHorizontally="true"
-                android:singleLine="true"
-                android:text="@string/combat_endturn"
-                android:textSize="@dimen/actionbar_text" />
-
-            <Button
-                android:id="@+id/combatview_flee"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="marquee"
-                android:minHeight="0dp"
-                android:scrollHorizontally="true"
-                android:singleLine="true"
-                android:text="@string/combat_flee"
+                android:text="@string/combat_crowform"
                 android:textSize="@dimen/actionbar_text" />
         </LinearLayout>
 

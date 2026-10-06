@@ -417,7 +417,11 @@ public final class MainActivity
 
 	@Override
 	public void onMonsterAttackMissed(Monster attacker, AttackResult attackResult) {
-		message(getString(R.string.combat_result_monstermiss, attacker.getName()));
+		if (attackResult.isCrowForm) {
+			message(getString(R.string.combat_result_crowform, attacker.getName()));
+		} else {
+			message(getString(R.string.combat_result_monstermiss, attacker.getName()));
+		}
 	}
 
 	@Override

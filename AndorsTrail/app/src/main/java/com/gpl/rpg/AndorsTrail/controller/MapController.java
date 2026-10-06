@@ -151,6 +151,7 @@ public final class MapController {
 		controllers.actorStatsController.removeAllTemporaryConditions(player);
 		controllers.actorStatsController.recalculatePlayerStats(player);
 		controllers.actorStatsController.setActorMaxAP(player);
+		controllers.actorStatsController.setPlayerMaxMana(player);
 		controllers.actorStatsController.setActorMaxHealth(player);
 		player.mapIconID = player.baseTraits.iconID;
 		for (PredefinedMap m : world.maps.getAllMaps()) {
