@@ -14,7 +14,10 @@ import com.gpl.rpg.AndorsTrail.model.ability.SkillCollection;
 import com.gpl.rpg.AndorsTrail.model.actor.Player;
 
 public final class MagicAbilityTreeView extends View {
-	private static final int[] BRANCH_COUNTS = {1, 2, 3, 4};
+	private static final float ROOT_Y = 42f;
+	private static final float BRANCH_Y = 130f;
+	private static final float COUNTER_Y = 218f;
+	private static final float NODE_HEIGHT = 48f;
 	private Player player;
 	private OnSkillClickListener skillClickListener;
 	private SkillCollection.SkillID touchStartedSkill;
@@ -54,56 +57,82 @@ public final class MagicAbilityTreeView extends View {
 		super.onDraw(canvas);
 		float width = getWidth();
 		float centerX = width / 2f;
-		float rootY = 36f * density;
-		float rootHeight = 46f * density;
-		float firstRowY = 112f * density;
-		float rowSpacing = 72f * density;
-		float nodeHeight = 34f * density;
-		float nodeWidth = Math.min(40f * density, width / 9f);
-		float crowFormWidth = Math.min(122f * density, width * 0.42f);
-
+		float branchWidth = Math.min(142f * density, width * 0.44f);
+		float rootWidth = Math.min(210f * density, width - 32f * density);
+		float crowX = width * 0.26f;
+		float ravenX = width * 0.74f;
 		boolean manaRegenerationLearned = manaRegenerationLevel() > 0;
-		drawNode(canvas, centerX, rootY, Math.min(190f * density, width - 32f * density),
-				rootHeight, 0xff293c58, manaRegenerationLearned ? 0xff75bd91 : 0xff81b5ff);
+		boolean crowFormLearned = crowFormLevel() > 0;
+		boolean ravenMarkLearned = ravenMarkLevel() > 0;
+		boolean counterLearned = blackwingCounterLevel() > 0;
+		boolean murderLearned = murderOfCrowsLevel() > 0;
+		int prerequisiteColor = manaRegenerationLearned ? 0xff75bd91 : 0xff81b5ff;
+		int crowColor = crowFormLearned ? 0xff75bd91
+				: ravenMarkLearned ? 0xff778397
+						: hasMageSkill() && manaRegenerationLearned ? 0xff81b5ff : 0xff778397;
+		int ravenColor = ravenMarkLearned ? 0xff75bd91
+				: crowFormLearned ? 0xff778397
+						: hasMageSkill() && manaRegenerationLearned ? 0xff81b5ff : 0xff778397;
+		int counterColor = counterLearned ? 0xff75bd91
+				: murderLearned ? 0xff778397 : crowFormLearned ? 0xff81b5ff : 0xff778397;
+		int murderColor = murderLearned ? 0xff75bd91
+				: counterLearned ? 0xff778397 : ravenMarkLearned ? 0xff81b5ff : 0xff778397;
+
+		drawNode(canvas, centerX, ROOT_Y * density, rootWidth, NODE_HEIGHT * density,
+				0xff293c58, prerequisiteColor);
 		drawText(canvas, getResources().getString(R.string.magic_tree_mana_regeneration),
-				centerX, rootY - 2f * density, 0xffffffff);
+				centerX, (ROOT_Y - 5f) * density, 0xffffffff);
 		textPaint.setTextSize(11f * density);
 		drawText(canvas, getResources().getString(R.string.magic_tree_skill_level,
 				manaRegenerationLevel(), SkillCollection.MAX_LEVEL_MANA_REGENERATION),
-				centerX, rootY + 15f * density, 0xffd2dced);
+				centerX, (ROOT_Y + 15f) * density, 0xffd2dced);
 		textPaint.setTextSize(14f * density);
 
-		for (int row = 0; row < BRANCH_COUNTS.length; row++) {
-			int countPerSide = BRANCH_COUNTS[row];
-			float rowY = firstRowY + row * rowSpacing;
-			for (int side = 0; side < 2; side++) {
-				boolean leftSide = side == 0;
-				for (int node = 0; node < countPerSide; node++) {
-					float x = getNodeX(width, leftSide, countPerSide, node);
-					if (row == 0) {
-						canvas.drawLine(centerX, rootY + rootHeight / 2f,
-								x, rowY - nodeHeight / 2f, connectorPaint);
-					} else {
-						int parentCount = BRANCH_COUNTS[row - 1];
-						int parent = node * parentCount / countPerSide;
-						float parentX = getNodeX(width, leftSide, parentCount, parent);
-						float parentY = firstRowY + (row - 1) * rowSpacing + nodeHeight / 2f;
-						canvas.drawLine(parentX, parentY, x, rowY - nodeHeight / 2f, connectorPaint);
-					}
+		float rootBottom = (ROOT_Y + NODE_HEIGHT / 2f) * density;
+		float branchTop = (BRANCH_Y - NODE_HEIGHT / 2f) * density;
+		canvas.drawLine(centerX, rootBottom, crowX, branchTop, connectorPaint);
+		canvas.drawLine(centerX, rootBottom, ravenX, branchTop, connectorPaint);
+		drawBranchNode(canvas, crowX, BRANCH_Y * density, branchWidth,
+				R.string.magic_crowform_title, R.string.magic_tree_defensive_path,
+				crowFormLevel(), SkillCollection.MAX_LEVEL_CROW_FORM, crowColor);
+		drawBranchNode(canvas, ravenX, BRANCH_Y * density, branchWidth,
+				R.string.magic_ravenmark_title, R.string.magic_tree_offensive_path,
+				ravenMarkLevel(), SkillCollection.MAX_LEVEL_RAVEN_MARK, ravenColor);
 
-					boolean isCrowForm = row == 0 && leftSide;
-					boolean crowFormLearned = crowFormLevel() > 0;
-					int crowFormBorderColor = crowFormLearned ? 0xff75bd91
-							: hasMageSkill() ? 0xff81b5ff : 0xff778397;
-					drawNode(canvas, x, rowY, isCrowForm ? crowFormWidth : nodeWidth,
-							nodeHeight, 0xff252b39, isCrowForm ? crowFormBorderColor : 0xff778397);
-					if (isCrowForm) {
-						drawText(canvas, getResources().getString(R.string.magic_crowform_title),
-								x, rowY + textPaint.getTextSize() / 3f, 0xffffffff);
-					}
-				}
-			}
-		}
+		float branchBottom = (BRANCH_Y + NODE_HEIGHT / 2f) * density;
+		float pathTop = (COUNTER_Y - NODE_HEIGHT / 2f) * density;
+		canvas.drawLine(crowX, branchBottom, crowX, pathTop, connectorPaint);
+		canvas.drawLine(ravenX, branchBottom, ravenX, pathTop, connectorPaint);
+		drawSkillNode(canvas, crowX, COUNTER_Y * density, branchWidth,
+				R.string.magic_blackwing_counter_title, blackwingCounterLevel(),
+				SkillCollection.MAX_LEVEL_BLACKWING_COUNTER, counterColor);
+		drawSkillNode(canvas, ravenX, COUNTER_Y * density, branchWidth,
+				R.string.magic_murder_of_crows_title, murderOfCrowsLevel(),
+				SkillCollection.MAX_LEVEL_MURDER_OF_CROWS, murderColor);
+	}
+
+	private void drawSkillNode(Canvas canvas, float x, float y, float width,
+			int titleResource, int level, int maxLevel, int color) {
+		drawNode(canvas, x, y, width, NODE_HEIGHT * density, 0xff252b39, color);
+		drawText(canvas, getResources().getString(titleResource),
+				x, y - 3f * density, 0xffffffff);
+		textPaint.setTextSize(11f * density);
+		drawText(canvas, getResources().getString(R.string.magic_tree_skill_level, level, maxLevel),
+				x, y + 14f * density, 0xffd2dced);
+		textPaint.setTextSize(14f * density);
+	}
+
+	private void drawBranchNode(Canvas canvas, float x, float y, float width,
+			int titleResource, int pathResource, int level, int maxLevel, int color) {
+		drawNode(canvas, x, y, width, NODE_HEIGHT * density, 0xff252b39, color);
+		textPaint.setTextSize(9f * density);
+		drawText(canvas, getResources().getString(pathResource), x, y - 10f * density, 0xffd2dced);
+		textPaint.setTextSize(13f * density);
+		drawText(canvas, getResources().getString(titleResource), x, y + 3f * density, 0xffffffff);
+		textPaint.setTextSize(10f * density);
+		drawText(canvas, getResources().getString(R.string.magic_tree_skill_level, level, maxLevel),
+				x, y + 17f * density, 0xffd2dced);
+		textPaint.setTextSize(14f * density);
 	}
 
 	@Override
@@ -134,32 +163,72 @@ public final class MagicAbilityTreeView extends View {
 	private SkillCollection.SkillID skillAtPosition(float x, float y) {
 		if (isInsideManaRegenerationNode(x, y)) return SkillCollection.SkillID.manaRegeneration;
 		if (isInsideCrowFormNode(x, y)) return SkillCollection.SkillID.crowForm;
+		if (isInsideRavenMarkNode(x, y)) return SkillCollection.SkillID.ravenMark;
+		if (isInsideBlackwingCounterNode(x, y)) return SkillCollection.SkillID.blackwingCounter;
+		if (isInsideMurderOfCrowsNode(x, y)) return SkillCollection.SkillID.murderOfCrows;
 		return null;
 	}
 
 	private boolean isInsideManaRegenerationNode(float x, float y) {
-		float rootWidth = Math.min(190f * density, getWidth() - 32f * density);
+		float rootWidth = Math.min(210f * density, getWidth() - 32f * density);
 		return Math.abs(x - getWidth() / 2f) <= rootWidth / 2f
-				&& Math.abs(y - 36f * density) <= 23f * density;
+				&& Math.abs(y - ROOT_Y * density) <= NODE_HEIGHT * density / 2f;
 	}
 
 	private boolean isInsideCrowFormNode(float x, float y) {
-		float nodeWidth = Math.min(122f * density, getWidth() * 0.42f);
-		float centerX = getNodeX(getWidth(), true, 1, 0);
+		float nodeWidth = Math.min(142f * density, getWidth() * 0.44f);
+		float centerX = getWidth() * 0.26f;
 		return Math.abs(x - centerX) <= nodeWidth / 2f
-				&& Math.abs(y - 112f * density) <= 17f * density;
+				&& Math.abs(y - BRANCH_Y * density) <= NODE_HEIGHT * density / 2f;
+	}
+
+	private boolean isInsideRavenMarkNode(float x, float y) {
+		float nodeWidth = Math.min(142f * density, getWidth() * 0.44f);
+		float centerX = getWidth() * 0.74f;
+		return Math.abs(x - centerX) <= nodeWidth / 2f
+				&& Math.abs(y - BRANCH_Y * density) <= NODE_HEIGHT * density / 2f;
+	}
+
+	private boolean isInsideBlackwingCounterNode(float x, float y) {
+		float nodeWidth = Math.min(142f * density, getWidth() * 0.44f);
+		float centerX = getWidth() * 0.26f;
+		return Math.abs(x - centerX) <= nodeWidth / 2f
+				&& Math.abs(y - COUNTER_Y * density) <= NODE_HEIGHT * density / 2f;
+	}
+
+	private boolean isInsideMurderOfCrowsNode(float x, float y) {
+		float nodeWidth = Math.min(142f * density, getWidth() * 0.44f);
+		float centerX = getWidth() * 0.74f;
+		return Math.abs(x - centerX) <= nodeWidth / 2f
+				&& Math.abs(y - COUNTER_Y * density) <= NODE_HEIGHT * density / 2f;
 	}
 
 	private int manaRegenerationLevel() {
 		return player == null ? 0 : player.getSkillLevel(SkillCollection.SkillID.manaRegeneration);
 	}
 
-	private int crowFormLevel() {
-		return player == null ? 0 : player.getSkillLevel(SkillCollection.SkillID.crowForm);
+	private boolean manaRegenerationLearned() {
+		return manaRegenerationLevel() > 0;
 	}
 
 	private boolean hasMageSkill() {
 		return player != null && player.getSkillLevel(SkillCollection.SkillID.fightstyleMage) > 0;
+	}
+
+	private int crowFormLevel() {
+		return player == null ? 0 : player.getSkillLevel(SkillCollection.SkillID.crowForm);
+	}
+
+	private int ravenMarkLevel() {
+		return player == null ? 0 : player.getSkillLevel(SkillCollection.SkillID.ravenMark);
+	}
+
+	private int blackwingCounterLevel() {
+		return player == null ? 0 : player.getSkillLevel(SkillCollection.SkillID.blackwingCounter);
+	}
+
+	private int murderOfCrowsLevel() {
+		return player == null ? 0 : player.getSkillLevel(SkillCollection.SkillID.murderOfCrows);
 	}
 
 	@Override
@@ -170,13 +239,6 @@ public final class MagicAbilityTreeView extends View {
 					clickedSkill == null ? SkillCollection.SkillID.manaRegeneration : clickedSkill);
 		}
 		return true;
-	}
-
-	private static float getNodeX(float width, boolean leftSide, int count, int node) {
-		float min = leftSide ? 0.06f : 0.56f;
-		float max = leftSide ? 0.44f : 0.94f;
-		if (count == 1) return width * (min + max) / 2f;
-		return width * (min + (max - min) * node / (count - 1f));
 	}
 
 	private void drawNode(Canvas canvas, float centerX, float centerY, float width,
@@ -197,7 +259,7 @@ public final class MagicAbilityTreeView extends View {
 
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		float treeHeight = 112f + (BRANCH_COUNTS.length - 1) * 72f + 34f / 2f + 16f;
+		float treeHeight = COUNTER_Y + NODE_HEIGHT / 2f + 16f;
 		int desiredHeight = (int) (treeHeight * density);
 		int height = resolveSize(desiredHeight, heightMeasureSpec);
 		int widthMode = MeasureSpec.getMode(widthMeasureSpec);

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.gpl.rpg.AndorsTrail.AndorsTrailApplication;
 import com.gpl.rpg.AndorsTrail.AndorsTrailPreferences;
+import com.gpl.rpg.AndorsTrail.R;
 import com.gpl.rpg.AndorsTrail.context.ControllerContext;
 import com.gpl.rpg.AndorsTrail.context.WorldContext;
 import com.gpl.rpg.AndorsTrail.controller.Constants;
@@ -33,12 +34,14 @@ import com.gpl.rpg.AndorsTrail.util.CoordRect;
 import com.gpl.rpg.AndorsTrail.util.Size;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Style;
-import android.graphics.Path;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
@@ -75,8 +78,12 @@ public final class MainView extends SurfaceView
 	private final SurfaceHolder holder;
 	private final Paint mPaint = new Paint();
 	private final Paint debugPaint = new Paint();
-	private final Paint crowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-	private final Paint crowGlowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+	private final Bitmap crowSprites;
+	private final Paint crowSpritePaint = new Paint();
+	private final Rect crowSpriteSource = new Rect();
+	private final RectF crowSpriteDestination = new RectF();
+	private static final int CROW_SPRITE_SIZE = 32;
+	private static final int CROW_SPRITE_FRAME_COUNT = 4;
 	private final int[] debugColors = {Color.MAGENTA, Color.BLUE, Color.CYAN, Color.GREEN, Color.YELLOW, Color.RED, Color.WHITE};
 	private final CoordRect p1x1 = new CoordRect(new Coord(), new Size(1,1));
 	private boolean hasSurface = false;
@@ -124,6 +131,9 @@ public final class MainView extends SurfaceView
 		this.tileSize = world.tileManager.tileSize;
 		this.inputController = controllers.inputController;
 		this.preferences = app.getPreferences();
+		BitmapFactory.Options crowSpriteOptions = new BitmapFactory.Options();
+		crowSpriteOptions.inScaled = false;
+		this.crowSprites = BitmapFactory.decodeResource(getResources(), R.drawable.crow_flight, crowSpriteOptions);
 
 		alternateColorFilterPaint.setStyle(Style.FILL);
 		
@@ -292,6 +302,8 @@ public final class MainView extends SurfaceView
 		for (VisualEffectAnimation effect : effects) {
 			if (effect.isCrowFlock()) {
 				drawCrowFlock(canvas, effect);
+			} else if (effect.isCrowAttack()) {
+				drawCrowAttack(canvas, effect);
 			} else {
 				int tileID = effect.tileID;
 				int textYOffset = effect.textYOffset;
@@ -303,70 +315,96 @@ public final class MainView extends SurfaceView
 		}
 	}
 
-	private void drawCrowFlock(Canvas canvas, VisualEffectAnimation effect) {
-		float progress = effect.getCrowProgress();
-		float centerX = (effect.position.x - mapViewArea.topLeft.x) * tileSize + tileSize / 2f;
-		float centerY = (effect.position.y - mapViewArea.topLeft.y) * tileSize + tileSize / 2f;
-		float flight = tileSize * (0.15f + progress * 0.95f);
-		float[] xPaths = {-0.9f, -0.48f, 0.04f, 0.55f, 0.92f};
-		float[] yPaths = {-0.32f, 0.46f, -0.58f, 0.38f, -0.08f};
-		float[] headings = {-34f, 22f, -14f, 31f, -26f};
-		float timeline = effect.getCurrentFrame() / (float) Math.max(1, effect.getLastFrame());
-		int alpha = (int) (255 * Math.min(1f, (1f - timeline) * 5f));
-		float returningRotation = effect.areCrowsReturning() ? 180f : 0f;
+	private void drawCrowAttack(Canvas canvas, VisualEffectAnimation effect) {
+		boolean returning = effect.areAttackCrowsReturning();
+		float progress = returning
+				? effect.getCrowAttackReturnProgress()
+				: effect.getCrowAttackProgress();
+		float originX = (effect.position.x - mapViewArea.topLeft.x) * tileSize + tileSize / 2f;
+		float originY = (effect.position.y - mapViewArea.topLeft.y) * tileSize + tileSize / 2f;
+		float[] formationX = {-0.62f, -0.31f, 0f, 0.31f, 0.62f};
+		float[] formationY = {-0.45f, 0.35f, -0.62f, 0.55f, -0.08f};
 
-		for (int i = 0; i < xPaths.length; i++) {
-			float x = centerX + xPaths[i] * flight;
-			float y = centerY + yPaths[i] * flight;
-			float wingBeat = (float) Math.sin(timeline * Math.PI * 16 + i * 1.7f) * 0.45f;
-			float size = tileSize * (0.38f + (i % 2) * 0.06f);
-			drawCrow(canvas, x, y, size, headings[i] + returningRotation, wingBeat, alpha);
+		for (Coord target : effect.crowAttackTargets) {
+			float targetX = (target.x - mapViewArea.topLeft.x) * tileSize + tileSize / 2f;
+			float targetY = (target.y - mapViewArea.topLeft.y) * tileSize + tileSize / 2f;
+			float dx = targetX - originX;
+			float dy = targetY - originY;
+			float distance = (float) Math.sqrt(dx * dx + dy * dy);
+			float perpendicularX = distance == 0 ? 0 : -dy / distance;
+			float perpendicularY = distance == 0 ? 0 : dx / distance;
+
+			for (int i = 0; i < formationX.length; i++) {
+				float birdProgress = Math.min(1f, Math.max(0f, progress * 1.16f - i * 0.035f));
+				float easedProgress = 1f - (float) Math.pow(1f - birdProgress, 2);
+				float playerFormationX = originX + formationX[i] * tileSize;
+				float playerFormationY = originY + formationY[i] * tileSize;
+				float targetFormationX = targetX + formationX[i] * tileSize * 0.8f;
+				float targetFormationY = targetY + formationY[i] * tileSize * 0.8f;
+				float startX = returning ? targetFormationX : playerFormationX;
+				float startY = returning ? targetFormationY : playerFormationY;
+				float endX = returning ? playerFormationX : targetFormationX;
+				float endY = returning ? playerFormationY : targetFormationY;
+				float arc = (float) Math.sin(birdProgress * Math.PI) * tileSize * (i - 2) * 0.045f;
+				float x = startX + (endX - startX) * easedProgress + perpendicularX * arc;
+				float y = startY + (endY - startY) * easedProgress + perpendicularY * arc;
+				int alpha = returning
+						? (int) (255 * Math.min(1f, (1f - birdProgress) * 2.5f))
+						: birdProgress > 0.82f
+								? (int) (255 * (1f - (birdProgress - 0.82f) / 0.18f))
+								: 255;
+				float rotation = (float) Math.toDegrees(Math.atan2(
+						returning ? -dy : dy, returning ? -dx : dx));
+				int frame = (effect.getCurrentFrame() / 2 + i) % CROW_SPRITE_FRAME_COUNT;
+				drawCrow(canvas, x, y, tileSize * 0.23f, rotation, alpha, frame);
+			}
 		}
 	}
 
-	private void drawCrow(Canvas canvas, float x, float y, float size, float rotation, float wingBeat, int alpha) {
+	private void drawCrowFlock(Canvas canvas, VisualEffectAnimation effect) {
+		float progress = effect.getCrowProgress();
+		float burstProgress = effect.areCrowsReturning() ? progress : 1f - (float) Math.pow(1f - progress, 4);
+		float centerX = (effect.position.x - mapViewArea.topLeft.x) * tileSize + tileSize / 2f;
+		float centerY = (effect.position.y - mapViewArea.topLeft.y) * tileSize + tileSize / 2f;
+		float flight = tileSize * (0.15f + burstProgress * 0.95f);
+		float[] xPaths = {-0.9f, -0.48f, 0.04f, 0.55f, 0.92f};
+		float[] yPaths = {-0.32f, 0.46f, -0.58f, 0.38f, -0.08f};
+		float returnProgress = effect.getCrowReturnProgress();
+		int alpha = effect.areCrowsReturning()
+				? (int) (255 * Math.min(1f, (1f - returnProgress) * 2.5f))
+				: 255;
+
+		for (int i = 0; i < xPaths.length; i++) {
+			float pathX = xPaths[i] * flight;
+			float pathY = yPaths[i] * flight;
+			float heading;
+			if (effect.areCrowsReturning()) {
+				float angle = (float) Math.atan2(pathY, pathX) - returnProgress * (float) (Math.PI * 3);
+				float radius = (float) Math.sqrt(pathX * pathX + pathY * pathY) * (1f - returnProgress);
+				pathX = (float) Math.cos(angle) * radius;
+				pathY = (float) Math.sin(angle) * radius;
+				heading = (float) Math.toDegrees(Math.atan2(
+						-(float) Math.sin(angle) - (float) (Math.PI * 3) * (float) Math.cos(angle),
+						-(float) Math.cos(angle) + (float) (Math.PI * 3) * (float) Math.sin(angle)));
+			} else {
+				heading = (float) Math.toDegrees(Math.atan2(pathY, pathX));
+			}
+			float x = centerX + pathX;
+			float y = centerY + pathY;
+			float size = tileSize * (0.22f + (i % 2) * 0.025f) * (1f - returnProgress * 0.35f);
+			int frame = (effect.getCurrentFrame() / 2 + i) % CROW_SPRITE_FRAME_COUNT;
+			drawCrow(canvas, x, y, size, heading + (i - 2) * 3f, alpha, frame);
+		}
+	}
+
+	private void drawCrow(Canvas canvas, float x, float y, float size, float rotation, int alpha, int frame) {
 		canvas.save();
 		canvas.translate(x, y);
 		canvas.rotate(rotation);
-		canvas.scale(size, size);
-
-		Path silhouette = new Path();
-		silhouette.moveTo(-0.28f, -0.05f);
-		silhouette.lineTo(-0.92f, -0.42f);
-		silhouette.lineTo(-0.62f, -0.02f);
-		silhouette.lineTo(-0.97f, 0.12f);
-		silhouette.lineTo(-0.45f, 0.12f);
-		silhouette.lineTo(-0.18f, 0.22f);
-		silhouette.lineTo(0.36f, 0.12f);
-		silhouette.lineTo(0.78f, 0.02f);
-		silhouette.lineTo(0.38f, -0.08f);
-		silhouette.close();
-
-		Path wings = new Path();
-		wings.moveTo(-0.18f, -0.02f);
-		wings.quadTo(-0.48f, -0.3f - wingBeat, -0.84f, -0.92f - wingBeat);
-		wings.quadTo(-0.18f, -0.66f - wingBeat, 0.02f, -0.02f);
-		wings.quadTo(0.44f, -0.68f + wingBeat, 0.78f, -0.86f + wingBeat);
-		wings.quadTo(0.5f, -0.2f + wingBeat, 0.25f, 0.02f);
-		wings.close();
-
-		crowGlowPaint.setColor(Color.argb(alpha / 4, 130, 185, 255));
-		crowGlowPaint.setStyle(Paint.Style.STROKE);
-		crowGlowPaint.setStrokeWidth(0.1f);
-		canvas.drawPath(silhouette, crowGlowPaint);
-		canvas.drawPath(wings, crowGlowPaint);
-		crowPaint.setColor(Color.argb(alpha, 18, 21, 35));
-		crowPaint.setStyle(Paint.Style.FILL);
-		canvas.drawPath(silhouette, crowPaint);
-		canvas.drawPath(wings, crowPaint);
-		canvas.drawOval(-0.22f, -0.12f, 0.42f, 0.18f, crowPaint);
-		canvas.drawCircle(0.38f, -0.13f, 0.13f, crowPaint);
-		Path beak = new Path();
-		beak.moveTo(0.46f, -0.15f);
-		beak.lineTo(0.78f, -0.1f);
-		beak.lineTo(0.47f, -0.04f);
-		beak.close();
-		canvas.drawPath(beak, crowPaint);
+		crowSpriteSource.set(frame * CROW_SPRITE_SIZE, 0, (frame + 1) * CROW_SPRITE_SIZE, CROW_SPRITE_SIZE);
+		crowSpriteDestination.set(-size, -size, size, size);
+		crowSpritePaint.setAlpha(alpha);
+		canvas.drawBitmap(crowSprites, crowSpriteSource, crowSpriteDestination, crowSpritePaint);
 		canvas.restore();
 	}
 	

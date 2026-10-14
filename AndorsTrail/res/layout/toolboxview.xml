@@ -19,6 +19,14 @@
         android:src="@drawable/ui_icon_combat" />
 
     <ImageButton
+        android:id="@+id/toolbox_magic"
+        style="@style/toolboxButtonTile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/heroinfo_magic"
+        android:src="@drawable/ui_icon_skill" />
+
+    <ImageButton
         android:id="@+id/toolbox_map"
         style="@style/toolboxButtonTile"
         android:layout_width="wrap_content"

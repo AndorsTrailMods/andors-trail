@@ -28,7 +28,6 @@ import com.gpl.rpg.AndorsTrail.controller.listeners.CombatSelectionListener;
 import com.gpl.rpg.AndorsTrail.controller.listeners.CombatTurnListener;
 import com.gpl.rpg.AndorsTrail.model.ability.ActorCondition;
 import com.gpl.rpg.AndorsTrail.model.ability.ActorConditionType;
-import com.gpl.rpg.AndorsTrail.model.ability.SkillCollection;
 import com.gpl.rpg.AndorsTrail.model.actor.Actor;
 import com.gpl.rpg.AndorsTrail.model.actor.Monster;
 import com.gpl.rpg.AndorsTrail.model.actor.Player;
@@ -40,7 +39,6 @@ public final class CombatView extends RelativeLayout implements CombatSelectionL
 	private final Button attackMoveButton;
 	private final Button endTurnButton;
 	private final Button fleeButton;
-	private final Button crowFormButton;
 	private final ImageButton monsterInfo;
 	private final RangeBar monsterHealth;
 	private final ImageButton monsterConditionsButton;
@@ -111,11 +109,6 @@ public final class CombatView extends RelativeLayout implements CombatSelectionL
 		playerAPBar.init(R.drawable.ui_progress_ap, R.string.status_ap);
 		playerManaBar = (RangeBar) findViewById(R.id.combatview_manastatus);
 		playerManaBar.init(R.drawable.ui_progress_mp, R.string.status_mp);
-		crowFormButton = (Button) findViewById(R.id.combatview_crowform);
-		crowFormButton.setOnClickListener((View v) -> {
-			if (c.primeCrowForm()) updateCrowFormButton();
-		});
-
 		monsterInfo = (ImageButton) findViewById(R.id.combatview_monsterinfo);
 		monsterInfo.setOnClickListener(new OnClickListener() {
 			@Override
@@ -202,32 +195,12 @@ public final class CombatView extends RelativeLayout implements CombatSelectionL
 	}
 	private void updatePlayerMana() {
 		playerManaBar.update(player.mana.max, player.mana.current);
-		updateCrowFormButton();
 	}
 
-	private void updateCrowFormButton() {
-		if (player.getSkillLevel(SkillCollection.SkillID.crowForm) < 1) {
-			crowFormButton.setVisibility(View.GONE);
+	private void updateSelectedMonster(Monster selectedMonster) {
+		if (currentMonster != null && currentMonster == selectedMonster) {
 			return;
 		}
-		crowFormButton.setVisibility(View.VISIBLE);
-		if (player.crowFormPrimed) {
-			crowFormButton.setText(R.string.combat_crowform_primed);
-		} else if (player.crowFormCooldownTurns > 0) {
-			crowFormButton.setText(res.getString(R.string.combat_crowform_cooldown, player.crowFormCooldownTurns));
-		} else {
-			int cost = SkillCollection.getCrowFormManaCost(
-					player.getSkillLevel(SkillCollection.SkillID.crowForm));
-			crowFormButton.setText(res.getString(R.string.combat_crowform, cost));
-		}
-		int cost = SkillCollection.getCrowFormManaCost(player.getSkillLevel(SkillCollection.SkillID.crowForm));
-		crowFormButton.setEnabled(!player.crowFormPrimed
-				&& player.crowFormCooldownTurns == 0
-				&& world.model.uiSelections.isPlayersCombatTurn
-				&& player.mana.current >= cost);
-	}
-	private void updateSelectedMonster(Monster selectedMonster) {
-		if (currentMonster != null && currentMonster == selectedMonster) return;
 
 		attackMoveButton.setEnabled(true);
 		monsterBar.setVisibility(View.INVISIBLE);
@@ -382,7 +355,6 @@ public final class CombatView extends RelativeLayout implements CombatSelectionL
 	@Override
 	public void onNewPlayerTurn() {
 		updateTurnInfo(null);
-		updateCrowFormButton();
 	}
 
 	@Override

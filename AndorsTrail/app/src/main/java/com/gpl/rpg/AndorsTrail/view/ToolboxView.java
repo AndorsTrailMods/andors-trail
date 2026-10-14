@@ -31,12 +31,14 @@ public final class ToolboxView extends LinearLayout implements OnClickListener {
 	private final Animation showAnimation;
 	private final Animation hideAnimation;
 	private final ImageButton toolbox_quickitems;
+	private final ImageButton toolbox_magic;
 	private final ImageButton toolbox_map;
 	private final ImageButton toolbox_save;
 	private final ImageButton toolbox_combatlog;
 	private ImageButton toggleToolboxVisibility;
 	private View focusReturnView;
 	private QuickitemView quickitemView;
+	private MagicAbilityView magicAbilityView;
 	private static final int quickSlotIcon = R.drawable.ui_icon_equipment;
 	private final Drawable quickSlotIconsLockedDrawable;
 	private final Resources res;
@@ -62,6 +64,8 @@ public final class ToolboxView extends LinearLayout implements OnClickListener {
 
 		toolbox_quickitems = (ImageButton)findViewById(R.id.toolbox_quickitems);
 		toolbox_quickitems.setOnClickListener(this);
+		toolbox_magic = (ImageButton)findViewById(R.id.toolbox_magic);
+		toolbox_magic.setOnClickListener(this);
 		toolbox_map = (ImageButton)findViewById(R.id.toolbox_map);
 		toolbox_map.setOnClickListener(this);
 		toolbox_save = (ImageButton)findViewById(R.id.toolbox_save);
@@ -76,9 +80,11 @@ public final class ToolboxView extends LinearLayout implements OnClickListener {
 		});
 	}
 
-	public void registerToolboxViews(ImageButton toggleVisibility, QuickitemView quickitemView) {
+	public void registerToolboxViews(ImageButton toggleVisibility, QuickitemView quickitemView,
+			MagicAbilityView magicAbilityView) {
 		this.toggleToolboxVisibility = toggleVisibility;
 		this.quickitemView = quickitemView;
+		this.magicAbilityView = magicAbilityView;
 		toggleVisibility.setOnClickListener(this);
 		updateIcons();
 	}
@@ -94,6 +100,8 @@ public final class ToolboxView extends LinearLayout implements OnClickListener {
 			toggleVisibility();
 		} else if (btn == toolbox_quickitems) {
 			toggleQuickslotItemView();
+		} else if (btn == toolbox_magic) {
+			toggleMagicAbilityView();
 		} else if (btn == toolbox_map) {
 			if (!WorldMapController.displayWorldMap(context, world)) return;
 			hide(false);
@@ -108,6 +116,7 @@ public final class ToolboxView extends LinearLayout implements OnClickListener {
 	}
 
 	private void toggleQuickslotItemView() {
+		magicAbilityView.setVisibility(View.GONE);
 		// Toggle the visibility of the quickitem view and save the new state to prefs
 		preferences.setQuickslotsVisible(!preferences.quickslotsVisible);
 		// Toolbox is currently open, so if prefs say to, force the quickbuttons visible even if toggle is off.
@@ -117,6 +126,20 @@ public final class ToolboxView extends LinearLayout implements OnClickListener {
 			quickitemView.updateVisibility();
 		}
 		this.updateToggleQuickSlotItemsIcon();
+	}
+
+	private void toggleMagicAbilityView() {
+		quickitemView.setVisibility(View.GONE);
+		if (magicAbilityView.getVisibility() == View.VISIBLE) {
+			magicAbilityView.setVisibility(View.GONE);
+			if (preferences.showQuickslotsWhenToolboxIsVisible) {
+				quickitemView.setVisibility(View.VISIBLE);
+			} else {
+				quickitemView.updateVisibility();
+			}
+		} else {
+			magicAbilityView.setVisibility(View.VISIBLE);
+		}
 	}
 
 	private void toggleVisibility() {
@@ -136,6 +159,7 @@ public final class ToolboxView extends LinearLayout implements OnClickListener {
 		}
 
 		quickitemView.updateVisibility();
+		magicAbilityView.setVisibility(View.GONE);
 
 		setToolboxIcon(false);
 
@@ -157,6 +181,7 @@ public final class ToolboxView extends LinearLayout implements OnClickListener {
 		if (preferences.showQuickslotsWhenToolboxIsVisible) {
 			quickitemView.setVisibility(View.VISIBLE);
 		}
+		magicAbilityView.setVisibility(View.GONE);
 
 		this.updateToggleQuickSlotItemsIcon();
 		setToolboxIcon(true);
@@ -218,6 +243,7 @@ public final class ToolboxView extends LinearLayout implements OnClickListener {
 
 	// Getters for toolbar buttons
 	public ImageButton getToolboxQuickitemsButton() { return toolbox_quickitems; }
+	public ImageButton getToolboxMagicButton() { return toolbox_magic; }
 	public ImageButton getToolboxMapButton() { return toolbox_map; }
 	public ImageButton getToolboxSaveButton() { return toolbox_save; }
 	public ImageButton getToolboxCombatLogButton() { return toolbox_combatlog; }

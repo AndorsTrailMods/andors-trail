@@ -51,6 +51,7 @@ import com.gpl.rpg.AndorsTrail.view.ItemContainerAdapter;
 import com.gpl.rpg.AndorsTrail.view.MainView;
 import com.gpl.rpg.AndorsTrail.view.QuickButton;
 import com.gpl.rpg.AndorsTrail.view.QuickitemView;
+import com.gpl.rpg.AndorsTrail.view.MagicAbilityView;
 import com.gpl.rpg.AndorsTrail.view.QuickslotsItemContainerAdapter;
 import com.gpl.rpg.AndorsTrail.view.StatusView;
 import com.gpl.rpg.AndorsTrail.view.ToolboxView;
@@ -73,6 +74,7 @@ public final class MainActivity
 	private StatusView statusview;
 	private CombatView combatview;
 	private QuickitemView quickitemview;
+	private MagicAbilityView magicAbilityView;
 	private DisplayActiveActorConditionIcons activeConditions;
 	private ToolboxView toolboxview;
 
@@ -98,11 +100,12 @@ public final class MainActivity
 		statusview = (StatusView) findViewById(R.id.main_statusview);
 		combatview = (CombatView) findViewById(R.id.main_combatview);
 		quickitemview = (QuickitemView) findViewById(R.id.main_quickitemview);
+		magicAbilityView = (MagicAbilityView) findViewById(R.id.main_magicabilityview);
 		activeConditions = new DisplayActiveActorConditionIcons(controllers, world, this, (RelativeLayout) findViewById(R.id.statusview_activeconditions));
 		activeConditions.setTarget(world.model.player);
 		VirtualDpadView dpad = (VirtualDpadView) findViewById(R.id.main_virtual_dpad);
 		toolboxview = (ToolboxView) findViewById(R.id.main_toolboxview);
-		statusview.registerToolboxViews(toolboxview, quickitemview);
+		statusview.registerToolboxViews(toolboxview, quickitemview, magicAbilityView);
 		toolboxview.setFocusReturnView(mainview);
 
 		// Clear any pauses, in case this activity is being restarted
@@ -139,10 +142,12 @@ public final class MainActivity
 		dpad.updateVisibility(controllers.preferences);
 		quickitemview.updateVisibility();
 		quickitemview.setPosition();
+		magicAbilityView.setPosition();
 
 		// Define which views are in front of each other.
 		dpad.bringToFront();
 		quickitemview.bringToFront();
+		magicAbilityView.bringToFront();
 		toolboxview.bringToFront();
 		combatview.bringToFront();
 		statusview.bringToFront();
@@ -265,6 +270,7 @@ public final class MainActivity
 		combatview.unsubscribe();
 		mainview.unsubscribe();
 		quickitemview.unsubscribe();
+		magicAbilityView.unsubscribe();
 		statusview.unsubscribe();
 		controllers.movementController.playerMovementListeners.remove(this);
 		controllers.combatController.combatActionListeners.remove(this);
@@ -283,6 +289,7 @@ public final class MainActivity
 		controllers.movementController.playerMovementListeners.add(this);
 		statusview.subscribe();
 		quickitemview.subscribe();
+		magicAbilityView.subscribe();
 		mainview.subscribe();
 		combatview.subscribe();
 		activeConditions.subscribe();
@@ -335,6 +342,7 @@ public final class MainActivity
 	private void updateStatus() {
 		statusview.updateStatus();
 		quickitemview.refreshQuickitems();
+		magicAbilityView.refreshAbilities();
 		combatview.updateStatus();
 		toolboxview.updateIcons();
 	}
@@ -418,7 +426,12 @@ public final class MainActivity
 	@Override
 	public void onMonsterAttackMissed(Monster attacker, AttackResult attackResult) {
 		if (attackResult.isCrowForm) {
-			message(getString(R.string.combat_result_crowform, attacker.getName()));
+			if (attackResult.damage > 0) {
+				message(getString(R.string.combat_result_blackwing_counter,
+						attacker.getName(), attackResult.damage));
+			} else {
+				message(getString(R.string.combat_result_crowform, attacker.getName()));
+			}
 		} else {
 			message(getString(R.string.combat_result_monstermiss, attacker.getName()));
 		}

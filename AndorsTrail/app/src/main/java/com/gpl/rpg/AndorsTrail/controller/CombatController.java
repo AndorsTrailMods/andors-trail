@@ -37,6 +37,11 @@ public final class CombatController implements VisualEffectCompletedCallback {
 	public final CombatTurnListeners combatTurnListeners = new CombatTurnListeners();
 
 	private Monster currentActiveMonster = null;
+	private Monster ravenMarkedTarget;
+	private int ravenMarkCooldownTurns;
+	private int murderOfCrowsCooldownTurns;
+	private ArrayList<Monster> pendingMurderOfCrowsTargets;
+	private int pendingMurderOfCrowsDamage;
 	private final ArrayList<Loot> killedMonsterBags = new ArrayList<Loot>();
 	private int totalExpThisFight = 0;
 
@@ -77,6 +82,8 @@ public final class CombatController implements VisualEffectCompletedCallback {
 		world.model.player.crowFormPrimed = false;
 		world.model.player.crowFormCooldownTurns = 0;
 		world.model.player.crowFormUsesSinceCooldown = 0;
+		ravenMarkedTarget = null;
+		murderOfCrowsCooldownTurns = 0;
 		if (pickupLootBags) {
 			recordLootInCombatLog();
 		}
@@ -127,6 +134,11 @@ public final class CombatController implements VisualEffectCompletedCallback {
 		killedMonsterBags.clear();
 		totalExpThisFight = 0;
 		currentActiveMonster = null;
+		ravenMarkedTarget = null;
+		ravenMarkCooldownTurns = 0;
+		murderOfCrowsCooldownTurns = 0;
+		pendingMurderOfCrowsTargets = null;
+		pendingMurderOfCrowsDamage = 0;
 	}
 
 	public void setCombatSelection(Monster selectedMonster) {
@@ -356,6 +368,8 @@ public final class CombatController implements VisualEffectCompletedCallback {
 		if (player.crowFormCooldownTurns > 0 && --player.crowFormCooldownTurns == 0) {
 			player.crowFormUsesSinceCooldown = 0;
 		}
+		if (ravenMarkCooldownTurns > 0) ravenMarkCooldownTurns--;
+		if (murderOfCrowsCooldownTurns > 0) murderOfCrowsCooldownTurns--;
 		beginMonsterTurn(false);
 	}
 	private void beginMonsterTurn(boolean isFirstRound) {
@@ -488,8 +502,98 @@ public final class CombatController implements VisualEffectCompletedCallback {
 		return true;
 	}
 
+	public boolean castRavenMark(Monster target) {
+		Player player = world.model.player;
+		if (!world.model.uiSelections.isInCombat
+				|| !world.model.uiSelections.isPlayersCombatTurn
+				|| player.getSkillLevel(SkillCollection.SkillID.ravenMark) < 1
+				|| target == null
+				|| target.isDead()
+				|| world.model.uiSelections.selectedMonster != target
+				|| getRavenMarkedTarget() != null
+				|| ravenMarkCooldownTurns > 0
+				|| !controllers.actorStatsController.usePlayerMana(player, SkillCollection.RAVEN_MARK_MANA_COST)) {
+			return false;
+		}
+		ravenMarkedTarget = target;
+		return true;
+	}
+
+	public Monster getRavenMarkedTarget() {
+		if (ravenMarkedTarget != null && ravenMarkedTarget.isDead()) ravenMarkedTarget = null;
+		return ravenMarkedTarget;
+	}
+
+	public int getRavenMarkCooldownTurns() {
+		return ravenMarkCooldownTurns;
+	}
+
+	public boolean castMurderOfCrows() {
+		Player player = world.model.player;
+		int skillLevel = player.getSkillLevel(SkillCollection.SkillID.murderOfCrows);
+		if (!world.model.uiSelections.isInCombat
+				|| !world.model.uiSelections.isPlayersCombatTurn
+				|| skillLevel < 1
+				|| murderOfCrowsCooldownTurns > 0) {
+			return false;
+		}
+
+		ArrayList<Monster> targets = getAdjacentAggressiveMonsters();
+		if (targets.isEmpty()
+				|| !controllers.actorStatsController.usePlayerMana(player, SkillCollection.MURDER_OF_CROWS_MANA_COST)) return false;
+
+		murderOfCrowsCooldownTurns = SkillCollection.MURDER_OF_CROWS_COOLDOWN_TURNS;
+		pendingMurderOfCrowsTargets = targets;
+		pendingMurderOfCrowsDamage = SkillCollection.getMurderOfCrowsDamage(skillLevel);
+		ArrayList<Coord> targetPositions = new ArrayList<>(targets.size());
+		for (Monster target : targets) targetPositions.add(new Coord(target.position));
+		controllers.effectController.startCrowAttackEffect(
+				new Coord(player.position), targetPositions,
+				this, CALLBACK_MURDEROFCROWS_IMPACT, this, CALLBACK_MURDEROFCROWS_COMPLETED);
+		return true;
+	}
+
+	private void resolveMurderOfCrows() {
+		if (pendingMurderOfCrowsTargets == null) return;
+		ArrayList<Monster> targets = pendingMurderOfCrowsTargets;
+		int baseDamage = pendingMurderOfCrowsDamage;
+		pendingMurderOfCrowsTargets = null;
+		pendingMurderOfCrowsDamage = 0;
+		for (Monster target : targets) {
+			if (target.isDead()) continue;
+			int damage = Math.max(0, baseDamage - target.getDamageResistance());
+			controllers.actorStatsController.removeActorHealth(target, damage);
+			AttackResult attack = new AttackResult(true, false, damage, target.isDead());
+			combatActionListeners.onPlayerAttackSuccess(target, attack);
+			if (attack.targetDied) playerKilledMonster(target);
+		}
+	}
+
+	public int getMurderOfCrowsCooldownTurns() {
+		return murderOfCrowsCooldownTurns;
+	}
+
+	public boolean hasAdjacentAggressiveMonsters() {
+		return !getAdjacentAggressiveMonsters().isEmpty();
+	}
+
+	private ArrayList<Monster> getAdjacentAggressiveMonsters() {
+		ArrayList<Monster> targets = new ArrayList<Monster>();
+		for (MonsterSpawnArea area : world.model.currentMaps.map.spawnAreas) {
+			for (Monster monster : area.monsters) {
+				if (!monster.isDead() && monster.isAgressive(world.model.player)
+						&& monster.isAdjacentTo(world.model.player)) {
+					targets.add(monster);
+				}
+			}
+		}
+		return targets;
+	}
+
 	private static final int CALLBACK_MONSTERATTACK = 0;
 	private static final int CALLBACK_PLAYERATTACK = 1;
+	private static final int CALLBACK_MURDEROFCROWS_IMPACT = 2;
+	private static final int CALLBACK_MURDEROFCROWS_COMPLETED = 3;
 
 	@Override
 	public void onVisualEffectCompleted(int callbackValue) {
@@ -498,6 +602,10 @@ public final class CombatController implements VisualEffectCompletedCallback {
 			monsterAttackCompleted();
 		} else if (callbackValue == CALLBACK_PLAYERATTACK) {
 			playerAttackCompleted();
+		} else if (callbackValue == CALLBACK_MURDEROFCROWS_IMPACT) {
+			resolveMurderOfCrows();
+		} else if (callbackValue == CALLBACK_MURDEROFCROWS_COMPLETED) {
+			playerActionCompleted();
 		}
 	}
 
@@ -505,6 +613,9 @@ public final class CombatController implements VisualEffectCompletedCallback {
 		if (lastAttackResult.targetDied) {
 			controllers.mapController.handlePlayerDeath();
 			return;
+		}
+		if (lastAttackResult.counterTargetDied) {
+			playerKilledMonster(currentActiveMonster);
 		}
 		handleNextMonsterAction();
 	}
@@ -643,18 +754,10 @@ public final class CombatController implements VisualEffectCompletedCallback {
 			applyAttackMissStatusEffects(attacker, target);
 			return AttackResult.MISS;
 		}
-		if (target == world.model.player && world.model.player.crowFormPrimed) {
-			Player player = world.model.player;
-			player.crowFormPrimed = false;
-			player.crowFormAnimating = true;
-			player.crowFormUsesSinceCooldown++;
-			int skillLevel = player.getSkillLevel(SkillCollection.SkillID.crowForm);
-			if (player.crowFormUsesSinceCooldown >= SkillCollection.getCrowFormUsesBeforeCooldown(skillLevel)) {
-				player.crowFormCooldownTurns = SkillCollection.getCrowFormCooldownTurns(skillLevel);
-			}
-			return AttackResult.CROW_FORM;
+		if (target == world.model.player && world.model.player.crowFormPrimed
+				&& world.model.player.getSkillLevel(SkillCollection.SkillID.blackwingCounter) < 1) {
+			return blockAttackWithCrowForm(attacker, 0);
 		}
-
 		int damage = Constants.rollValue(attacker.getDamagePotential());
 		boolean isCriticalHit = false;
 		if (hasCriticalAttack(attacker, target)) {
@@ -663,13 +766,38 @@ public final class CombatController implements VisualEffectCompletedCallback {
 				damage *= attacker.getCriticalMultiplier();
 			}
 		}
+		if (attacker == world.model.player && target == ravenMarkedTarget) {
+			damage += SkillCollection.getRavenMarkBonusDamage(
+					world.model.player.getSkillLevel(SkillCollection.SkillID.ravenMark));
+			ravenMarkedTarget = null;
+			ravenMarkCooldownTurns = 2;
+		}
 		damage -= target.getDamageResistance();
 		if (damage < 0) damage = 0;
+		if (target == world.model.player && world.model.player.crowFormPrimed) {
+			return blockAttackWithCrowForm(attacker, damage);
+		}
 		controllers.actorStatsController.removeActorHealth(target, damage);
 
 		applyAttackHitStatusEffects(attacker, target);
 
 		return new AttackResult(true, isCriticalHit, damage, target.isDead());
+	}
+
+	private AttackResult blockAttackWithCrowForm(Actor attacker, int preventedDamage) {
+		Player player = world.model.player;
+		player.crowFormPrimed = false;
+		player.crowFormAnimating = true;
+		player.crowFormUsesSinceCooldown++;
+		int skillLevel = player.getSkillLevel(SkillCollection.SkillID.crowForm);
+		if (player.crowFormUsesSinceCooldown >= SkillCollection.getCrowFormUsesBeforeCooldown(skillLevel)) {
+			player.crowFormCooldownTurns = SkillCollection.getCrowFormCooldownTurns(skillLevel);
+		}
+
+		int counterDamage = SkillCollection.getBlackwingCounterDamage(preventedDamage,
+				player.getSkillLevel(SkillCollection.SkillID.blackwingCounter));
+		if (counterDamage > 0) controllers.actorStatsController.removeActorHealth(attacker, counterDamage);
+		return new AttackResult(false, false, counterDamage, false, true, attacker.isDead());
 	}
 
 	private void applyAttackHitStatusEffects(Actor attacker, Actor target) {

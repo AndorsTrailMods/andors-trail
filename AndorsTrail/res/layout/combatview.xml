@@ -76,15 +76,6 @@
                     android:textSize="@dimen/actionbar_text" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/combatview_crowform"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="marquee"
-                android:minHeight="0dp"
-                android:singleLine="true"
-                android:text="@string/combat_crowform"
-                android:textSize="@dimen/actionbar_text" />
         </LinearLayout>
 
         <TextView

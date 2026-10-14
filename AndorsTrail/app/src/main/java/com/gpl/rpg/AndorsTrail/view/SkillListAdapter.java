@@ -70,7 +70,10 @@ public final class SkillListAdapter extends ArrayAdapter<SkillInfo> {
 	}
 	private static boolean shouldDisplaySkill(SkillInfo skill, Player player) {
 		if (skill.id == SkillCollection.SkillID.manaRegeneration
-				|| skill.id == SkillCollection.SkillID.crowForm) return false;
+				|| skill.id == SkillCollection.SkillID.crowForm
+				|| skill.id == SkillCollection.SkillID.ravenMark
+				|| skill.id == SkillCollection.SkillID.blackwingCounter
+				|| skill.id == SkillCollection.SkillID.murderOfCrows) return false;
 		if (player.hasSkill(skill.id)) return true;
 		if (skill.levelupVisibility == SkillInfo.LevelUpType.alwaysShown) return true;
 		return false;
@@ -161,6 +164,9 @@ public final class SkillListAdapter extends ArrayAdapter<SkillInfo> {
 		case fightstyleMage: return R.string.skill_shortdescription_fightstyle_mage;
 		case manaRegeneration: return R.string.skill_shortdescription_mana_regeneration;
 		case crowForm: return R.string.skill_shortdescription_crow_form;
+		case ravenMark: return R.string.skill_shortdescription_raven_mark;
+		case blackwingCounter: return R.string.skill_shortdescription_blackwing_counter;
+		case murderOfCrows: return R.string.skill_shortdescription_murder_of_crows;
 		case specializationDualWield: return R.string.skill_shortdescription_specialization_dualwield;
 		case specialization2hand: return R.string.skill_shortdescription_specialization_2hand;
 		case specializationWeaponShield: return R.string.skill_shortdescription_specialization_weapon_shield;

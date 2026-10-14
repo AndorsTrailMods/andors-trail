@@ -59,6 +59,9 @@ public final class SkillCollection {
 		,specializationWarlock
 		,manaRegeneration
 		,crowForm
+		,ravenMark
+		,blackwingCounter
+		,murderOfCrows
 	}
 
 	// should be in the same number &U order as in arrays.xml
@@ -71,6 +74,18 @@ public final class SkillCollection {
 				utility, //	efficiency?
 				specialty,
 				proficiency
+	}
+
+	private static final SkillID[] MAGIC_SKILL_PROGRESSION = {
+			SkillID.manaRegeneration,
+			SkillID.crowForm
+	};
+
+	public static SkillID getPreviousMagicSkill(SkillID skillID) {
+		for (int i = 1; i < MAGIC_SKILL_PROGRESSION.length; i++) {
+			if (MAGIC_SKILL_PROGRESSION[i] == skillID) return MAGIC_SKILL_PROGRESSION[i - 1];
+		}
+		return null;
 	}
 
 
@@ -96,6 +111,15 @@ public final class SkillCollection {
 	public static final int PER_SKILLPOINT_INCREASE_REGENERATION = 1;
 	public static final int MAX_LEVEL_MANA_REGENERATION = 10;
 	public static final int MAX_LEVEL_CROW_FORM = 5;
+	public static final int MAX_LEVEL_RAVEN_MARK = 5;
+	public static final int MAX_LEVEL_BLACKWING_COUNTER = 5;
+	public static final int BLACKWING_COUNTER_MAX_REFLECT_PERCENT = 25;
+	public static final int MAX_LEVEL_MURDER_OF_CROWS = 5;
+	public static final int MURDER_OF_CROWS_MANA_COST = 5;
+	public static final int MURDER_OF_CROWS_COOLDOWN_TURNS = 2;
+	public static final int MURDER_OF_CROWS_DAMAGE_PER_LEVEL = 2;
+	public static final int RAVEN_MARK_MANA_COST = 5;
+	public static final int RAVEN_MARK_DAMAGE_PER_LEVEL = 2;
 	public static final int PER_SKILLPOINT_INCREASE_EXPLOSS_PERCENT = 20;
 	public static final int PER_SKILLPOINT_INCREASE_RESISTANCE_CHANCE_PERCENT = 10;
 	public static final int PER_SKILLPOINT_INCREASE_RESISTANCE_SHADOW_BLESS = 5;
@@ -125,6 +149,29 @@ public final class SkillCollection {
 
 	public static int getCrowFormUsesBeforeCooldown(int skillLevel) {
 		return skillLevel >= MAX_LEVEL_CROW_FORM ? 2 : 1;
+	}
+
+	public static int getRavenMarkBonusDamage(int skillLevel) {
+		return RAVEN_MARK_DAMAGE_PER_LEVEL * Math.max(0, Math.min(skillLevel, MAX_LEVEL_RAVEN_MARK));
+	}
+
+	public static int getBlackwingCounterDamage(int preventedDamage, int skillLevel) {
+		int level = Math.max(0, Math.min(skillLevel, MAX_LEVEL_BLACKWING_COUNTER));
+		return preventedDamage * BLACKWING_COUNTER_MAX_REFLECT_PERCENT * level
+				/ (100 * MAX_LEVEL_BLACKWING_COUNTER);
+	}
+
+	public static int getMurderOfCrowsDamage(int skillLevel) {
+		int level = Math.max(0, Math.min(skillLevel, MAX_LEVEL_MURDER_OF_CROWS));
+		return MURDER_OF_CROWS_DAMAGE_PER_LEVEL * level;
+	}
+
+	public static SkillID getExclusiveCrowBranchSkill(SkillID skillID) {
+		if (skillID == SkillID.crowForm) return SkillID.ravenMark;
+		if (skillID == SkillID.ravenMark) return SkillID.crowForm;
+		if (skillID == SkillID.blackwingCounter) return SkillID.murderOfCrows;
+		if (skillID == SkillID.murderOfCrows) return SkillID.blackwingCounter;
+		return null;
 	}
 	public static final int PER_SKILLPOINT_INCREASE_UNARMORED_BC = 10;
 	public static final int PER_SKILLPOINT_INCREASE_LIGHT_ARMOR_BC_PERCENT = 30;
@@ -274,6 +321,17 @@ public final class SkillCollection {
 		initializeSkill(new SkillInfo(SkillID.manaRegeneration, MAX_LEVEL_MANA_REGENERATION, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, null, position++));
 		initializeSkill(new SkillInfo(SkillID.crowForm, MAX_LEVEL_CROW_FORM, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, new SkillLevelRequirement[] {
 				SkillLevelRequirement.requireOtherSkillAtLeast(SkillID.fightstyleMage, 1)
+				,SkillLevelRequirement.requireOtherSkillAtLeast(SkillID.manaRegeneration, 1)
+			}, position++));
+		initializeSkill(new SkillInfo(SkillID.ravenMark, MAX_LEVEL_RAVEN_MARK, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, new SkillLevelRequirement[] {
+				SkillLevelRequirement.requireOtherSkillAtLeast(SkillID.fightstyleMage, 1)
+				,SkillLevelRequirement.requireOtherSkillAtLeast(SkillID.manaRegeneration, 1)
+			}, position++));
+		initializeSkill(new SkillInfo(SkillID.blackwingCounter, MAX_LEVEL_BLACKWING_COUNTER, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, new SkillLevelRequirement[] {
+				SkillLevelRequirement.requireOtherSkillAtLeast(SkillID.crowForm, 1)
+			}, position++));
+		initializeSkill(new SkillInfo(SkillID.murderOfCrows, MAX_LEVEL_MURDER_OF_CROWS, SkillInfo.LevelUpType.alwaysShown, SkillCategory.specialty, new SkillLevelRequirement[] {
+				SkillLevelRequirement.requireOtherSkillAtLeast(SkillID.ravenMark, 1)
 			}, position++));
 	}
 

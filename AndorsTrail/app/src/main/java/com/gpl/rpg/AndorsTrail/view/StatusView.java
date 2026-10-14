@@ -68,8 +68,10 @@ public final class StatusView extends RelativeLayout implements PlayerStatsListe
 		updateIcon(player.canLevelup());
 	}
 
-	public void registerToolboxViews(ToolboxView toolbox, QuickitemView quickitemView) {
-		toolbox.registerToolboxViews((ImageButton) findViewById(R.id.toolbox_toggle), quickitemView);
+	public void registerToolboxViews(ToolboxView toolbox, QuickitemView quickitemView,
+			MagicAbilityView magicAbilityView) {
+		toolbox.registerToolboxViews((ImageButton) findViewById(R.id.toolbox_toggle),
+				quickitemView, magicAbilityView);
 	}
 
 	public void updateStatus() {

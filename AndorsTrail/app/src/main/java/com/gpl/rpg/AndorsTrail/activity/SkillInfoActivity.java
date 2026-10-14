@@ -42,11 +42,11 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 		skillinfo_title.setText(getSkillTitleResourceID(skillID));
 
 		TextView skillinfo_longdescription = (TextView) findViewById(R.id.skillinfo_longdescription);
-		skillinfo_longdescription.setText(getSkillLongDescription(skillID, res));
-
 		TextView skillinfo_currentlevel = (TextView) findViewById(R.id.skillinfo_currentlevel);
 		final int playerSkillLevel = player.getSkillLevel(skillID);
 		final int nextSkillLevel = playerSkillLevel + 1;
+		skillinfo_longdescription.setText(getSkillLongDescription(skillID, playerSkillLevel, res));
+
 		if (skill.hasMaxLevel()) {
 			skillinfo_currentlevel.setText(res.getString(R.string.skill_current_level_with_maximum, playerSkillLevel, skill.maxLevel));
 		} else if (player.hasSkill(skillID)) {
@@ -72,6 +72,16 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 
 				requirementList.addView(tv, requirementParams);
 			}
+		}
+		SkillCollection.SkillID previousMagicSkill = SkillCollection.getPreviousMagicSkill(skillID);
+		if (playerSkillLevel == 0 && previousMagicSkill != null
+				&& !hasSkillRequirement(skill, previousMagicSkill)) {
+			SkillLevelRequirement requirement = SkillLevelRequirement.requireOtherSkillAtLeast(previousMagicSkill, 1);
+			TextView tv = new TextView(this);
+			tv.setLayoutParams(requirementParams);
+			tv.setText(getRequirementDescription(requirement, 1, res));
+			tv.setEnabled(!requirement.isSatisfiedByPlayer(player, nextSkillLevel));
+			requirementList.addView(tv, requirementParams);
 		}
 
 
@@ -103,6 +113,15 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 		if (!skill.hasMaxLevel()) return true;
 		if (playerSkillLevel >= skill.maxLevel) return false;
 		return true;
+	}
+
+	private static boolean hasSkillRequirement(SkillInfo skill, SkillCollection.SkillID requiredSkill) {
+		if (!skill.hasLevelupRequirements()) return false;
+		for (SkillLevelRequirement requirement : skill.levelupRequirements) {
+			if (requirement.requirementType == SkillLevelRequirement.RequirementType.skillLevel
+					&& requiredSkill.name().equals(requirement.skillOrStatID)) return true;
+		}
+		return false;
 	}
 
 	public static int getSkillTitleResourceID(SkillCollection.SkillID skill) {
@@ -150,6 +169,9 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 		case fightstyleMage: return R.string.skill_title_fightstyle_mage;
 		case manaRegeneration: return R.string.skill_title_mana_regeneration;
 		case crowForm: return R.string.magic_crowform_title;
+		case ravenMark: return R.string.magic_ravenmark_title;
+		case blackwingCounter: return R.string.magic_blackwing_counter_title;
+		case murderOfCrows: return R.string.magic_murder_of_crows_title;
 		case specializationDualWield: return R.string.skill_title_specialization_dualwield;
 		case specialization2hand: return R.string.skill_title_specialization_2hand;
 		case specializationWeaponShield: return R.string.skill_title_specialization_weapon_shield;
@@ -161,7 +183,7 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 		}
 	}
 
-	private static String getSkillLongDescription(final SkillCollection.SkillID skill, final Resources res) {
+	private static String getSkillLongDescription(final SkillCollection.SkillID skill, int playerSkillLevel, final Resources res) {
 		switch (skill) {
 		case weaponChance: return res.getString(R.string.skill_longdescription_weapon_chance, SkillCollection.PER_SKILLPOINT_INCREASE_WEAPON_CHANCE);
 		case weaponDmg: return res.getString(R.string.skill_longdescription_weapon_dmg, SkillCollection.PER_SKILLPOINT_INCREASE_WEAPON_DAMAGE_MAX);
@@ -211,7 +233,10 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 				SkillCollection.PER_SKILLPOINT_INCREASE_UNARMED_UNARMORED_CM_PERCENT);
 		case fightstyleMage: return res.getString(R.string.skill_longdescription_fightstyle_mage);
 		case manaRegeneration: return res.getString(R.string.skill_longdescription_mana_regeneration, SkillCollection.MAX_LEVEL_MANA_REGENERATION);
-		case crowForm: return res.getString(R.string.magic_crowform_description);
+		case crowForm: return getCrowFormDescription(playerSkillLevel, res);
+		case ravenMark: return getRavenMarkDescription(playerSkillLevel, res);
+		case blackwingCounter: return getBlackwingCounterDescription(playerSkillLevel, res);
+		case murderOfCrows: return getMurderOfCrowsDescription(playerSkillLevel, res);
 		case specializationDualWield: return res.getString(R.string.skill_longdescription_specialization_dualwield, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_DUALWIELD_AC_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_DUALWIELD_BC_PERCENT);
 		case specialization2hand: return res.getString(R.string.skill_longdescription_specialization_2hand, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_2HAND_DMG_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_2HAND_AC_PERCENT);
 		case specializationWeaponShield: return res.getString(R.string.skill_longdescription_specialization_weapon_shield, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_WEAPON_AC_PERCENT, SkillCollection.PER_SKILLPOINT_INCREASE_SPECIALIZATION_WEAPON_DMG_PERCENT);
@@ -220,6 +245,53 @@ public final class SkillInfoActivity extends AndorsTrailBaseActivity {
 		default:
 			return "";
 		}
+	}
+
+	private static String getCrowFormDescription(int skillLevel, Resources res) {
+		String currentLevel = skillLevel > 0
+				? getCrowFormLevelDescription(skillLevel, res)
+				: res.getString(R.string.magic_crowform_not_learned);
+		String nextLevel = skillLevel < SkillCollection.MAX_LEVEL_CROW_FORM
+				? getCrowFormLevelDescription(skillLevel + 1, res)
+				: res.getString(R.string.magic_crowform_max_level);
+		return res.getString(R.string.magic_crowform_description, currentLevel, nextLevel);
+	}
+
+	private static String getCrowFormLevelDescription(int skillLevel, Resources res) {
+		String extraUses = SkillCollection.getCrowFormUsesBeforeCooldown(skillLevel) > 1
+				? res.getString(R.string.magic_crowform_extra_uses,
+						SkillCollection.getCrowFormUsesBeforeCooldown(skillLevel))
+				: "";
+		return res.getString(R.string.magic_crowform_level_format,
+				skillLevel,
+				SkillCollection.getCrowFormManaCost(skillLevel),
+				SkillCollection.getCrowFormCooldownTurns(skillLevel),
+				extraUses);
+	}
+
+	private static String getRavenMarkDescription(int skillLevel, Resources res) {
+		int nextLevelBonus = SkillCollection.getRavenMarkBonusDamage(
+				Math.min(skillLevel + 1, SkillCollection.MAX_LEVEL_RAVEN_MARK));
+		return res.getString(R.string.magic_ravenmark_description,
+				nextLevelBonus, SkillCollection.RAVEN_MARK_DAMAGE_PER_LEVEL);
+	}
+
+	private static String getBlackwingCounterDescription(int skillLevel, Resources res) {
+		int currentPercent = SkillCollection.BLACKWING_COUNTER_MAX_REFLECT_PERCENT
+				* skillLevel / SkillCollection.MAX_LEVEL_BLACKWING_COUNTER;
+		int nextPercent = SkillCollection.BLACKWING_COUNTER_MAX_REFLECT_PERCENT
+				* Math.min(skillLevel + 1, SkillCollection.MAX_LEVEL_BLACKWING_COUNTER)
+				/ SkillCollection.MAX_LEVEL_BLACKWING_COUNTER;
+		return res.getString(R.string.magic_blackwing_counter_description,
+				currentPercent, nextPercent);
+	}
+
+	private static String getMurderOfCrowsDescription(int skillLevel, Resources res) {
+		int currentDamage = SkillCollection.getMurderOfCrowsDamage(skillLevel);
+		int nextDamage = SkillCollection.getMurderOfCrowsDamage(
+				Math.min(skillLevel + 1, SkillCollection.MAX_LEVEL_MURDER_OF_CROWS));
+		return res.getString(R.string.magic_murder_of_crows_description,
+				currentDamage, nextDamage);
 	}
 
 	private static String getRequirementDescription(SkillLevelRequirement requirement, int requiredValue, final Resources res) {

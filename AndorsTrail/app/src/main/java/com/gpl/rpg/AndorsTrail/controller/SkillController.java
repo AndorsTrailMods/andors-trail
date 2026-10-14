@@ -93,6 +93,12 @@ public final class SkillController {
 
 	static boolean canLevelupSkillWithQuest(Player player, SkillInfo skill, int levels) {
 		final int playerSkillLevel = player.getSkillLevel(skill.id);
+		SkillID previousMagicSkill = SkillCollection.getPreviousMagicSkill(skill.id);
+		if (playerSkillLevel == 0 && previousMagicSkill != null
+				&& player.getSkillLevel(previousMagicSkill) < 1) return false;
+		SkillID exclusiveCrowBranchSkill = SkillCollection.getExclusiveCrowBranchSkill(skill.id);
+		if (playerSkillLevel == 0 && exclusiveCrowBranchSkill != null
+				&& player.getSkillLevel(exclusiveCrowBranchSkill) > 0) return false;
 		if (skill.hasMaxLevel()) {
 			if (playerSkillLevel + levels > skill.maxLevel) return false;
 		}

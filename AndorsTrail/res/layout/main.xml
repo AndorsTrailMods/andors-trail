@@ -21,6 +21,14 @@
 		android:visibility="gone"
 		/>
 
+	<com.gpl.rpg.AndorsTrail.view.MagicAbilityView
+		android:id="@+id/main_magicabilityview"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_above="@id/main_statusview"
+		android:visibility="gone"
+		/>
+
 	<com.gpl.rpg.AndorsTrail.view.CombatView
 		android:id="@+id/main_combatview"
 		android:layout_width="match_parent"
