@@ -7,6 +7,7 @@ import java.util.Locale;
 import com.gpl.rpg.AndorsTrail.context.ControllerContext;
 import com.gpl.rpg.AndorsTrail.context.WorldContext;
 import com.gpl.rpg.AndorsTrail.controller.Constants;
+import com.gpl.rpg.AndorsTrail.audio.AudioController;
 import com.gpl.rpg.AndorsTrail.util.AndroidStorage;
 
 import android.app.Activity;
@@ -50,6 +51,7 @@ public final class AndorsTrailApplication extends Application {
 	private WorldContext world;
 	private ControllerContext controllers;
 	private WorldSetup setup;
+	private AudioController audioController;
 	private final SessionState sessionState = new SessionState();
 
 	public WorldContext getWorld() { return world; }
@@ -57,6 +59,7 @@ public final class AndorsTrailApplication extends Application {
 	public AndorsTrailPreferences getPreferences() { return preferences; }
 	public ControllerContext getControllerContext() { return controllers; }
 	public SessionState getSessionState() { return sessionState; }
+	public AudioController getAudioController() { return audioController; }
 
 	public static AndorsTrailApplication getApplicationFromActivity(Activity activity) {
 		return ((AndorsTrailApplication) activity.getApplication());
@@ -166,6 +169,7 @@ public final class AndorsTrailApplication extends Application {
 
 		// These should be initialized here, not in the constructor, to make sure that the application context is available for them.
 		preferences = new AndorsTrailPreferences(this);
+		audioController = new AudioController(this);
 		world = new WorldContext();
 		controllers = new ControllerContext(this, world);
 		setup = new WorldSetup(world, controllers, this);

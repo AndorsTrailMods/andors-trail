@@ -80,10 +80,7 @@ public final class CombatController implements VisualEffectCompletedCallback {
 		setCombatSelection(null, null);
 		world.model.uiSelections.isInCombat = false;
 		world.model.player.crowFormPrimed = false;
-		world.model.player.crowFormCooldownTurns = 0;
-		world.model.player.crowFormUsesSinceCooldown = 0;
 		ravenMarkedTarget = null;
-		murderOfCrowsCooldownTurns = 0;
 		if (pickupLootBags) {
 			recordLootInCombatLog();
 		}
@@ -135,8 +132,6 @@ public final class CombatController implements VisualEffectCompletedCallback {
 		totalExpThisFight = 0;
 		currentActiveMonster = null;
 		ravenMarkedTarget = null;
-		ravenMarkCooldownTurns = 0;
-		murderOfCrowsCooldownTurns = 0;
 		pendingMurderOfCrowsTargets = null;
 		pendingMurderOfCrowsDamage = 0;
 	}
@@ -499,6 +494,7 @@ public final class CombatController implements VisualEffectCompletedCallback {
 				|| player.crowFormCooldownTurns > 0
 				|| !controllers.actorStatsController.usePlayerMana(player, manaCost)) return false;
 		player.crowFormPrimed = true;
+		controllers.getAudioController().playMagic();
 		return true;
 	}
 
@@ -516,6 +512,7 @@ public final class CombatController implements VisualEffectCompletedCallback {
 			return false;
 		}
 		ravenMarkedTarget = target;
+		controllers.getAudioController().playRavenMark();
 		return true;
 	}
 
@@ -543,6 +540,7 @@ public final class CombatController implements VisualEffectCompletedCallback {
 				|| !controllers.actorStatsController.usePlayerMana(player, SkillCollection.MURDER_OF_CROWS_MANA_COST)) return false;
 
 		murderOfCrowsCooldownTurns = SkillCollection.MURDER_OF_CROWS_COOLDOWN_TURNS;
+		controllers.getAudioController().playMurderOfCrows();
 		pendingMurderOfCrowsTargets = targets;
 		pendingMurderOfCrowsDamage = SkillCollection.getMurderOfCrowsDamage(skillLevel);
 		ArrayList<Coord> targetPositions = new ArrayList<>(targets.size());

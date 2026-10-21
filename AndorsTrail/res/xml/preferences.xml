@@ -75,6 +75,23 @@
 			android:entryValues="@array/preferences_attackspeed_values" />
 	</PreferenceCategory>
 	<PreferenceCategory
+		android:title="@string/preferences_audio_category">
+		<com.gpl.rpg.AndorsTrail.view.CustomListPreference
+			android:title="@string/preferences_audio_music_volume_title"
+			android:summary="@string/preferences_audio_music_volume"
+			android:key="music_volume"
+			android:defaultValue="70"
+			android:entries="@array/preferences_audio_volume"
+			android:entryValues="@array/preferences_audio_volume_values" />
+		<com.gpl.rpg.AndorsTrail.view.CustomListPreference
+			android:title="@string/preferences_audio_effects_volume_title"
+			android:summary="@string/preferences_audio_effects_volume"
+			android:key="effects_volume"
+			android:defaultValue="85"
+			android:entries="@array/preferences_audio_volume"
+			android:entryValues="@array/preferences_audio_volume_values" />
+	</PreferenceCategory>
+	<PreferenceCategory
 		android:title="@string/preferences_movement_category">
 		<com.gpl.rpg.AndorsTrail.view.CustomListPreference
 			android:title="@string/preferences_movementmethod_title"

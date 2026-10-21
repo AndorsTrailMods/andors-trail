@@ -7,6 +7,7 @@ import android.content.res.Resources;
 
 import com.gpl.rpg.AndorsTrail.AndorsTrailApplication;
 import com.gpl.rpg.AndorsTrail.AndorsTrailPreferences;
+import com.gpl.rpg.AndorsTrail.audio.AudioController;
 import com.gpl.rpg.AndorsTrail.controller.ActorStatsController;
 import com.gpl.rpg.AndorsTrail.controller.CombatController;
 import com.gpl.rpg.AndorsTrail.controller.ConversationController;
@@ -58,6 +59,9 @@ public final class ControllerContext {
 
 	public Resources getResources() {
 		return app.get().getResources();
+	}
+	public AudioController getAudioController() {
+		return app.get().getAudioController();
 	}
 	public Context getContext() {return app.get().getApplicationContext(); }
 }

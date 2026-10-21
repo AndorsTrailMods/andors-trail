@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.gpl.rpg.AndorsTrail.AndorsTrailApplication;
 import com.gpl.rpg.AndorsTrail.AndorsTrailPreferences;
+import com.gpl.rpg.AndorsTrail.audio.AudioController;
 import com.gpl.rpg.AndorsTrail.Dialogs;
 import com.gpl.rpg.AndorsTrail.R;
 import com.gpl.rpg.AndorsTrail.context.ControllerContext;
@@ -70,6 +71,7 @@ public final class MainActivity
 
 	private ControllerContext controllers;
 	private WorldContext world;
+	private AudioController audioController;
 	private MainView mainview;
 	private StatusView statusview;
 	private CombatView combatview;
@@ -93,6 +95,7 @@ public final class MainActivity
 		if (!app.isInitialized()) { finish(); return; }
 		this.world = app.getWorld();
 		this.controllers = app.getControllerContext();
+		this.audioController = app.getAudioController();
 
 		initializeView(this, R.layout.main, R.id.main_container);
 
@@ -217,6 +220,7 @@ public final class MainActivity
 	@Override
 	protected void onPause() {
 		super.onPause();
+		audioController.pauseMusic();
 		controllers.gameRoundController.onMainActivityPaused();
 		controllers.movementController.stopMovement();
 		if (controllers.movementController.isMapTransitionInProgress()) {
@@ -233,6 +237,7 @@ public final class MainActivity
 
 		if (world.model.statistics.isDead()) this.finish();
 		else {
+			audioController.resumeMusic(world.model.uiSelections.isInCombat);
 			controllers.gameRoundController.onMainActivityResumed();
 			// It's possible the pause() quicksave was deferred because the map was in transition.  If
 			// so, we do it now so the new map is saved.
@@ -397,21 +402,25 @@ public final class MainActivity
 
 	@Override
 	public void onCombatStarted() {
+		audioController.setCombatMusic(true);
 		clearMessages();
 	}
 
 	@Override
 	public void onCombatEnded() {
+		audioController.setCombatMusic(false);
 		clearMessages();
 	}
 
 	@Override
 	public void onPlayerAttackMissed(Monster target, AttackResult attackResult) {
+		audioController.playPlayerMiss();
 		message(getString(R.string.combat_result_heromiss));
 	}
 
 	@Override
 	public void onPlayerAttackSuccess(Monster target, AttackResult attackResult) {
+		audioController.playPlayerHit();
 		final String monsterName = target.getName();
 		if (attackResult.isCriticalHit) {
 			message(getString(R.string.combat_result_herohitcritical, monsterName, attackResult.damage));
@@ -426,6 +435,7 @@ public final class MainActivity
 	@Override
 	public void onMonsterAttackMissed(Monster attacker, AttackResult attackResult) {
 		if (attackResult.isCrowForm) {
+			audioController.playCrowForm();
 			if (attackResult.damage > 0) {
 				message(getString(R.string.combat_result_blackwing_counter,
 						attacker.getName(), attackResult.damage));
@@ -433,12 +443,14 @@ public final class MainActivity
 				message(getString(R.string.combat_result_crowform, attacker.getName()));
 			}
 		} else {
+			audioController.playMonsterMiss();
 			message(getString(R.string.combat_result_monstermiss, attacker.getName()));
 		}
 	}
 
 	@Override
 	public void onMonsterAttackSuccess(Monster attacker, AttackResult attackResult) {
+		audioController.playMonsterHit();
 		final String monsterName = attacker.getName();
 		if (attackResult.isCriticalHit) {
 			message(getString(R.string.combat_result_monsterhitcritical, monsterName, attackResult.damage));

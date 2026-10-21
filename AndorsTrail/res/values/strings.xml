@@ -313,6 +313,8 @@
 		You should have received a copy of the GNU General Public License along with this program; if not, see &lt;a href="http://www.gnu.org/licenses"&gt;http://www.gnu.org/licenses&lt;/a&gt;&lt;br /&gt;
 		&lt;br /&gt;
 		For source code and feature requests, please visit the project page at &lt;a href="https://github.com/AndorsTrailRelease/andors-trail/"&gt;https://github.com/AndorsTrailRelease/andors-trail/&lt;/a&gt;&lt;br /&gt;
+		&lt;br /&gt;
+		Crow sounds: “Corvus corone - Carrion Crow XC511130” by Marie-Lan Taÿ Pamart, from Xeno-canto XC511130. The cropped and normalized excerpts use calls from a recording of two crows. &lt;a href="https://commons.wikimedia.org/wiki/File:Corvus_corone_-_Carrion_Crow_XC511130.mp3"&gt;Source recording&lt;/a&gt;, licensed under &lt;a href="https://creativecommons.org/licenses/by-sa/4.0/"&gt;CC BY-SA 4.0&lt;/a&gt;.&lt;br /&gt;
 	</string>
 	<string name="about_interface"><![CDATA[
 
@@ -396,6 +398,12 @@
 	<string name="preferences_combat_category">Combat</string>
 	<string name="preferences_combat_speed_title">Combat speed</string>
 	<string name="preferences_combat_speed">Determines how fast monsters attack.</string>
+	<string name="preferences_audio_category">Audio</string>
+	<string name="preferences_audio_music_volume_title">Music volume</string>
+	<string name="preferences_audio_music_volume">Adjust exploration and combat music. Set to muted to turn music off.</string>
+	<string name="preferences_audio_effects_volume_title">Sound effects volume</string>
+	<string name="preferences_audio_effects_volume">Adjust attacks, misses, and magic sounds. Set to muted to turn effects off.</string>
+	<string name="preferences_audio_volume_muted">Muted</string>
 
 	<string name="preferences_display_loot_dialog">Always show loot dialog box</string>
 	<string name="preferences_display_loot_dialog_on_items">Show loot dialog box when finding items</string>
