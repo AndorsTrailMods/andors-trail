@@ -32,6 +32,7 @@ import android.widget.TextView.BufferType;
 import com.gpl.rpg.AndorsTrail.AndorsTrailApplication;
 import com.gpl.rpg.AndorsTrail.Dialogs;
 import com.gpl.rpg.AndorsTrail.R;
+import com.gpl.rpg.AndorsTrail.audio.MikhailVoicePlayer;
 import com.gpl.rpg.AndorsTrail.context.WorldContext;
 import com.gpl.rpg.AndorsTrail.controller.ConversationController;
 import com.gpl.rpg.AndorsTrail.model.actor.Actor;
@@ -63,11 +64,13 @@ public final class ConversationActivity
 	private ListView statementList;
 	private RadioGroup replyGroup;
 	private OnCheckedChangeListener radioButtonListener;
+	private MikhailVoicePlayer mikhailVoicePlayer;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		setTheme(ThemeHelper.getDialogTheme());
 		super.onCreate(savedInstanceState);
+		this.mikhailVoicePlayer = new MikhailVoicePlayer(this);
 		AndorsTrailApplication app = AndorsTrailApplication.getApplicationFromActivity(this);
 		if (!app.isInitialized()) { finish(); return; }
 		this.world = app.getWorld();
@@ -339,6 +342,18 @@ public final class ConversationActivity
 		Dialogs.addMonsterIdentifiers(outState, conversationState.getCurrentNPC());
 	}
 
+	@Override
+	protected void onPause() {
+		mikhailVoicePlayer.stop();
+		super.onPause();
+	}
+
+	@Override
+	protected void onDestroy() {
+		mikhailVoicePlayer.stop();
+		super.onDestroy();
+	}
+
 	private static final class ConversationStatement implements Parcelable {
 		public static final int NO_ICON = -1;
 
@@ -448,6 +463,7 @@ public final class ConversationActivity
 
 	@Override
 	public void onTextPhraseReached(String message, Actor actor, String phraseID) {
+		mikhailVoicePlayer.play(actor, phraseID);
 		addConversationStatement(actor, message, getSpanColor(R.attr.ui_theme_dialogue_light_color), false);
 	}
 
