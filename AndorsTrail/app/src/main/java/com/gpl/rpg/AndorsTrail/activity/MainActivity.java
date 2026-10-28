@@ -220,7 +220,7 @@ public final class MainActivity
 	@Override
 	protected void onPause() {
 		super.onPause();
-		audioController.pauseMusic();
+		audioController.pauseAudio();
 		controllers.gameRoundController.onMainActivityPaused();
 		controllers.movementController.stopMovement();
 		if (controllers.movementController.isMapTransitionInProgress()) {
@@ -237,7 +237,7 @@ public final class MainActivity
 
 		if (world.model.statistics.isDead()) this.finish();
 		else {
-			audioController.resumeMusic(world.model.uiSelections.isInCombat);
+			audioController.resumeAudio();
 			controllers.gameRoundController.onMainActivityResumed();
 			// It's possible the pause() quicksave was deferred because the map was in transition.  If
 			// so, we do it now so the new map is saved.
@@ -402,13 +402,11 @@ public final class MainActivity
 
 	@Override
 	public void onCombatStarted() {
-		audioController.setCombatMusic(true);
 		clearMessages();
 	}
 
 	@Override
 	public void onCombatEnded() {
-		audioController.setCombatMusic(false);
 		clearMessages();
 	}
 

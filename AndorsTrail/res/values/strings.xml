@@ -399,8 +399,6 @@
 	<string name="preferences_combat_speed_title">Combat speed</string>
 	<string name="preferences_combat_speed">Determines how fast monsters attack.</string>
 	<string name="preferences_audio_category">Audio</string>
-	<string name="preferences_audio_music_volume_title">Music volume</string>
-	<string name="preferences_audio_music_volume">Adjust exploration and combat music. Set to muted to turn music off.</string>
 	<string name="preferences_audio_effects_volume_title">Sound effects volume</string>
 	<string name="preferences_audio_effects_volume">Adjust attacks, misses, and magic sounds. Set to muted to turn effects off.</string>
 	<string name="preferences_audio_volume_muted">Muted</string>
